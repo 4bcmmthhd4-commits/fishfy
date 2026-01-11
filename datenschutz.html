@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Fishfy</title>
+    <meta name="description" content="Datenschutzerklärung für die Fishfy App">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007AFF;
+            --navy: #011c38;
+            --creme: #f9f3ea;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-500: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--navy);
+            background: var(--white);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), #00c6ff);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: var(--gray-500);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--navy);
+        }
+
+        .info-box {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .info-box p {
+            margin-bottom: 8px;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 16px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-links {
+            margin-bottom: 24px;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 100px 20px 60px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎣</div>
+                Fishfy
+            </a>
+            <a href="index.html" class="back-link">
+                ← Zurück zur Startseite
+            </a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Datenschutzerklärung</h1>
+        <p class="last-updated">Stand: 11. Januar 2026</p>
+
+        <h2>1. Verantwortlicher</h2>
+        <div class="info-box">
+            <p><strong>Apzura</strong></p>
+            <p>Inhaber: Falco Grimminger</p>
+            <p>Hafenstraße 39, 67346 Speyer</p>
+            <p>E-Mail: support@fishfy.app</p>
+        </div>
+
+        <h2>2. Datenerhebung und -speicherung</h2>
+        <p>Fishfy erhebt und speichert folgende Daten:</p>
+        <ul>
+            <li><strong>Standortdaten:</strong> Nur bei aktiver Nutzung der App, um Wetterdaten für den aktuellen Standort abzurufen und Angelspots zu markieren</li>
+            <li><strong>Fotos:</strong> Fotos von Fängen werden ausschließlich lokal auf dem Gerät gespeichert</li>
+            <li><strong>Angelspots und Notizen:</strong> Alle Spots und Notizen werden lokal auf dem Gerät gespeichert</li>
+            <li><strong>Wetterdaten:</strong> Werden über Apple WeatherKit API abgerufen und lokal für maximal 72 Stunden gespeichert</li>
+            <li><strong>Fangdaten mit Wetterbedingungen:</strong> Werden lokal auf dem Gerät gespeichert</li>
+        </ul>
+
+        <h2>3. Datenübertragung</h2>
+        <p>Alle Daten werden ausschließlich lokal auf Ihrem Gerät gespeichert. Es erfolgt keine Übertragung Ihrer persönlichen Daten an externe Server, außer:</p>
+        <ul>
+            <li><strong>Apple WeatherKit:</strong> Wetterdaten werden über Apple WeatherKit API abgerufen. Diese Datenübertragung erfolgt gemäß den Datenschutzbestimmungen von Apple.</li>
+            <li><strong>Freiwillige Datenweitergabe:</strong> Optional können Sie zustimmen, dass anonymisierte Fangdaten automatisch an uns übermittelt werden, um die App zu verbessern. Diese Funktion kann jederzeit in den Einstellungen deaktiviert werden. Die Daten enthalten keine personenbezogenen Informationen.</li>
+        </ul>
+
+        <h2>4. Standortdaten</h2>
+        <p>Die App verwendet Standortdaten nur während der aktiven Nutzung, um:</p>
+        <ul>
+            <li>Wetterdaten für Ihren aktuellen Standort abzurufen</li>
+            <li>Angelspots zu markieren</li>
+            <li>Fangpositionen zu dokumentieren</li>
+        </ul>
+        <p>Standortdaten werden nicht dauerhaft gespeichert. Sie können die Standortfreigabe jederzeit in den iOS-Einstellungen deaktivieren.</p>
+
+        <h2>5. Kamera</h2>
+        <p>Die App benötigt Zugriff auf die Kamera, um Fänge zu fotografieren. Fotos werden ausschließlich lokal auf Ihrem Gerät gespeichert und nicht an Dritte übertragen.</p>
+
+        <h2>6. Wetterdaten</h2>
+        <p>Die App nutzt Apple WeatherKit, um Wetterdaten abzurufen. Diese Daten werden von Apple bereitgestellt und unterliegen den Datenschutzbestimmungen von Apple.</p>
+        <p>Wetterdaten werden lokal für maximal 72 Stunden gespeichert, um Wetterverläufe zu analysieren.</p>
+
+        <h2>7. Datenexport</h2>
+        <p>Sie können Ihre Daten jederzeit als PDF exportieren. Der Export erfolgt lokal auf Ihrem Gerät.</p>
+
+        <h2>8. Freiwillige Datenweitergabe</h2>
+        <p>Sie können optional zustimmen, dass Ihre anonymisierten Fangdaten automatisch an uns übermittelt werden, um die App zu verbessern. Diese Funktion kann jederzeit in den Einstellungen deaktiviert werden.</p>
+        <p>Die Daten werden nur mit Ihrer ausdrücklichen Zustimmung versendet und dienen ausschließlich der Analyse und Verbesserung der App. Sie können diese Einwilligung jederzeit widerrufen.</p>
+        <p>Die übermittelten Daten enthalten keine personenbezogenen Informationen und werden anonymisiert verarbeitet.</p>
+
+        <h2>9. Datenlöschung</h2>
+        <p>Sie können alle Daten jederzeit über die App-Funktion "Alle Daten löschen" entfernen. Bei Deinstallation der App werden alle lokal gespeicherten Daten gelöscht.</p>
+
+        <h2>10. Ihre Rechte (DSGVO/GDPR)</h2>
+        <p>Sie haben das Recht:</p>
+        <ul>
+            <li>Auskunft über Ihre gespeicherten Daten zu erhalten (Art. 15 DSGVO)</li>
+            <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+            <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerruf Ihrer Einwilligung zur Datenweitergabe (jederzeit in den Einstellungen)</li>
+            <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+        </ul>
+
+        <h2>11. Kontakt</h2>
+        <p>Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter:</p>
+        <div class="info-box">
+            <p><strong>E-Mail:</strong> support@fishfy.app</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Startseite</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+        </div>
+        <p class="footer-copy">© 2026 Apzura. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
+

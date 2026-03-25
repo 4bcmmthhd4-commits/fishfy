@@ -1,239 +1,96 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum - Fishfy</title>
-    <meta name="description" content="Impressum für die Fishfy App">
+    <title>Imprint - Fishfy</title>
+    <meta name="description" content="Imprint for the Fishfy app">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #007AFF;
-            --navy: #011c38;
-            --creme: #f9f3ea;
-            --white: #ffffff;
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-500: #6c757d;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--navy);
-            background: var(--white);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 16px 24px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--navy);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .back-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 120px 24px 80px;
-        }
-
-        h1 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 48px;
-        }
-
-        h2 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-top: 48px;
-            margin-bottom: 16px;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-top: 24px;
-            margin-bottom: 12px;
-        }
-
-        p {
-            color: var(--gray-500);
-            margin-bottom: 16px;
-        }
-
-        .info-box {
-            background: var(--gray-100);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 24px 0;
-        }
-
-        .info-box p {
-            margin-bottom: 8px;
-        }
-
-        .info-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        footer {
-            background: var(--navy);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 40px 24px;
-            text-align: center;
-        }
-
-        footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            margin: 0 16px;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-
-        .footer-links {
-            margin-bottom: 24px;
-        }
-
-        .footer-copy {
-            font-size: 13px;
-            opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 100px 20px 60px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-        }
+        :root { --primary:#007AFF; --navy:#011c38; --white:#ffffff; --gray-100:#f8f9fa; --gray-200:#e9ecef; --gray-500:#6c757d; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; color:var(--navy); background:var(--white); }
+        nav { position:fixed; top:0; left:0; right:0; background:rgba(255,255,255,.95); backdrop-filter:blur(20px); z-index:1000; padding:16px 24px; border-bottom:1px solid rgba(0,0,0,.08); }
+        .nav-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+        .logo { font-size:24px; font-weight:700; color:var(--navy); text-decoration:none; display:flex; align-items:center; gap:8px; }
+        .logo-icon { width:36px; height:36px; } .logo-icon img { width:100%; height:100%; object-fit:contain; }
+        .back-link { color:var(--primary); text-decoration:none; font-weight:500; } .back-link:hover { text-decoration:underline; }
+        .lang-switcher { border:1px solid var(--gray-200); background:var(--white); color:var(--navy); border-radius:10px; padding:8px 12px; font-size:14px; font-weight:500; }
+        .content { max-width:800px; margin:0 auto; padding:120px 24px 80px; }
+        h1 { font-size:36px; font-weight:700; color:var(--navy); margin-bottom:48px; }
+        h2 { font-size:22px; font-weight:600; color:var(--navy); margin-top:48px; margin-bottom:16px; }
+        .info-box { background:var(--gray-100); border-radius:12px; padding:24px; margin:24px 0; color:var(--gray-500); white-space:pre-line; }
+        .section-text { color:var(--gray-500); white-space:pre-line; margin-bottom:16px; }
+        footer { background:var(--navy); color:rgba(255,255,255,.7); padding:40px 24px; text-align:center; }
+        footer a { color:rgba(255,255,255,.7); text-decoration:none; margin:0 16px; } footer a:hover { color:white; }
+        .footer-links { margin-bottom:24px; } .footer-copy { font-size:13px; opacity:.7; }
+        @media (max-width:768px){ .content{padding:100px 20px 60px;} h1{font-size:28px;} h2{font-size:20px;} }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>
-                Fishfy
-            </a>
-            <a href="index.html" class="back-link">
-                ← Zurück zur Startseite
-            </a>
+            <a href="index.html" class="logo"><div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>Fishfy</a>
+            <a href="index.html" class="back-link" data-i18n="back">Back to home</a>
+            <select id="lang-switcher" class="lang-switcher" aria-label="Select language">
+                <option value="de">DE</option><option value="en">EN</option><option value="nl">NL</option><option value="fr">FR</option><option value="lb">LB</option>
+            </select>
         </div>
     </nav>
-
     <main class="content">
-        <h1>Impressum</h1>
-
-        <h2>Angaben gemäß § 5 TMG</h2>
-        <div class="info-box">
-            <p><strong>Apzura</strong></p>
-            <p>Inhaber: Falco Grimminger</p>
-            <p>Hafenstraße 39</p>
-            <p>67346 Speyer</p>
-        </div>
-
-        <h2>Kontakt</h2>
-        <div class="info-box">
-            <p><strong>E-Mail:</strong> support@fishfy.app</p>
-        </div>
-
-        <h2>Umsatzsteuer-ID</h2>
-        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
-        <p>Wird nach Erteilung ergänzt</p>
-
-        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-        <div class="info-box">
-            <p>Falco Grimminger</p>
-            <p>Hafenstraße 39</p>
-            <p>67346 Speyer</p>
-        </div>
-
-        <h2>Haftungsausschluss</h2>
-
-        <h3>Haftung für Inhalte</h3>
-        <p>Die Inhalte unserer App wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
-
-        <h3>Urheberrecht</h3>
-        <p>Die durch die Appbetreiber erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+        <h1 id="title">Imprint</h1>
+        <h2 id="s1"></h2>
+        <div class="info-box" id="s1c"></div>
+        <h2 id="s2"></h2>
+        <div class="section-text" id="s2c"></div>
     </main>
-
     <footer>
         <div class="footer-links">
-            <a href="index.html">Startseite</a>
-            <a href="datenschutz.html">Datenschutz</a>
-            <a href="impressum.html">Impressum</a>
-            <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+            <a href="index.html" data-i18n="home">Home</a>
+            <a href="datenschutz.html" data-i18n="privacy">Privacy</a>
+            <a href="impressum.html" data-i18n="imprint">Imprint</a>
+            <a href="nutzungsbedingungen.html" data-i18n="terms">Terms</a>
         </div>
-        <p class="footer-copy">© 2026 Apzura. Alle Rechte vorbehalten.</p>
+        <p class="footer-copy">© 2026 Apzura. All rights reserved.</p>
     </footer>
+    <script>
+        (function () {
+            const SUPPORTED = ["de", "en", "nl", "fr", "lb"];
+            const FALLBACK = "en";
+            const storageKey = "fishfy_lang";
+            const content = {
+                de: { pageTitle:"Impressum", back:"Zurück zur Startseite", home:"Startseite", privacy:"Datenschutz", imprint:"Impressum", terms:"Nutzungsbedingungen", s1:"Angaben gemäß § 5 TMG", s1c:"Apzura\nHafenstraße 39, 67346 Speyer\nE-Mail: support@fishfy.app\n\nVertreten durch: F. Grimminger", s2:"Haftungsausschluss", s2c:"Haftung für Inhalte:\nDie Inhalte unserer App wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.\n\nHaftung für Links:\nSoweit in der App Verweise auf andere Angebote (z.B. E-Mail, Webseiten) gesetzt werden, haben wir keinen Einfluss auf deren Inhalte. Für verlinkte Inhalte sind die jeweiligen Anbieter verantwortlich.\n\nUrheberrecht:\nDie durch die Appbetreiber erstellten Inhalte und Werke auf dieser App unterliegen dem deutschen Urheberrecht.", footerCopy:"© 2026 Apzura. Alle Rechte vorbehalten." },
+                en: { pageTitle:"Imprint", back:"Back to home", home:"Home", privacy:"Privacy", imprint:"Imprint", terms:"Terms", s1:"Information pursuant to § 5 TMG", s1c:"Apzura\nHafenstraße 39, 67346 Speyer\nEmail: support@fishfy.app\n\nRepresented by: F. Grimminger", s2:"Disclaimer", s2c:"Liability for content:\nThe contents of our app were created with the greatest care. However, we cannot guarantee the correctness, completeness and topicality of the content.\n\nLiability for links:\nWhere the app contains references to other offerings (e.g. email, websites), we have no influence on their content. The respective providers are responsible for linked content.\n\nCopyright:\nThe content and works created by the app operator on this app are subject to German copyright law.", footerCopy:"© 2026 Apzura. All rights reserved." },
+                nl: { pageTitle:"Colofon", back:"Terug naar startpagina", home:"Startpagina", privacy:"Privacy", imprint:"Colofon", terms:"Gebruiksvoorwaarden", s1:"Informatie volgens § 5 TMG", s1c:"Apzura\nHafenstraße 39, 67346 Speyer\nE-mail: support@fishfy.app\n\nVeregenwoordigd door: F. Grimminger", s2:"Aansprakelijkheidsbeperking", s2c:"Aansprakelijkheid voor inhoud:\nDe inhoud van onze app is met grote zorgvuldigheid samengesteld. Wij kunnen echter geen garantie geven voor de juistheid, volledigheid en actualiteit van de inhoud.\n\nAansprakelijkheid voor links:\nVoor zover in de app verwezen wordt naar andere aanbiedingen (bijv. e-mail, websites), hebben wij geen invloed op de inhoud daarvan. Voor gelinkte inhoud zijn de respectievelijke aanbieders verantwoordelijk.\n\nAuteursrecht:\nDe door de app-aanbieder gemaakte inhoud en werken in deze app vallen onder het Duitse auteursrecht.", footerCopy:"© 2026 Apzura. Alle rechten voorbehouden." },
+                fr: { pageTitle:"Mentions légales", back:"Retour à l'accueil", home:"Accueil", privacy:"Confidentialité", imprint:"Mentions légales", terms:"Conditions", s1:"Informations selon § 5 TMG", s1c:"Apzura\nHafenstraße 39, 67346 Speyer\nE-mail : support@fishfy.app\n\nReprésenté par : F. Grimminger", s2:"Avertissement", s2c:"Responsabilité du contenu :\nLe contenu de notre app a été créé avec le plus grand soin. Nous ne pouvons toutefois pas garantir l'exactitude, l'exhaustivité et l'actualité du contenu.\n\nResponsabilité des liens :\nLorsque l'app contient des références à d'autres offres (p. ex. e-mail, sites web), nous n'avons aucune influence sur leur contenu. Les fournisseurs respectifs sont responsables du contenu lié.\n\nDroits d'auteur :\nLe contenu et les œuvres créés par l'éditeur de l'app dans cette app sont soumis au droit d'auteur allemand.", footerCopy:"© 2026 Apzura. Tous droits réservés." },
+                lb: { pageTitle:"Impressum", back:"Zréck op d'Startsäit", home:"Startsäit", privacy:"Dateschutz", imprint:"Impressum", terms:"Benotzungsbedingungen", s1:"Ugaben geméiss § 5 TMG", s1c:"Apzura\nHafenstraße 39, 67346 Speyer\nE-Mail: support@fishfy.app\n\nVertrueden duerch: F. Grimminger", s2:"Haftungsausschluss", s2c:"Haftung fir Inhalter:\nD'Inhalter vun eiser App goufen mat gréisster Sorgfal erstallt. Fir d'Richtegkeet, Vollstännegkeet an Aktualitéit vun den Inhalter kënne mir awer keng Gewähr iwwerhuelen.\n\nHaftung fir Linken:\nSou wäit an der App Verweiser op aner Ubidder (z.B. E-Mail, Websäiten) gesat ginn, hu mir keen Afloss op déi hir Inhalter. Fir verlinkt Inhalter sinn déi jeweileg Ubidder verantwortlech.\n\nUrheberrecht:\nD'Duerch d'Appbetreiber erstallt Inhalter a Wierker op dëser App ënnerleeën dem däitschen Urheberrecht.", footerCopy:"© 2026 Apzura. All Rechter virbehalen." }
+            };
+            function normalizeLang(input){ if(!input) return FALLBACK; const v=input.toLowerCase(); if(v.startsWith("lb")||v.startsWith("lu")) return "lb"; const b=v.split("-")[0]; return SUPPORTED.includes(b)?b:FALLBACK; }
+            function render(lang){
+                const t = content[lang] || content[FALLBACK];
+                document.documentElement.lang = lang;
+                document.title = "Fishfy - " + t.pageTitle;
+                document.getElementById("title").textContent = t.pageTitle;
+                document.getElementById("s1").textContent = t.s1;
+                document.getElementById("s1c").textContent = t.s1c;
+                document.getElementById("s2").textContent = t.s2;
+                document.getElementById("s2c").textContent = t.s2c;
+                document.querySelector('[data-i18n="back"]').textContent = t.back;
+                document.querySelector('[data-i18n="home"]').textContent = t.home;
+                document.querySelector('[data-i18n="privacy"]').textContent = t.privacy;
+                document.querySelector('[data-i18n="imprint"]').textContent = t.imprint;
+                document.querySelector('[data-i18n="terms"]').textContent = t.terms;
+                document.querySelector(".footer-copy").textContent = t.footerCopy;
+            }
+            const preferred = normalizeLang(localStorage.getItem(storageKey) || navigator.language || FALLBACK);
+            render(preferred);
+            const switcher = document.getElementById("lang-switcher");
+            switcher.value = preferred;
+            switcher.addEventListener("change", (event) => { const lang = normalizeLang(event.target.value); localStorage.setItem(storageKey, lang); render(lang); });
+        })();
+    </script>
 </body>
 </html>
 

@@ -141,6 +141,7 @@
             font-weight: 700;
             line-height: 1.16;
             padding-bottom: 0.06em;
+            text-wrap: balance;
             margin-bottom: 24px;
             background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
@@ -153,6 +154,7 @@
             color: var(--gray-500);
             margin-bottom: 40px;
             max-width: 600px;
+            text-wrap: balance;
             margin-left: auto;
             margin-right: auto;
         }
@@ -403,6 +405,17 @@
 
             .hero {
                 padding: 100px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: clamp(38px, 11vw, 56px);
+                line-height: 1.14;
+                padding-bottom: 0.08em;
+            }
+
+            .hero p {
+                font-size: clamp(17px, 5vw, 22px);
+                line-height: 1.5;
             }
 
             .features, .about, .download {

@@ -203,7 +203,7 @@
 
     <main class="content">
         <h1>Datenschutzerklärung</h1>
-        <p class="last-updated">Stand: 11. Januar 2026</p>
+        <p class="last-updated">Stand: 3. März 2026</p>
 
         <h2>1. Verantwortlicher</h2>
         <div class="info-box">
@@ -216,18 +216,22 @@
         <h2>2. Datenerhebung und -speicherung</h2>
         <p>Fishfy erhebt und speichert folgende Daten:</p>
         <ul>
-            <li><strong>Standortdaten:</strong> Nur bei aktiver Nutzung der App, um Wetterdaten für den aktuellen Standort abzurufen und Angelspots zu markieren</li>
-            <li><strong>Fotos:</strong> Fotos von Fängen werden ausschließlich lokal auf dem Gerät gespeichert</li>
-            <li><strong>Angelspots und Notizen:</strong> Alle Spots und Notizen werden lokal auf dem Gerät gespeichert</li>
-            <li><strong>Wetterdaten:</strong> Werden über Apple WeatherKit API abgerufen und lokal für maximal 72 Stunden gespeichert</li>
-            <li><strong>Fangdaten mit Wetterbedingungen:</strong> Werden lokal auf dem Gerät gespeichert</li>
+            <li><strong>Standortdaten:</strong> Je nach Ihrer Freigabe in den iOS-Einstellungen.</li>
+            <li><strong>Fotos von Fängen:</strong> Lokal auf dem Gerät gespeichert.</li>
+            <li><strong>Angelspots und Notizen:</strong> Lokal auf dem Gerät gespeichert.</li>
+            <li><strong>Wetterdaten:</strong> Über Apple WeatherKit und Open-Meteo.</li>
+            <li><strong>Fangdaten mit Wetterbedingungen:</strong> Lokal auf dem Gerät gespeichert.</li>
         </ul>
+        <p>Alle Daten werden grundsätzlich lokal auf Ihrem Gerät gespeichert.</p>
 
         <h2>3. Datenübertragung</h2>
-        <p>Alle Daten werden ausschließlich lokal auf Ihrem Gerät gespeichert. Es erfolgt keine Übertragung Ihrer persönlichen Daten an externe Server, außer:</p>
+        <p>Eine Übertragung an externe Server erfolgt nur in folgenden Fällen:</p>
         <ul>
-            <li><strong>Apple WeatherKit:</strong> Wetterdaten werden über Apple WeatherKit API abgerufen. Diese Datenübertragung erfolgt gemäß den Datenschutzbestimmungen von Apple.</li>
-            <li><strong>Freiwillige Datenweitergabe:</strong> Optional können Sie zustimmen, dass anonymisierte Fangdaten automatisch an uns übermittelt werden, um die App zu verbessern. Diese Funktion kann jederzeit in den Einstellungen deaktiviert werden. Die Daten enthalten keine personenbezogenen Informationen.</li>
+            <li><strong>Apple WeatherKit und Open-Meteo:</strong> Für Wetterdaten.</li>
+            <li><strong>Push-Benachrichtigungen (Pro):</strong> Zur Zustellung von Benachrichtigungen (Aktivität, ähnliche Fänge) werden Geräte-Token und Einstellungen (z.B. ausgewählte Spots) an Firebase (Google) übermittelt. Die Berechnung erfolgt serverseitig anhand von Wetterdaten; Fänge und Spots werden dabei nicht an Dritte weitergegeben.</li>
+            <li><strong>Cloud-Synchronisation (Pro, optional):</strong> Bei Anmeldung mit einem Konto können Fänge und Spots zwischen Geräten synchronisiert werden. Dabei werden Daten auf Servern von Firebase (Google) verarbeitet und gespeichert.</li>
+            <li><strong>Automatische Pegel-Einschätzung:</strong> Spot-Koordinaten (Breite/Länge) und ggf. Länder-Code werden an den Fishfy-Backenddienst übermittelt. Der Dienst fragt je nach Land verfügbare Pegelquellen ab und liefert passende Pegelstationen mit aktuellen Werten in cm zurück.</li>
+            <li><strong>Freiwillige Datenweitergabe:</strong> Optional können Sie zustimmen, dass anonymisierte Fangdaten zur Verbesserung der App übermittelt werden (siehe Abschnitt 8).</li>
         </ul>
 
         <h2>4. Standortdaten</h2>
@@ -239,19 +243,23 @@
         </ul>
         <p>Standortdaten werden nicht dauerhaft gespeichert. Sie können die Standortfreigabe jederzeit in den iOS-Einstellungen deaktivieren.</p>
 
-        <h2>5. Kamera</h2>
+        <h2>5. Kamera und Fotobibliothek</h2>
         <p>Die App benötigt Zugriff auf die Kamera, um Fänge zu fotografieren. Fotos werden ausschließlich lokal auf Ihrem Gerät gespeichert und nicht an Dritte übertragen.</p>
+        <p>Optional kann die App Zugriff auf die Fotobibliothek anfordern, um Fangbilder in Ihrer Galerie zu speichern. Die Fotos verbleiben auf Ihrem Gerät.</p>
 
         <h2>6. Wetterdaten</h2>
-        <p>Die App nutzt Apple WeatherKit, um Wetterdaten abzurufen. Diese Daten werden von Apple bereitgestellt und unterliegen den Datenschutzbestimmungen von Apple.</p>
-        <p>Wetterdaten werden lokal für maximal 72 Stunden gespeichert, um Wetterverläufe zu analysieren.</p>
+        <p>Die App nutzt Apple WeatherKit und Open-Meteo, um Wetterdaten abzurufen. Die Daten von Apple WeatherKit unterliegen den Datenschutzbestimmungen von Apple. Open-Meteo ist ein offener Wetterdienst (open-meteo.com).</p>
+        <p>Für die automatische Pegel-Einschätzung fragt der Backenddienst je nach Land verfügbare Pegelquellen ab. Derzeit angebundene Quellen sind u.a. PEGELONLINE (Deutschland), Rijkswaterstaat WaterWebservices (Niederlande), eHYD (Österreich), BAFU-Hydrodaten (Schweiz), HUBEAU (Frankreich), WATERINFO/HIC (Belgien, Flandern), Hydrométrie Wallonie KiWIS (Belgien, Wallonie), BRUWATER Open Data (Belgien, Brüssel) sowie Héichwaasser (Luxemburg).</p>
+        <p>Wetterdaten und Pegelabfragen dienen ausschließlich der Funktionsbereitstellung in der App und werden nicht zur Profilerstellung verwendet.</p>
 
         <h2>7. Datenexport</h2>
         <p>Sie können Ihre Daten jederzeit als PDF exportieren. Der Export erfolgt lokal auf Ihrem Gerät.</p>
 
         <h2>8. Freiwillige Datenweitergabe</h2>
         <p>Sie können optional zustimmen, dass Ihre anonymisierten Fangdaten automatisch an uns übermittelt werden, um die App zu verbessern. Diese Funktion kann jederzeit in den Einstellungen deaktiviert werden.</p>
-        <p>Die Daten werden nur mit Ihrer ausdrücklichen Zustimmung versendet und dienen ausschließlich der Analyse und Verbesserung der App. Sie können diese Einwilligung jederzeit widerrufen.</p>
+        <p>Die Daten werden nur mit Ihrer ausdrücklichen Zustimmung (durch Aktivierung des Toggles) versendet und dienen der Analyse und Verbesserung der App.</p>
+        <p>Zudem können Fangbilder, auf denen keine Personen oder Gesichter erkennbar sind (nur Fisch und Hintergrund), für unsere Social-Media-Kanäle und zur Bewerbung der App verwendet werden. Bilder mit erkennbaren Personen werden nicht genutzt. Ebenso werden keine genauen oder erkennbaren Standortdaten aus Bildern für Werbezwecke verwendet; falls ein Standort erkennbar ist (z.B. markante Orte, Schilder, Kennzeichen, Hausnummern), wird dieser vor Verwendung unkenntlich gemacht bzw. verpixelt.</p>
+        <p>Sie können diese Einwilligung jederzeit widerrufen, indem Sie die Funktion in den Einstellungen deaktivieren.</p>
         <p>Die übermittelten Daten enthalten keine personenbezogenen Informationen und werden anonymisiert verarbeitet.</p>
 
         <h2>9. Datenlöschung</h2>

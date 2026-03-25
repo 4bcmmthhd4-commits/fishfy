@@ -14,8 +14,8 @@
         body { font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; color:var(--navy); background:var(--white); }
         nav { position:fixed; top:0; left:0; right:0; background:rgba(255,255,255,.95); backdrop-filter:blur(20px); z-index:1000; padding:16px 24px; border-bottom:1px solid rgba(0,0,0,.08); }
         .nav-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:14px; }
-        .logo { font-size:24px; font-weight:700; color:var(--navy); text-decoration:none; display:flex; align-items:center; gap:8px; }
-        .logo-icon { width:36px; height:36px; } .logo-icon img { width:100%; height:100%; object-fit:contain; }
+        .logo { text-decoration:none; display:flex; align-items:center; gap:0; }
+        .logo-icon { width:54px; height:54px; } .logo-icon img { width:100%; height:100%; object-fit:contain; }
         .back-link { color:var(--primary); text-decoration:none; font-weight:500; } .back-link:hover { text-decoration:underline; }
         .lang-switcher { border:1px solid var(--gray-200); background:var(--white); color:var(--navy); border-radius:10px; padding:8px 12px; font-size:14px; font-weight:500; }
         .content { max-width:800px; margin:0 auto; padding:120px 24px 80px; }
@@ -33,7 +33,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"><div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>Fishfy</a>
+            <a href="index.html" class="logo"><div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div></a>
             <a href="index.html" class="back-link" data-i18n="back">Back to home</a>
             <select id="lang-switcher" class="lang-switcher" aria-label="Select language">
                 <option value="de">DE</option><option value="en">EN</option><option value="nl">NL</option><option value="fr">FR</option><option value="lb">LB</option>

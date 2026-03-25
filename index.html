@@ -426,6 +426,60 @@
                 flex-direction: column;
             }
         }
+
+        @media (max-width: 390px) {
+            .nav-container {
+                gap: 10px;
+            }
+
+            .logo {
+                font-size: 20px;
+                gap: 6px;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .lang-switcher {
+                padding: 7px 10px;
+                font-size: 13px;
+            }
+
+            .hero-badge {
+                font-size: 13px;
+                padding: 7px 12px;
+                gap: 6px;
+                max-width: calc(100vw - 40px);
+            }
+
+            .cta-button,
+            .app-store-button {
+                width: 100%;
+                max-width: 340px;
+                justify-content: center;
+                padding: 15px 18px;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: clamp(34px, 12vw, 46px);
+            }
+
+            .cta-button,
+            .app-store-button {
+                font-size: 15px;
+            }
+
+            .cta-button svg,
+            .app-store-button svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
     </style>
 </head>
 <body>

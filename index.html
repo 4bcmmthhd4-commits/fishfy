@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fishfy - Smarter angeln, mehr fangen</title>
-    <meta name="description" content="Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen. Die App für echte Angler.">
+    <meta id="meta-description" name="description" content="Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen. Die App für echte Angler.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -96,6 +96,16 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        .lang-switcher {
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            color: var(--navy);
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         /* Hero Section */
@@ -413,11 +423,18 @@
                 Fishfy
             </a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="datenschutz.html">Datenschutz</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+                <li><a href="datenschutz.html" data-i18n="nav_privacy">Datenschutz</a></li>
+                <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
             </ul>
+            <select id="lang-switcher" class="lang-switcher" aria-label="Sprache auswählen">
+                <option value="de">DE</option>
+                <option value="en">EN</option>
+                <option value="nl">NL</option>
+                <option value="fr">FR</option>
+                <option value="lb">LB</option>
+            </select>
         </div>
     </nav>
 
@@ -425,15 +442,15 @@
     <section class="hero">
         <div class="hero-content">
                 <div class="hero-badge">
-                <img src="logo.svg" alt="" style="height: 20px; vertical-align: middle; margin-right: 6px;"> Dein Angel-Assistent
+                <img src="logo.svg" alt="" style="height: 20px; vertical-align: middle; margin-right: 6px;"><span data-i18n="badge">Dein Angel-Assistent</span>
             </div>
             <h1>Smarter angeln, mehr fangen</h1>
-            <p>Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen.</p>
+            <p data-i18n="hero_text">Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen.</p>
             <a href="#" class="cta-button">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
-                Im App Store laden
+                <span data-i18n="cta_top">Im App Store laden</span>
             </a>
         </div>
     </section>
@@ -442,29 +459,29 @@
     <section class="features" id="features">
         <div class="section-container">
             <div class="section-header">
-                <h2>Alles was du brauchst</h2>
-                <p>Entwickelt von Anglern, für Angler</p>
+                <h2 data-i18n="features_title">Alles was du brauchst</h2>
+                <p data-i18n="features_subtitle">Entwickelt von Anglern, für Angler</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon blue">📊</div>
-                    <h3>Intelligente Prognosen</h3>
-                    <p>Präzise Aktivitäts-Prognosen mit Wetter, Luftdruck, Wind, Mondphase und Saison für deine besten Beißzeiten.</p>
+                    <h3 data-i18n="feature1_title">Intelligente Prognosen</h3>
+                    <p data-i18n="feature1_text">Präzise Aktivitäts-Prognosen mit Wetter, Luftdruck, Wind, Mondphase und Saison für deine besten Beißzeiten.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon orange">📍</div>
-                    <h3>Deine Angelspots</h3>
-                    <p>Speichere und verwalte deine Lieblingsstellen. Mit Karte, Notizen und Gewässertyp.</p>
+                    <h3 data-i18n="feature2_title">Deine Angelspots</h3>
+                    <p data-i18n="feature2_text">Speichere und verwalte deine Lieblingsstellen. Mit Karte, Notizen und Gewässertyp.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon green">📸</div>
-                    <h3>Fänge dokumentieren</h3>
-                    <p>Halte jeden Erfolg mit Foto, Größe und allen Bedingungen fest. Dein digitales Fangbuch.</p>
+                    <h3 data-i18n="feature3_title">Fänge dokumentieren</h3>
+                    <p data-i18n="feature3_text">Halte jeden Erfolg mit Foto, Größe und allen Bedingungen fest. Dein digitales Fangbuch.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon purple">🎣</div>
-                    <h3>Köder, Windkarte & Push</h3>
-                    <p>Erhalte passende Köder-Empfehlungen, aktuelle Winddaten und optionale Push-Hinweise bei Top-Bedingungen.</p>
+                    <h3 data-i18n="feature4_title">Köder, Windkarte & Push</h3>
+                    <p data-i18n="feature4_text">Erhalte passende Köder-Empfehlungen, aktuelle Winddaten und optionale Push-Hinweise bei Top-Bedingungen.</p>
                 </div>
             </div>
         </div>
@@ -473,21 +490,21 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-content">
-            <h2>Warum Fishfy?</h2>
-            <p>Eine App für alles, was der Angler begehrt. Fishfy liefert präzise Prognosen auf Basis wissenschaftlicher Daten und echter Nutzerfänge.</p>
-            <p>Entwickelt von Anglern, für Angler. Keine komplizierten Tabellen, sondern klare Empfehlungen für Wetter, Wind, Pegel, Köder und Gewässer.</p>
+            <h2 data-i18n="about_title">Warum Fishfy?</h2>
+            <p data-i18n="about_text1">Eine App für alles, was der Angler begehrt. Fishfy liefert präzise Prognosen auf Basis wissenschaftlicher Daten und echter Nutzerfänge.</p>
+            <p data-i18n="about_text2">Entwickelt von Anglern, für Angler. Keine komplizierten Tabellen, sondern klare Empfehlungen für Wetter, Wind, Pegel, Köder und Gewässer.</p>
         </div>
     </section>
 
     <!-- Download Section -->
     <section class="download">
-        <h2>Jetzt kostenlos laden</h2>
-        <p>Verfügbar für iPhone und iPad</p>
+        <h2 data-i18n="download_title">Jetzt kostenlos laden</h2>
+        <p data-i18n="download_text">Verfügbar für iPhone und iPad</p>
         <a href="#" class="app-store-button">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            App Store
+            <span data-i18n="cta_bottom">App Store</span>
         </a>
     </section>
 
@@ -497,18 +514,18 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3><img src="logo.svg" alt="Fishfy" style="height: 24px; vertical-align: middle; margin-right: 8px;">Fishfy</h3>
-                    <p>Smarter angeln, mehr fangen. Die App für echte Angler.</p>
+                    <p data-i18n="footer_brand">Smarter angeln, mehr fangen. Die App für echte Angler.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Rechtliches</h4>
+                    <h4 data-i18n="footer_legal">Rechtliches</h4>
                     <ul>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                        <li><a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a></li>
+                        <li><a href="impressum.html" data-i18n="footer_imprint">Impressum</a></li>
+                        <li><a href="nutzungsbedingungen.html" data-i18n="footer_terms">Nutzungsbedingungen</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Kontakt</h4>
+                    <h4 data-i18n="footer_contact">Kontakt</h4>
                     <ul>
                         <li><a href="mailto:support@fishfy.app">support@fishfy.app</a></li>
                     </ul>
@@ -520,6 +537,220 @@
             </div>
         </div>
     </footer>
+    <script>
+        (function () {
+            const SUPPORTED = ["de", "en", "nl", "fr", "lb"];
+            const FALLBACK = "de";
+            const storageKey = "fishfy_lang";
+
+            const translations = {
+                de: {
+                    title: "Fishfy - Smarter angeln, mehr fangen",
+                    meta_description: "Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen. Die App für echte Angler.",
+                    nav_features: "Features",
+                    nav_about: "Über uns",
+                    nav_privacy: "Datenschutz",
+                    nav_imprint: "Impressum",
+                    badge: "Dein Angel-Assistent",
+                    hero_text: "Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen.",
+                    cta_top: "Im App Store laden",
+                    features_title: "Alles was du brauchst",
+                    features_subtitle: "Entwickelt von Anglern, für Angler",
+                    feature1_title: "Intelligente Prognosen",
+                    feature1_text: "Präzise Aktivitäts-Prognosen mit Wetter, Luftdruck, Wind, Mondphase und Saison für deine besten Beißzeiten.",
+                    feature2_title: "Deine Angelspots",
+                    feature2_text: "Speichere und verwalte deine Lieblingsstellen. Mit Karte, Notizen und Gewässertyp.",
+                    feature3_title: "Fänge dokumentieren",
+                    feature3_text: "Halte jeden Erfolg mit Foto, Größe und allen Bedingungen fest. Dein digitales Fangbuch.",
+                    feature4_title: "Köder, Windkarte & Push",
+                    feature4_text: "Erhalte passende Köder-Empfehlungen, aktuelle Winddaten und optionale Push-Hinweise bei Top-Bedingungen.",
+                    about_title: "Warum Fishfy?",
+                    about_text1: "Eine App für alles, was der Angler begehrt. Fishfy liefert präzise Prognosen auf Basis wissenschaftlicher Daten und echter Nutzerfänge.",
+                    about_text2: "Entwickelt von Anglern, für Angler. Keine komplizierten Tabellen, sondern klare Empfehlungen für Wetter, Wind, Pegel, Köder und Gewässer.",
+                    download_title: "Jetzt kostenlos laden",
+                    download_text: "Verfügbar für iPhone und iPad",
+                    cta_bottom: "App Store",
+                    footer_brand: "Smarter angeln, mehr fangen. Die App für echte Angler.",
+                    footer_legal: "Rechtliches",
+                    footer_privacy: "Datenschutz",
+                    footer_imprint: "Impressum",
+                    footer_terms: "Nutzungsbedingungen",
+                    footer_contact: "Kontakt"
+                },
+                en: {
+                    title: "Fishfy - Smarter angeln, mehr fangen",
+                    meta_description: "Precise forecasts powered by science and real user catches. Smart tactics, wind map, spots, catches, and push alerts for top conditions. The app for real anglers.",
+                    nav_features: "Features",
+                    nav_about: "About",
+                    nav_privacy: "Privacy",
+                    nav_imprint: "Imprint",
+                    badge: "Your fishing assistant",
+                    hero_text: "Precise forecasts powered by science and real user catches. Smart tactics, wind map, spots, catches, and push alerts for top conditions.",
+                    cta_top: "Download on the App Store",
+                    features_title: "Everything you need",
+                    features_subtitle: "Built by anglers, for anglers",
+                    feature1_title: "Smart forecasts",
+                    feature1_text: "Precise activity forecasts using weather, pressure, wind, moon phase, and season for your best bite times.",
+                    feature2_title: "Your fishing spots",
+                    feature2_text: "Save and manage your favorite locations with map, notes, and water type.",
+                    feature3_title: "Log your catches",
+                    feature3_text: "Record every success with photo, size, and all conditions. Your digital catchbook.",
+                    feature4_title: "Lures, wind map & push",
+                    feature4_text: "Get matching lure recommendations, live wind data, and optional push alerts for top conditions.",
+                    about_title: "Why Fishfy?",
+                    about_text1: "One app for everything anglers need. Fishfy delivers precise forecasts based on scientific data and real user catches.",
+                    about_text2: "Built by anglers, for anglers. No complex tables, just clear recommendations for weather, wind, water level, lures, and waters.",
+                    download_title: "Download for free",
+                    download_text: "Available for iPhone and iPad",
+                    cta_bottom: "App Store",
+                    footer_brand: "Smarter angeln, mehr fangen. The app for real anglers.",
+                    footer_legal: "Legal",
+                    footer_privacy: "Privacy",
+                    footer_imprint: "Imprint",
+                    footer_terms: "Terms",
+                    footer_contact: "Contact"
+                },
+                nl: {
+                    title: "Fishfy - Smarter angeln, mehr fangen",
+                    meta_description: "Nauwkeurige voorspellingen op basis van wetenschap en echte vangsten. Slimme tactiek, windkaart, stekken, vangsten en pushmeldingen bij topcondities.",
+                    nav_features: "Functies",
+                    nav_about: "Over ons",
+                    nav_privacy: "Privacy",
+                    nav_imprint: "Colofon",
+                    badge: "Jouw visassistent",
+                    hero_text: "Nauwkeurige voorspellingen op basis van wetenschap en echte vangsten. Slimme tactiek, windkaart, stekken, vangsten en pushmeldingen bij topcondities.",
+                    cta_top: "Download in de App Store",
+                    features_title: "Alles wat je nodig hebt",
+                    features_subtitle: "Gemaakt door vissers, voor vissers",
+                    feature1_title: "Slimme voorspellingen",
+                    feature1_text: "Nauwkeurige activiteitsvoorspellingen met weer, luchtdruk, wind, maanstand en seizoen voor je beste bijtmomenten.",
+                    feature2_title: "Jouw visstekken",
+                    feature2_text: "Sla je favoriete stekken op en beheer ze met kaart, notities en watertype.",
+                    feature3_title: "Vangsten documenteren",
+                    feature3_text: "Leg elke vangst vast met foto, grootte en alle omstandigheden. Jouw digitale logboek.",
+                    feature4_title: "Aas, windkaart & push",
+                    feature4_text: "Ontvang passende aasaanbevelingen, actuele windgegevens en optionele pushmeldingen bij topcondities.",
+                    about_title: "Waarom Fishfy?",
+                    about_text1: "Een app voor alles wat een visser nodig heeft. Fishfy levert nauwkeurige voorspellingen op basis van wetenschappelijke data en echte vangsten.",
+                    about_text2: "Gemaakt door vissers, voor vissers. Geen ingewikkelde tabellen, maar duidelijke aanbevelingen voor weer, wind, waterpeil, aas en wateren.",
+                    download_title: "Nu gratis downloaden",
+                    download_text: "Beschikbaar voor iPhone en iPad",
+                    cta_bottom: "App Store",
+                    footer_brand: "Smarter angeln, mehr fangen. De app voor echte vissers.",
+                    footer_legal: "Juridisch",
+                    footer_privacy: "Privacy",
+                    footer_imprint: "Colofon",
+                    footer_terms: "Voorwaarden",
+                    footer_contact: "Contact"
+                },
+                fr: {
+                    title: "Fishfy - Smarter angeln, mehr fangen",
+                    meta_description: "Prévisions précises basées sur la science et de vraies captures. Tactiques intelligentes, carte du vent, spots, captures et notifications push en conditions idéales.",
+                    nav_features: "Fonctionnalités",
+                    nav_about: "À propos",
+                    nav_privacy: "Confidentialité",
+                    nav_imprint: "Mentions légales",
+                    badge: "Ton assistant de pêche",
+                    hero_text: "Prévisions précises basées sur la science et de vraies captures. Tactiques intelligentes, carte du vent, spots, captures et notifications push en conditions idéales.",
+                    cta_top: "Télécharger sur l'App Store",
+                    features_title: "Tout ce qu'il te faut",
+                    features_subtitle: "Conçu par des pêcheurs, pour des pêcheurs",
+                    feature1_title: "Prévisions intelligentes",
+                    feature1_text: "Prévisions d'activité précises avec météo, pression, vent, phase lunaire et saison pour tes meilleurs moments de touche.",
+                    feature2_title: "Tes spots de pêche",
+                    feature2_text: "Enregistre et gère tes spots favoris avec carte, notes et type d'eau.",
+                    feature3_title: "Documenter les prises",
+                    feature3_text: "Enregistre chaque réussite avec photo, taille et toutes les conditions. Ton carnet de pêche numérique.",
+                    feature4_title: "Leurres, carte du vent & push",
+                    feature4_text: "Reçois des recommandations de leurres, des données de vent en direct et des alertes push optionnelles en conditions idéales.",
+                    about_title: "Pourquoi Fishfy ?",
+                    about_text1: "Une seule app pour tout ce dont un pêcheur a besoin. Fishfy fournit des prévisions précises basées sur des données scientifiques et de vraies captures.",
+                    about_text2: "Conçu par des pêcheurs, pour des pêcheurs. Pas de tableaux compliqués, seulement des recommandations claires pour la météo, le vent, le niveau d'eau, les leurres et les plans d'eau.",
+                    download_title: "Télécharger gratuitement",
+                    download_text: "Disponible sur iPhone et iPad",
+                    cta_bottom: "App Store",
+                    footer_brand: "Smarter angeln, mehr fangen. L'app pour les vrais pêcheurs.",
+                    footer_legal: "Légal",
+                    footer_privacy: "Confidentialité",
+                    footer_imprint: "Mentions légales",
+                    footer_terms: "Conditions",
+                    footer_contact: "Contact"
+                },
+                lb: {
+                    title: "Fishfy - Smarter angeln, mehr fangen",
+                    meta_description: "Praezis Prognosen op Basis vu Wëssenschaft an echte Fangdaten. Smart Taktik, Wandkaart, Spots, Faengen an Push bei Top-Bedingungen.",
+                    nav_features: "Funktiounen",
+                    nav_about: "Iwwer eis",
+                    nav_privacy: "Dateschutz",
+                    nav_imprint: "Impressum",
+                    badge: "Dengen Angel-Assistent",
+                    hero_text: "Praezis Prognosen op Basis vu Wëssenschaft an echte Fangdaten. Smart Taktik, Wandkaart, Spots, Faengen an Push bei Top-Bedingungen.",
+                    cta_top: "Am App Store eroflueden",
+                    features_title: "Alles wat s de brauchs",
+                    features_subtitle: "Entwéckelt vun Angler, fir Angler",
+                    feature1_title: "Smart Prognosen",
+                    feature1_text: "Praezis Aktivitéits-Prognosen mat Wieder, Loftdrock, Wand, Moundphas a Saison fir deng bescht Bësszäiten.",
+                    feature2_title: "Deng Angelspots",
+                    feature2_text: "Späicher an verwalt deng Liblingsplazen mat Kaart, Notizen a Gewässertyp.",
+                    feature3_title: "Faengen dokumentéieren",
+                    feature3_text: "Haal all Erfolleg mat Foto, Gréisst an alle Konditiounen fest. Dengt digitalt Fangbuch.",
+                    feature4_title: "Kéider, Wandkaart & Push",
+                    feature4_text: "Kritt passend Kéider-Empfehlungen, aktuell Wanddaten an optional Push-Hiwäiser bei Top-Bedingungen.",
+                    about_title: "Firwat Fishfy?",
+                    about_text1: "Eng App fir alles, wat en Angler brauch. Fishfy liwwert praezis Prognosen op Basis vu wëssenschaftlechen Donnéeën an echte Faengen.",
+                    about_text2: "Entwéckelt vun Angler, fir Angler. Keng komplizéiert Tabellen, mee kloer Empfehlungen fir Wieder, Wand, Pegel, Kéider a Gewässer.",
+                    download_title: "Elo gratis eroflueden",
+                    download_text: "Verfügbar fir iPhone an iPad",
+                    cta_bottom: "App Store",
+                    footer_brand: "Smarter angeln, mehr fangen. D'App fir richteg Angler.",
+                    footer_legal: "Rechtleches",
+                    footer_privacy: "Dateschutz",
+                    footer_imprint: "Impressum",
+                    footer_terms: "Nutzungsbedingungen",
+                    footer_contact: "Kontakt"
+                }
+            };
+
+            function normalizeLang(input) {
+                if (!input) return FALLBACK;
+                const value = input.toLowerCase();
+                if (value.startsWith("lb") || value.startsWith("lu")) return "lb";
+                const base = value.split("-")[0];
+                return SUPPORTED.includes(base) ? base : FALLBACK;
+            }
+
+            function applyLanguage(lang) {
+                const dict = translations[lang] || translations[FALLBACK];
+                document.documentElement.lang = lang;
+                document.title = dict.title;
+
+                const meta = document.getElementById("meta-description");
+                if (meta) meta.setAttribute("content", dict.meta_description);
+
+                document.querySelectorAll("[data-i18n]").forEach((el) => {
+                    const key = el.getAttribute("data-i18n");
+                    if (key && dict[key]) el.textContent = dict[key];
+                });
+
+                const switcher = document.getElementById("lang-switcher");
+                if (switcher) switcher.value = lang;
+            }
+
+            const preferred = normalizeLang(
+                localStorage.getItem(storageKey) || navigator.language || FALLBACK
+            );
+            applyLanguage(preferred);
+
+            const switcher = document.getElementById("lang-switcher");
+            if (switcher) {
+                switcher.addEventListener("change", (event) => {
+                    const nextLang = normalizeLang(event.target.value);
+                    localStorage.setItem(storageKey, nextLang);
+                    applyLanguage(nextLang);
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
 

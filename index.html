@@ -7,7 +7,7 @@
     <meta id="meta-description" name="description" content="Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen. Die App für echte Angler.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #007AFF;
@@ -178,6 +178,15 @@
         .cta-button svg {
             width: 24px;
             height: 24px;
+        }
+
+        .cta-button.is-disabled,
+        .app-store-button.is-disabled {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none !important;
+            box-shadow: none !important;
         }
 
         /* Features Section */
@@ -535,11 +544,11 @@
             </div>
             <h1 data-i18n="hero_title">Smarter angeln, mehr fangen</h1>
             <p data-i18n="hero_text">Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen.</p>
-            <a href="#" class="cta-button">
+            <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
-                <span data-i18n="cta_top">Im App Store laden</span>
+            <span data-i18n="cta_top">Bald im App Store</span>
             </a>
         </div>
     </section>
@@ -589,11 +598,11 @@
     <section class="download">
         <h2 data-i18n="download_title">Jetzt kostenlos laden</h2>
         <p data-i18n="download_text">Verfügbar für iPhone und iPad</p>
-        <a href="#" class="app-store-button">
+        <a href="#" class="app-store-button is-disabled" aria-disabled="true" tabindex="-1">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            <span data-i18n="cta_bottom">App Store</span>
+            <span data-i18n="cta_bottom">Bald verfügbar</span>
         </a>
     </section>
 
@@ -634,31 +643,31 @@
             const translations = {
                 de: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
-                    meta_description: "Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen. Die App für echte Angler.",
+                    meta_description: "Fishfy vereint Prognose, Wetterkarte mit Wind und Niederschlag, Spots, Fangbuch, Aktivitätsalarm und Backup. Kurz klar stark.",
                     nav_features: "Features",
                     nav_about: "Über uns",
                     nav_privacy: "Datenschutz",
                     nav_imprint: "Impressum",
                     badge: "Dein Angel-Assistent",
                     hero_title: "Smarter angeln, mehr fangen",
-                    hero_text: "Präzise Prognosen durch Wissenschaft und echte Nutzerfänge. Smarte Taktik, Windkarte, Spots, Fänge und Push bei Top-Bedingungen.",
-                    cta_top: "Im App Store laden",
+                    hero_text: "Prognose, Wetter, Taktik, Spots und Fangbuch in einer App. Fishfy zeigt dir, wann, wo und wie du heute die beste Chance hast.",
+                    cta_top: "Bald im App Store",
                     features_title: "Alles was du brauchst",
-                    features_subtitle: "Mehr Überblick am Wasser, bessere Entscheidungen beim Angeln.",
+                    features_subtitle: "Vom schnellen Überblick bis zur Detailentscheidung am Wasser.",
                     feature1_title: "Intelligente Prognosen",
-                    feature1_text: "Präzise Aktivitäts-Prognosen mit Wetter, Luftdruck, Wind, Mondphase und Saison für deine besten Beißzeiten.",
+                    feature1_text: "Stündliche Beissfenster mit Score aus Zeit, Saison, Mond und Wetterdaten für Barsch, Hecht und Zander.",
                     feature2_title: "Deine Angelspots",
-                    feature2_text: "Speichere und verwalte deine Lieblingsstellen. Mit Karte, Notizen und Gewässertyp.",
+                    feature2_text: "Speichere Spots mit Gewässerdaten, Zielfischen, Notizen, guten Monaten und Aktivitätsalarm pro Spot.",
                     feature3_title: "Fänge dokumentieren",
-                    feature3_text: "Halte jeden Erfolg mit Foto, Größe und allen Bedingungen fest. Dein digitales Fangbuch.",
+                    feature3_text: "Erfasse Fänge in Sekunden mit Foto und ergänze später Details, Bedingungen und Taktikvergleich.",
                     feature4_title: "Köder, Windkarte & Push",
-                    feature4_text: "Erhalte passende Köder-Empfehlungen, aktuelle Winddaten und optionale Push-Hinweise bei Top-Bedingungen.",
+                    feature4_text: "Nutze passende Köder und Technik, Wetterkarte mit Wind und Niederschlag sowie Push bei Top Aktivität.",
                     about_title: "Warum Fishfy?",
-                    about_text1: "Eine App für alles, was der Angler begehrt. Fishfy liefert präzise Prognosen auf Basis wissenschaftlicher Daten und echter Nutzerfänge.",
-                    about_text2: "Mehr Überblick am Wasser, bessere Entscheidungen beim Angeln. Keine komplizierten Tabellen, sondern klare Empfehlungen für Wetter, Wind, Pegel, Köder und Gewässer.",
+                    about_text1: "Fishfy ersetzt Bauchgefühl durch klare Entscheidungen mit nachvollziehbaren Daten statt Blackbox Empfehlungen.",
+                    about_text2: "Karte mit starken Filtern, ähnliche Fänge, Aktivitätsalarm, Cloud Backup, Sync und Restore halten alles zusammen.",
                     download_title: "Jetzt kostenlos laden",
                     download_text: "Verfügbar für iPhone und iPad",
-                    cta_bottom: "App Store",
+                    cta_bottom: "Bald verfügbar",
                     footer_brand: "Smarter angeln, mehr fangen. Die App für echte Angler.",
                     footer_legal: "Rechtliches",
                     footer_privacy: "Datenschutz",
@@ -668,31 +677,31 @@
                 },
                 en: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
-                    meta_description: "Precise forecasts powered by science and real user catches. Smart tactics, wind map, spots, catches, and push alerts for top conditions. The app for real anglers.",
+                    meta_description: "Fishfy combines forecast, weather map with wind and precipitation, spots, catch log, activity alarm and backup. Short clear strong.",
                     nav_features: "Features",
                     nav_about: "About",
                     nav_privacy: "Privacy",
                     nav_imprint: "Imprint",
                     badge: "Your fishing assistant",
                     hero_title: "Smarter fish, catch more",
-                    hero_text: "Precise forecasts powered by science and real user catches. Smart tactics, wind map, spots, catches, and push alerts for top conditions.",
-                    cta_top: "Download on the App Store",
+                    hero_text: "Forecast, weather, tactics, spots and catch log in one app. Fishfy shows you when where and how to get your best chance today.",
+                    cta_top: "Coming soon on the App Store",
                     features_title: "Everything you need",
-                    features_subtitle: "More clarity on the water, better fishing decisions.",
+                    features_subtitle: "From quick overview to confident detail decisions on the water.",
                     feature1_title: "Smart forecasts",
-                    feature1_text: "Precise activity forecasts using weather, pressure, wind, moon phase, and season for your best bite times.",
+                    feature1_text: "Hourly bite windows with a score from time, season, moon and weather data for perch, pike and pikeperch.",
                     feature2_title: "Your fishing spots",
-                    feature2_text: "Save and manage your favorite locations with map, notes, and water type.",
+                    feature2_text: "Save spots with water details, target fish, notes, best months and activity alarm per spot.",
                     feature3_title: "Log your catches",
-                    feature3_text: "Record every success with photo, size, and all conditions. Your digital catchbook.",
+                    feature3_text: "Log catches in seconds with photo and add details, conditions and tactic checks later.",
                     feature4_title: "Lures, wind map & push",
-                    feature4_text: "Get matching lure recommendations, live wind data, and optional push alerts for top conditions.",
+                    feature4_text: "Use matching lure and technique guidance, a weather map with wind and precipitation, and push for top activity.",
                     about_title: "Why Fishfy?",
-                    about_text1: "One app for everything anglers need. Fishfy delivers precise forecasts based on scientific data and real user catches.",
-                    about_text2: "More clarity on the water, better fishing decisions. No complex tables, just clear recommendations for weather, wind, water level, lures, and waters.",
+                    about_text1: "Fishfy replaces guesswork with clear decisions from traceable data instead of black box recommendations.",
+                    about_text2: "Map with strong filters, similar catches, activity alarm, cloud backup, sync and restore keeps everything connected.",
                     download_title: "Download for free",
                     download_text: "Available for iPhone and iPad",
-                    cta_bottom: "App Store",
+                    cta_bottom: "Coming soon",
                     footer_brand: "Smarter angeln, mehr fangen. The app for real anglers.",
                     footer_legal: "Legal",
                     footer_privacy: "Privacy",
@@ -702,31 +711,31 @@
                 },
                 nl: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
-                    meta_description: "Nauwkeurige voorspellingen op basis van wetenschap en echte vangsten. Slimme tactiek, windkaart, stekken, vangsten en pushmeldingen bij topcondities.",
+                    meta_description: "Fishfy bundelt voorspelling, weerkaart met wind en neerslag, stekken, vangstlogboek, activiteitsalarm en back-up. Kort helder sterk.",
                     nav_features: "Functies",
                     nav_about: "Over ons",
                     nav_privacy: "Privacy",
                     nav_imprint: "Colofon",
                     badge: "Jouw visassistent",
                     hero_title: "Slimmer vissen, meer vangen",
-                    hero_text: "Nauwkeurige voorspellingen op basis van wetenschap en echte vangsten. Slimme tactiek, windkaart, stekken, vangsten en pushmeldingen bij topcondities.",
-                    cta_top: "Download in de App Store",
+                    hero_text: "Voorspelling, weer, tactiek, stekken en vangstlogboek in één app. Fishfy laat zien wanneer waar en hoe je vandaag de beste kans hebt.",
+                    cta_top: "Binnenkort in de App Store",
                     features_title: "Alles wat je nodig hebt",
-                    features_subtitle: "Meer overzicht aan het water, betere beslissingen bij het vissen.",
+                    features_subtitle: "Van snel overzicht naar sterke detailkeuzes aan het water.",
                     feature1_title: "Slimme voorspellingen",
-                    feature1_text: "Nauwkeurige activiteitsvoorspellingen met weer, luchtdruk, wind, maanstand en seizoen voor je beste bijtmomenten.",
+                    feature1_text: "Bijtvensters per uur met score uit tijd, seizoen, maan en weerdata voor baars, snoek en snoekbaars.",
                     feature2_title: "Jouw visstekken",
-                    feature2_text: "Sla je favoriete stekken op en beheer ze met kaart, notities en watertype.",
+                    feature2_text: "Sla stekken op met waterdata, doelvis, notities, beste maanden en activiteitsalarm per stek.",
                     feature3_title: "Vangsten documenteren",
-                    feature3_text: "Leg elke vangst vast met foto, grootte en alle omstandigheden. Jouw digitale logboek.",
+                    feature3_text: "Leg vangsten in seconden vast met foto en vul details, condities en tactiekcheck later aan.",
                     feature4_title: "Aas, windkaart & push",
-                    feature4_text: "Ontvang passende aasaanbevelingen, actuele windgegevens en optionele pushmeldingen bij topcondities.",
+                    feature4_text: "Gebruik passend aas en techniek, een weerkaart met wind en neerslag en push bij topactiviteit.",
                     about_title: "Waarom Fishfy?",
-                    about_text1: "Een app voor alles wat een visser nodig heeft. Fishfy levert nauwkeurige voorspellingen op basis van wetenschappelijke data en echte vangsten.",
-                    about_text2: "Meer overzicht aan het water, betere beslissingen bij het vissen. Geen ingewikkelde tabellen, maar duidelijke aanbevelingen voor weer, wind, waterpeil, aas en wateren.",
+                    about_text1: "Fishfy vervangt gokken door duidelijke keuzes met navolgbare data in plaats van blackbox advies.",
+                    about_text2: "Kaart met sterke filters, vergelijkbare vangsten, activiteitsalarm, cloud back-up, sync en herstel houdt alles verbonden.",
                     download_title: "Nu gratis downloaden",
                     download_text: "Beschikbaar voor iPhone en iPad",
-                    cta_bottom: "App Store",
+                    cta_bottom: "Binnenkort beschikbaar",
                     footer_brand: "Smarter angeln, mehr fangen. De app voor echte vissers.",
                     footer_legal: "Juridisch",
                     footer_privacy: "Privacy",
@@ -736,31 +745,31 @@
                 },
                 fr: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
-                    meta_description: "Prévisions précises basées sur la science et de vraies captures. Tactiques intelligentes, carte du vent, spots, captures et notifications push en conditions idéales.",
+                    meta_description: "Fishfy réunit prévision, carte météo avec vent et précipitations, spots, carnet de prises, alarme activité et sauvegarde. Court clair fort.",
                     nav_features: "Fonctionnalités",
                     nav_about: "À propos",
                     nav_privacy: "Confidentialité",
                     nav_imprint: "Mentions légales",
                     badge: "Ton assistant de pêche",
                     hero_title: "Pêcher plus malin, attraper plus",
-                    hero_text: "Prévisions précises basées sur la science et de vraies captures. Tactiques intelligentes, carte du vent, spots, captures et notifications push en conditions idéales.",
-                    cta_top: "Télécharger sur l'App Store",
+                    hero_text: "Prévision, météo, tactique, spots et carnet de prises dans une app. Fishfy montre quand où et comment avoir la meilleure chance aujourd hui.",
+                    cta_top: "Bientôt sur l'App Store",
                     features_title: "Tout ce qu'il te faut",
-                    features_subtitle: "Plus de clarté au bord de l'eau, de meilleures décisions pour la pêche.",
+                    features_subtitle: "D une vue rapide à des choix précis au bord de l eau.",
                     feature1_title: "Prévisions intelligentes",
-                    feature1_text: "Prévisions d'activité précises avec météo, pression, vent, phase lunaire et saison pour tes meilleurs moments de touche.",
+                    feature1_text: "Fenêtres de touche heure par heure avec score basé sur heure, saison, lune et météo pour perche, brochet et sandre.",
                     feature2_title: "Tes spots de pêche",
-                    feature2_text: "Enregistre et gère tes spots favoris avec carte, notes et type d'eau.",
+                    feature2_text: "Enregistre des spots avec données d eau, poissons cibles, notes, bons mois et alarme activité par spot.",
                     feature3_title: "Documenter les prises",
-                    feature3_text: "Enregistre chaque réussite avec photo, taille et toutes les conditions. Ton carnet de pêche numérique.",
+                    feature3_text: "Enregistre les prises en secondes avec photo puis complète détails, conditions et contrôle tactique plus tard.",
                     feature4_title: "Leurres, carte du vent & push",
-                    feature4_text: "Reçois des recommandations de leurres, des données de vent en direct et des alertes push optionnelles en conditions idéales.",
+                    feature4_text: "Utilise les bons leurres et techniques, une carte météo avec vent et précipitations et du push en top activité.",
                     about_title: "Pourquoi Fishfy ?",
-                    about_text1: "Une seule app pour tout ce dont un pêcheur a besoin. Fishfy fournit des prévisions précises basées sur des données scientifiques et de vraies captures.",
-                    about_text2: "Plus de clarté au bord de l'eau, de meilleures décisions pour la pêche. Pas de tableaux compliqués, seulement des recommandations claires pour la météo, le vent, le niveau d'eau, les leurres et les plans d'eau.",
+                    about_text1: "Fishfy remplace l intuition floue par des décisions claires avec données traçables et sans boîte noire.",
+                    about_text2: "Carte avec filtres puissants, prises similaires, alarme activité, sauvegarde cloud, sync et restauration relient tout.",
                     download_title: "Télécharger gratuitement",
                     download_text: "Disponible sur iPhone et iPad",
-                    cta_bottom: "App Store",
+                    cta_bottom: "Bientôt disponible",
                     footer_brand: "Smarter angeln, mehr fangen. L'app pour les vrais pêcheurs.",
                     footer_legal: "Légal",
                     footer_privacy: "Confidentialité",
@@ -770,31 +779,31 @@
                 },
                 lb: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
-                    meta_description: "Praezis Prognosen op Basis vu Wëssenschaft an echte Fangdaten. Smart Taktik, Wandkaart, Spots, Faengen an Push bei Top-Bedingungen.",
+                    meta_description: "Fishfy verbënnt Virso, Wiederkaart mat Wand a Nidderschlag, Spots, Fangbuch, Aktivitéitsalarm a Backup. Kuerz kloer staark.",
                     nav_features: "Funktiounen",
                     nav_about: "Iwwer eis",
                     nav_privacy: "Dateschutz",
                     nav_imprint: "Impressum",
                     badge: "Dengen Angel-Assistent",
                     hero_title: "Méi schlau angelen, méi fänken",
-                    hero_text: "Praezis Prognosen op Basis vu Wëssenschaft an echte Fangdaten. Smart Taktik, Wandkaart, Spots, Faengen an Push bei Top-Bedingungen.",
-                    cta_top: "Am App Store eroflueden",
+                    hero_text: "Virso, Wieder, Taktik, Spots a Fangbuch an enger App. Fishfy weist dir wéini wou a wéi s du haut deng bescht Chance hues.",
+                    cta_top: "Geschwënn am App Store",
                     features_title: "Alles wat s de brauchs",
-                    features_subtitle: "Méi Iwwerbléck um Waasser, besser Entscheedunge beim Angelen.",
+                    features_subtitle: "Vum schnelle Bléck bis zur staarker Detailentscheedung um Waasser.",
                     feature1_title: "Smart Prognosen",
-                    feature1_text: "Praezis Aktivitéits-Prognosen mat Wieder, Loftdrock, Wand, Moundphas a Saison fir deng bescht Bësszäiten.",
+                    feature1_text: "Stënnlech Bëssfënstere mat Score aus Zäit, Saison, Mound a Wiederdaten fir Barsch, Hecht a Zander.",
                     feature2_title: "Deng Angelspots",
-                    feature2_text: "Späicher an verwalt deng Liblingsplazen mat Kaart, Notizen a Gewässertyp.",
+                    feature2_text: "Späicher Spots mat Gewässerdaten, Zielfësch, Notizen, gudde Méint an Aktivitéitsalarm pro Spot.",
                     feature3_title: "Faengen dokumentéieren",
-                    feature3_text: "Haal all Erfolleg mat Foto, Gréisst an alle Konditiounen fest. Dengt digitalt Fangbuch.",
+                    feature3_text: "Erfaass Fäng a Sekonne mat Foto a ergänz Detailer, Konditiounen an Taktikcheck méi spéit.",
                     feature4_title: "Kéider, Wandkaart & Push",
-                    feature4_text: "Kritt passend Kéider-Empfehlungen, aktuell Wanddaten an optional Push-Hiwäiser bei Top-Bedingungen.",
+                    feature4_text: "Notz passend Kéider an Technik, eng Wiederkaart mat Wand an Nidderschlag a Push bei Top Aktivitéit.",
                     about_title: "Firwat Fishfy?",
-                    about_text1: "Eng App fir alles, wat en Angler brauch. Fishfy liwwert praezis Prognosen op Basis vu wëssenschaftlechen Donnéeën an echte Faengen.",
-                    about_text2: "Méi Iwwerbléck um Waasser, besser Entscheedunge beim Angelen. Keng komplizéiert Tabellen, mee kloer Empfehlungen fir Wieder, Wand, Pegel, Kéider a Gewässer.",
+                    about_text1: "Fishfy ersetzt onséchert Gefill duerch kloer Decisiounen mat noweisbaren Donnéeën amplaz Blackbox.",
+                    about_text2: "Kaart mat staarke Filteren, ähnlech Fäng, Aktivitéitsalarm, Cloud Backup, Sync a Restore halen alles zesummen.",
                     download_title: "Elo gratis eroflueden",
                     download_text: "Verfügbar fir iPhone an iPad",
-                    cta_bottom: "App Store",
+                    cta_bottom: "Geschwënn verfügbar",
                     footer_brand: "Smarter angeln, mehr fangen. D'App fir richteg Angler.",
                     footer_legal: "Rechtleches",
                     footer_privacy: "Dateschutz",

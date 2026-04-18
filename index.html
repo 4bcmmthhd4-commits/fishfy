@@ -168,13 +168,12 @@
             margin-right: auto;
         }
 
-        .hero .hero-platform-note {
-            font-size: 15px;
-            color: var(--ink-soft);
-            max-width: 520px;
-            margin: 18px auto 0;
-            line-height: 1.55;
-            text-wrap: balance;
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 14px;
+            justify-content: center;
+            align-items: center;
         }
 
         .cta-button {
@@ -634,13 +633,20 @@
             </div>
             <h1 data-i18n="hero_title">Smarter angeln, mehr fangen</h1>
             <p data-i18n="hero_text">Diese App wurde bis ins Detail durchdacht, damit Angeln einfacher und stressfreier wird. Du siehst schneller, was jetzt sinnvoll ist.</p>
-            <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-            <span data-i18n="cta_top">Bald im App Store</span>
-            </a>
-            <p class="hero-platform-note" data-i18n="hero_platform_note">iPhone und iPad bald im App Store · Android in Entwicklung</p>
+            <div class="hero-cta-row">
+                <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    <span data-i18n="cta_top">Bald im App Store</span>
+                </a>
+                <span class="cta-button is-disabled" role="status">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-1.42-.65-3.02-1.02-4.73-1.02s-3.3.37-4.72 1.01L5.87 5.67c-.18-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85l1.84 3.18C3.98 11.42 2.5 14.34 2.5 17.5h19c0-3.16-1.48-6.08-3.9-8.02zM7 15h2v5H7v-5zm8 0h2v5h-2v-5zM6.5 15c-.83 0-1.5-.67-1.5-1.5S5.67 12 6.5 12s1.5.67 1.5 1.5S7.33 15 6.5 15zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                    <span data-i18n="cta_android">In Bearbeitung</span>
+                </span>
+            </div>
         </div>
     </section>
 
@@ -768,7 +774,7 @@
                     hero_title: "Smarter angeln, mehr fangen",
                     hero_text: "Diese App wurde bis ins Detail durchdacht, damit Angeln einfacher und stressfreier wird. Du siehst schneller, was jetzt sinnvoll ist.",
                     cta_top: "Bald im App Store",
-                    hero_platform_note: "iPhone und iPad bald im App Store · Android in Entwicklung",
+                    cta_android: "In Bearbeitung",
                     features_title: "Alles was du brauchst",
                     features_subtitle: "Weniger Suchen, weniger Stress, bessere Entscheidungen am Wasser.",
                     feature1_title: "Bessere Entscheidungen",
@@ -804,7 +810,7 @@
                     hero_title: "Smarter fish, catch more",
                     hero_text: "This app is thought through down to the smallest detail so fishing feels easier and less stressful. You quickly see what makes sense right now.",
                     cta_top: "Coming soon on the App Store",
-                    hero_platform_note: "iPhone and iPad coming soon on the App Store · Android in development",
+                    cta_android: "In progress",
                     features_title: "Everything you need",
                     features_subtitle: "Less searching, less stress, better decisions on the water.",
                     feature1_title: "Better decisions",
@@ -840,7 +846,7 @@
                     hero_title: "Slimmer vissen, meer vangen",
                     hero_text: "Deze app is tot in detail doordacht zodat vissen eenvoudiger en minder stressvol wordt. Je ziet snel wat nu zinvol is.",
                     cta_top: "Binnenkort in de App Store",
-                    hero_platform_note: "iPhone en iPad binnenkort in de App Store · Android in ontwikkeling",
+                    cta_android: "In uitvoering",
                     features_title: "Alles wat je nodig hebt",
                     features_subtitle: "Minder zoeken, minder stress, betere keuzes aan het water.",
                     feature1_title: "Betere beslissingen",
@@ -876,7 +882,7 @@
                     hero_title: "Pêcher plus malin, attraper plus",
                     hero_text: "Cette app est pensée dans les moindres détails pour rendre la pêche plus simple et moins stressante. Tu vois vite ce qui a du sens maintenant.",
                     cta_top: "Bientôt sur l'App Store",
-                    hero_platform_note: "iPhone et iPad bientôt sur l'App Store · Android en développement",
+                    cta_android: "En cours",
                     features_title: "Tout ce qu'il te faut",
                     features_subtitle: "Moins de recherche, moins de stress, de meilleures décisions au bord de l eau.",
                     feature1_title: "Meilleures décisions",
@@ -912,7 +918,7 @@
                     hero_title: "Méi schlau angelen, méi fänken",
                     hero_text: "Dës App ass bis an de klengsten Detail duerchduecht, sou datt Angelen méi einfach a manner stresseg gëtt. Du gesäis séier wat elo Sënn mécht.",
                     cta_top: "Geschwënn am App Store",
-                    hero_platform_note: "iPhone an iPad geschwënn am App Store · Android gëtt nach entwéckelt",
+                    cta_android: "An der Aarbecht",
                     features_title: "Alles wat s de brauchs",
                     features_subtitle: "Manner sichen, manner Stress, besser Decisiounen um Waasser.",
                     feature1_title: "Besser Decisiounen",

@@ -46,6 +46,12 @@
         .nav-links a { color:var(--ink-soft); text-decoration:none; font-weight:500; font-size:15px; transition:color .2s; }
         .nav-links a.active { color: var(--primary); }
         .nav-links a:hover { color:var(--primary); }
+        .nav-links a:focus-visible,
+        .lang-switcher:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 10px;
+        }
         .lang-switcher { border:1px solid var(--line); background:rgba(255,255,255,.9); color:var(--ink); border-radius:999px; padding:8px 14px; font-size:14px; font-weight:500; }
         .content { max-width:800px; margin:0 auto; padding:138px 24px 80px; }
         h1 { font-size:36px; font-weight:700; color:var(--ink); margin-bottom:48px; letter-spacing:-0.02em; }
@@ -58,10 +64,14 @@
         @media (max-width:768px){
             .nav-container { flex-wrap:wrap; row-gap:10px; }
             .nav-links { display:flex; order:3; width:100%; justify-content:center; flex-wrap:wrap; gap:12px 18px; }
-            .nav-links a { font-size:14px; }
+            .nav-links a { font-size:14px; padding: 6px 8px; }
             .content{padding:128px 20px 60px;}
             h1{font-size:28px;}
             h2{font-size:20px;}
+        }
+        @media (max-width:420px){
+            .nav-links { gap:8px 12px; }
+            .nav-links a { font-size:13px; padding: 5px 7px; }
         }
     </style>
 </head>

@@ -38,6 +38,7 @@ CARDS = [
     ("how-sliders", "prognosis_explanation.water_conditions", "prognosis_explanation.water_conditions_body", False),
     ("how-thermometer", "prognosis_explanation.water_temp", "prognosis_explanation.water_temp_body", False),
     ("how-clock", "prognosis_explanation.time_season", "prognosis_explanation.time_season_body", False),
+    ("how-weather", "prognosis_explanation.weather", "prognosis_explanation.weather_body", False),
     ("sec", "prognosis_explanation.section_special", None, False),
     ("how-sparkles", "prognosis_explanation.forecast", "prognosis_explanation.forecast_body", False),
     ("how-mappin", "prognosis_explanation.spots", "prognosis_explanation.spots_body", False),
@@ -67,6 +68,7 @@ SPRITE = """
 <symbol id="how-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M9 8h6M15 16h6M7 4h2"/></symbol>
 <symbol id="how-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></symbol>
 <symbol id="how-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+<symbol id="how-weather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
 <symbol id="how-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
 <symbol id="how-mappin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
 <symbol id="how-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 8h7a3 3 0 1 0-3-3M5 12h11a4 4 0 1 1-4 4M3 16h15"/></symbol>

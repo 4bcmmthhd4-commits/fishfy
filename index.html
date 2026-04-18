@@ -776,6 +776,7 @@
                 <symbol id="how-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M9 8h6M15 16h6M7 4h2"/></symbol>
                 <symbol id="how-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></symbol>
                 <symbol id="how-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+                <symbol id="how-weather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
                 <symbol id="how-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
                 <symbol id="how-mappin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
                 <symbol id="how-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 8h7a3 3 0 1 0-3-3M5 12h11a4 4 0 1 1-4 4M3 16h15"/></symbol>
@@ -845,9 +846,16 @@
                     <h4 data-i18n="pe_time_season"></h4>
                     <p data-i18n="pe_time_season_body"></p>
                 </div>
-                <h3 class="how-section-heading" data-i18n="pe_section_special"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-weather"/></svg>
+                    </div>
+                    <h4 data-i18n="pe_weather"></h4>
+                    <p data-i18n="pe_weather_body"></p>
+                </div>
+                <h3 class="how-section-heading" data-i18n="pe_section_special"></h3>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-sparkles"/></svg>
                     </div>
                     <h4 data-i18n="pe_forecast"></h4>
@@ -1065,6 +1073,8 @@
                     pe_water_temp_body: "Die Wassertemperatur wird manuell oder automatisch genutzt und stark gewichtet.",
                     pe_time_season: "Tageszeit & Saison",
                     pe_time_season_body: "Tageszeit und Saison steuern das Verhalten je Zielfisch.",
+                    pe_weather: "Wetter",
+                    pe_weather_body: "Aktuelles Wetter und die letzten 48 Stunden (Temperatur, Wind, Luftdruck, Niederschlag) fließen in die Berechnung ein.",
                     pe_section_special: "Was macht Fishfy besonders?",
                     pe_forecast: "Prognose",
                     pe_forecast_body: "Die Prognose basiert auf Regeln und Daten und wird mit geprüften Fängen weiter verbessert.",
@@ -1144,6 +1154,8 @@
                     pe_water_temp_body: "Water temperature can be manual or automatic and has high impact.",
                     pe_time_season: "Time of day & season",
                     pe_time_season_body: "Time of day and season shape activity for each target species.",
+                    pe_weather: "Weather",
+                    pe_weather_body: "Current weather and the last 48 hours (temperature, wind, pressure, precipitation) feed the calculation.",
                     pe_section_special: "What makes Fishfy special?",
                     pe_forecast: "Forecast",
                     pe_forecast_body: "The forecast uses rules and data and improves further with verified catches.",
@@ -1223,6 +1235,8 @@
                     pe_water_temp_body: "Watertemperatuur kan handmatig of automatisch en weegt zwaar mee.",
                     pe_time_season: "Tijdstip en seizoen",
                     pe_time_season_body: "Tijdstip en seizoen sturen het gedrag per doelfish.",
+                    pe_weather: "Weer",
+                    pe_weather_body: "Actueel weer en de laatste 48 uur (temperatuur, wind, luchtdruk, neerslag) gaan in de berekening.",
                     pe_section_special: "Wat maakt Fishfy bijzonder?",
                     pe_forecast: "Voorspelling",
                     pe_forecast_body: "De voorspelling werkt met regels en data en verbetert met gecontroleerde vangsten.",
@@ -1302,6 +1316,8 @@
                     pe_water_temp_body: "La température de l eau peut être manuelle ou automatique et pèse fortement.",
                     pe_time_season: "Moment de la journée et saison",
                     pe_time_season_body: "Moment de la journée et saison influencent chaque espèce cible.",
+                    pe_weather: "Météo",
+                    pe_weather_body: "La météo actuelle et les 48 dernières heures (température, vent, pression, précipitations) entrent dans le calcul.",
                     pe_section_special: "Qu’est-ce qui rend Fishfy unique ?",
                     pe_forecast: "Prévision",
                     pe_forecast_body: "La prévision suit des règles et des données puis progresse avec des prises vérifiées.",
@@ -1381,6 +1397,8 @@
                     pe_water_temp_body: "Waassertemperatur kann manuell oder automatesch sinn a gewiicht staark.",
                     pe_time_season: "Zäit vum Dag & Saison",
                     pe_time_season_body: "Zäit vum Dag a Saison beaflossen all Zielfësch.",
+                    pe_weather: "Wieder",
+                    pe_weather_body: "Aktuellt Wieder an déi lescht 48 Stonnen (Temperatur, Wand, Loftdrock, Nidderschlag) fléissen an d Berechnung.",
                     pe_section_special: "Wat mécht Fishfy besonnesch?",
                     pe_forecast: "Virsoen",
                     pe_forecast_body: "D Virso steiert mat Regelen an Daten a gëtt mat gepréifte Fäng ëmmer besser.",

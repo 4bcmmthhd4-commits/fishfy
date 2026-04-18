@@ -200,134 +200,229 @@
             box-shadow: none !important;
         }
 
-        /* Features Section */
+        /* Features („Alles was du brauchst“-Look): Grid, weiße Karten, Pastell-Icons oben links */
         .features {
             padding: 100px 24px;
             background: var(--surface);
         }
 
         .section-container {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 64px;
+            margin-bottom: 56px;
         }
 
         .section-header h2 {
-            font-size: 36px;
+            font-size: clamp(34px, 4.6vw, 48px);
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.035em;
             color: var(--ink);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            line-height: 1.12;
         }
 
         .section-header p {
             font-size: 18px;
             color: var(--ink-soft);
-            max-width: 640px;
+            max-width: 560px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.55;
         }
 
         .how-it-inner {
-            max-width: 720px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        @media (min-width: 640px) {
+            .how-it-inner {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 960px) {
+            .how-it-inner {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
         }
 
         .how-section-heading {
-            font-size: 20px;
+            grid-column: 1 / -1;
+            font-size: clamp(18px, 2.1vw, 21px);
             font-weight: 700;
             color: var(--ink);
             letter-spacing: -0.02em;
-            margin: 36px 0 16px;
-            text-align: left;
+            margin: 36px 0 4px;
+            text-align: center;
+            line-height: 1.25;
         }
 
         .how-section-heading:first-of-type {
-            margin-top: 12px;
+            margin-top: 0;
         }
 
-        .how-card-stack {
+        .how-section-heading:not(:first-of-type) {
+            margin-top: 48px;
+        }
+
+        .how-card.feature-card {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-        }
-
-        .how-card {
-            text-align: left;
-            background: #f5f5f7;
-            border-radius: 16px;
-            padding: 16px;
-            border: 1px solid var(--line);
-        }
-
-        .how-card-head {
-            display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 8px;
+            background: var(--card);
+            padding: 30px 28px 32px;
+            border-radius: 24px;
+            border: none;
+            box-shadow:
+                0 14px 44px rgba(0, 0, 0, 0.07),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            text-align: left;
         }
 
-        .how-card-icon {
-            flex-shrink: 0;
-            width: 30px;
-            height: 28px;
+        .how-card.feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 22px 56px rgba(0, 0, 0, 0.11),
+                0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .how-card-icon.feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--fishfy-app-accent);
+            margin-bottom: 20px;
+            border: none;
+            flex-shrink: 0;
         }
 
-        .how-card-icon svg {
-            width: 22px;
-            height: 22px;
+        .how-card-icon.feature-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke-width: 1.65;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .how-card.orange-accent .how-card-icon {
-            color: #ea580c;
+        .how-card-icon.feature-icon.blue svg {
+            stroke: #1d4ed8;
         }
 
-        .how-card h4 {
-            font-size: 17px;
-            font-weight: 600;
-            margin: 0;
+        .how-card-icon.feature-icon.orange svg {
+            stroke: #c2410c;
+        }
+
+        .how-card-icon.feature-icon.green svg {
+            stroke: #15803d;
+        }
+
+        .how-card-icon.feature-icon.purple svg {
+            stroke: #7c3aed;
+        }
+
+        .how-card-icon.feature-icon.is-filled.blue {
+            color: #1d4ed8;
+        }
+
+        .how-card-icon.feature-icon.is-filled.blue svg {
+            fill: currentColor;
+            stroke: none;
+        }
+
+        .how-card-icon.feature-icon.is-filled svg {
+            stroke: none;
+        }
+
+        .how-card-icon.feature-icon.blue {
+            background: rgba(0, 122, 255, 0.13);
+        }
+
+        .how-card-icon.feature-icon.orange {
+            background: rgba(255, 159, 100, 0.22);
+        }
+
+        .how-card-icon.feature-icon.green {
+            background: rgba(52, 199, 89, 0.15);
+        }
+
+        .how-card-icon.feature-icon.purple {
+            background: rgba(159, 122, 234, 0.18);
+        }
+
+        .how-card.orange-accent {
+            border: none;
+            box-shadow:
+                0 14px 44px rgba(234, 88, 12, 0.11),
+                0 2px 8px rgba(234, 88, 12, 0.06);
+        }
+
+        .how-card.orange-accent:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 22px 56px rgba(234, 88, 12, 0.18),
+                0 8px 20px rgba(234, 88, 12, 0.1);
+        }
+
+        .how-card.orange-accent .how-card-icon.feature-icon {
+            background: rgba(255, 159, 100, 0.28);
+        }
+
+        .how-card.orange-accent .how-card-icon.feature-icon svg {
+            stroke: #c2410c;
+        }
+
+        .how-card.feature-card h4 {
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
             color: var(--ink);
-            line-height: 1.35;
-            flex: 1;
-            min-width: 0;
+            margin-bottom: 10px;
+            line-height: 1.25;
         }
 
-        .how-card p {
-            margin: 0;
+        .how-card.feature-card p {
             color: var(--ink-soft);
             font-size: 15px;
-            line-height: 1.55;
+            line-height: 1.65;
+            margin: 0;
         }
 
         .how-tech {
-            margin-top: 28px;
-            padding: 16px;
-            background: #f5f5f7;
-            border-radius: 16px;
-            border: 1px solid var(--line);
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 12px auto 0;
+            padding: 30px 32px 32px;
+            background: var(--card);
+            border-radius: 24px;
+            border: none;
+            box-shadow:
+                0 14px 44px rgba(0, 0, 0, 0.07),
+                0 2px 8px rgba(0, 0, 0, 0.04);
             text-align: left;
         }
 
         .how-tech h3 {
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--ink);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .how-tech p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--ink-soft);
-            line-height: 1.55;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -506,8 +601,12 @@
                 border-radius: 24px;
             }
 
-            .feature-card {
-                padding: 26px;
+            .how-card.feature-card {
+                padding: 24px 22px 28px;
+            }
+
+            .how-it-inner {
+                gap: 20px;
             }
 
             .section-header {
@@ -644,6 +743,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
+        <!-- fishfy-layout:grid-v3 — Wenn dieser Kommentar im Seitenquelltext fehlt, ist nicht diese index.html geladen (z. B. alte Hosting-Version). -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">So funktioniert Fishfy</h2>
@@ -676,169 +776,169 @@
             </svg>
             <div class="how-it-inner">
                 <h3 class="how-section-heading" data-i18n="pe_section_forecast"></h3>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-fish"/></svg></span>
-                        <h4 data-i18n="pe_target_fish"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-fish"/></svg>
                     </div>
+                    <h4 data-i18n="pe_target_fish"></h4>
                     <p data-i18n="pe_target_fish_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-gauge"/></svg></span>
-                        <h4 data-i18n="pe_score"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-gauge"/></svg>
                     </div>
+                    <h4 data-i18n="pe_score"></h4>
                     <p data-i18n="pe_score_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-wrench"/></svg></span>
-                        <h4 data-i18n="pe_bait_tech"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon green" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-wrench"/></svg>
                     </div>
+                    <h4 data-i18n="pe_bait_tech"></h4>
                     <p data-i18n="pe_bait_tech_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-arrows-v"/></svg></span>
-                        <h4 data-i18n="pe_depth_lead"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-arrows-v"/></svg>
                     </div>
+                    <h4 data-i18n="pe_depth_lead"></h4>
                     <p data-i18n="pe_depth_lead_body"></p>
                 </div>
                 <h3 class="how-section-heading" data-i18n="pe_section_influence"></h3>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-sliders"/></svg></span>
-                        <h4 data-i18n="pe_water_conditions"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-sliders"/></svg>
                     </div>
+                    <h4 data-i18n="pe_water_conditions"></h4>
                     <p data-i18n="pe_water_conditions_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-thermometer"/></svg></span>
-                        <h4 data-i18n="pe_water_temp"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-thermometer"/></svg>
                     </div>
+                    <h4 data-i18n="pe_water_temp"></h4>
                     <p data-i18n="pe_water_temp_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-clock"/></svg></span>
-                        <h4 data-i18n="pe_time_season"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon green" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-clock"/></svg>
                     </div>
+                    <h4 data-i18n="pe_time_season"></h4>
                     <p data-i18n="pe_time_season_body"></p>
                 </div>
                 <h3 class="how-section-heading" data-i18n="pe_section_special"></h3>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-sparkles"/></svg></span>
-                        <h4 data-i18n="pe_forecast"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-sparkles"/></svg>
                     </div>
+                    <h4 data-i18n="pe_forecast"></h4>
                     <p data-i18n="pe_forecast_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-mappin"/></svg></span>
-                        <h4 data-i18n="pe_spots"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-mappin"/></svg>
                     </div>
+                    <h4 data-i18n="pe_spots"></h4>
                     <p data-i18n="pe_spots_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-wind"/></svg></span>
-                        <h4 data-i18n="pe_wind_map"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-wind"/></svg>
                     </div>
+                    <h4 data-i18n="pe_wind_map"></h4>
                     <p data-i18n="pe_wind_map_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-camera"/></svg></span>
-                        <h4 data-i18n="pe_catches"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon green" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-camera"/></svg>
                     </div>
+                    <h4 data-i18n="pe_catches"></h4>
                     <p data-i18n="pe_catches_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-transfer"/></svg></span>
-                        <h4 data-i18n="pe_transfer"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-transfer"/></svg>
                     </div>
+                    <h4 data-i18n="pe_transfer"></h4>
                     <p data-i18n="pe_transfer_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-share"/></svg></span>
-                        <h4 data-i18n="pe_spot_transfer"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-share"/></svg>
                     </div>
+                    <h4 data-i18n="pe_spot_transfer"></h4>
                     <p data-i18n="pe_spot_transfer_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-bulb"/></svg></span>
-                        <h4 data-i18n="pe_similar"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-bulb"/></svg>
                     </div>
+                    <h4 data-i18n="pe_similar"></h4>
                     <p data-i18n="pe_similar_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-map"/></svg></span>
-                        <h4 data-i18n="pe_map"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon green" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-map"/></svg>
                     </div>
+                    <h4 data-i18n="pe_map"></h4>
                     <p data-i18n="pe_map_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-bell"/></svg></span>
-                        <h4 data-i18n="pe_notifications"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-bell"/></svg>
                     </div>
+                    <h4 data-i18n="pe_notifications"></h4>
                     <p data-i18n="pe_notifications_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-cloud"/></svg></span>
-                        <h4 data-i18n="pe_backup"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-cloud"/></svg>
                     </div>
+                    <h4 data-i18n="pe_backup"></h4>
                     <p data-i18n="pe_backup_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-chart-bar"/></svg></span>
-                        <h4 data-i18n="pe_stats"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-chart-bar"/></svg>
                     </div>
+                    <h4 data-i18n="pe_stats"></h4>
                     <p data-i18n="pe_stats_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-people"/></svg></span>
-                        <h4 data-i18n="pe_beginners_pros"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon green" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-people"/></svg>
                     </div>
+                    <h4 data-i18n="pe_beginners_pros"></h4>
                     <p data-i18n="pe_beginners_pros_body"></p>
                 </div>
                 <h3 class="how-section-heading" data-i18n="pe_section_free"></h3>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-gift"/></svg></span>
-                        <h4 data-i18n="pe_free"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon purple" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-gift"/></svg>
                     </div>
+                    <h4 data-i18n="pe_free"></h4>
                     <p data-i18n="pe_free_body"></p>
                 </div>
-                <div class="how-card">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-star"/></svg></span>
-                        <h4 data-i18n="pe_fishfy_pro"></h4>
+                <div class="how-card feature-card">
+                    <div class="how-card-icon feature-icon blue is-filled" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-star"/></svg>
                     </div>
+                    <h4 data-i18n="pe_fishfy_pro"></h4>
                     <p data-i18n="pe_fishfy_pro_body"></p>
                 </div>
                 <h3 class="how-section-heading" data-i18n="pe_section_honest"></h3>
-                <div class="how-card orange-accent">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-hand"/></svg></span>
-                        <h4 data-i18n="pe_no_guarantee"></h4>
+                <div class="how-card feature-card orange-accent">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-hand"/></svg>
                     </div>
+                    <h4 data-i18n="pe_no_guarantee"></h4>
                     <p data-i18n="pe_no_guarantee_body"></p>
                 </div>
-                <div class="how-card orange-accent">
-                    <div class="how-card-head">
-                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-trend"/></svg></span>
-                        <h4 data-i18n="pe_we_learn"></h4>
+                <div class="how-card feature-card orange-accent">
+                    <div class="how-card-icon feature-icon orange" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26"><use href="#how-trend"/></svg>
                     </div>
+                    <h4 data-i18n="pe_we_learn"></h4>
                     <p data-i18n="pe_we_learn_body"></p>
                 </div>
                 <div class="how-tech">

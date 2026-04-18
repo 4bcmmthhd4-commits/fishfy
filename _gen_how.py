@@ -112,6 +112,9 @@ def main() -> None:
     lines.append("            </svg>")
     lines.append('            <div class="how-it-inner">')
 
+    tones = ["blue", "orange", "green", "purple"]
+    tone_i = 0
+
     for icon, tk, bk, orange in CARDS:
         if icon == "sec":
             kk = keyify(tk)
@@ -123,12 +126,22 @@ def main() -> None:
         for lang in LANG_FILES:
             i18n[lang][kt] = tr(lang, tk)
             i18n[lang][kb] = tr(lang, bk)
-        cls = 'how-card orange-accent' if orange else "how-card"
-        lines.append(f'                <div class="{cls}">')
-        lines.append('                    <div class="how-card-head">')
-        lines.append(f'                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#{icon}"/></svg></span>')
-        lines.append(f'                        <h4 data-i18n="{kt}"></h4>')
-        lines.append("                    </div>")
+        if orange:
+            card_cls = "how-card feature-card orange-accent"
+            tone = "orange"
+        else:
+            card_cls = "how-card feature-card"
+            tone = tones[tone_i % 4]
+            tone_i += 1
+        fill_cls = " is-filled" if icon == "how-star" else ""
+        lines.append(f'                <div class="{card_cls}">')
+        lines.append(
+            f'                    <div class="how-card-icon feature-icon {tone}{fill_cls}" aria-hidden="true">\n'
+            f'                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26">'
+            f'<use href="#{icon}"/></svg>\n'
+            f"                    </div>"
+        )
+        lines.append(f'                    <h4 data-i18n="{kt}"></h4>')
         lines.append(f'                    <p data-i18n="{kb}"></p>')
         lines.append("                </div>")
 

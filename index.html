@@ -201,8 +201,7 @@
             height: 24px;
         }
 
-        .cta-button.is-disabled,
-        .app-store-button.is-disabled {
+        .cta-button.is-disabled {
             pointer-events: none;
             cursor: not-allowed;
             opacity: 0.7;
@@ -352,38 +351,8 @@
             font-size: 36px;
             font-weight: 700;
             color: var(--ink);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .download p {
-            font-size: 18px;
-            color: var(--ink-soft);
             margin-bottom: 40px;
-        }
-
-        .app-store-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--ink);
-            color: var(--white);
-            padding: 15px 26px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 28px rgba(29, 29, 31, 0.22);
-        }
-
-        .app-store-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 16px 36px rgba(29, 29, 31, 0.28);
-        }
-
-        .app-store-button svg {
-            width: 28px;
-            height: 28px;
+            letter-spacing: -0.02em;
         }
 
         /* Footer */
@@ -547,8 +516,7 @@
                 max-width: calc(100vw - 40px);
             }
 
-            .cta-button,
-            .app-store-button {
+            .cta-button {
                 width: 100%;
                 max-width: 340px;
                 justify-content: center;
@@ -566,13 +534,11 @@
                 font-size: clamp(34px, 12vw, 46px);
             }
 
-            .cta-button,
-            .app-store-button {
+            .cta-button {
                 font-size: 15px;
             }
 
-            .cta-button svg,
-            .app-store-button svg {
+            .cta-button svg {
                 width: 22px;
                 height: 22px;
             }
@@ -718,13 +684,20 @@
     <!-- Download Section -->
     <section class="download">
         <h2 data-i18n="download_title">Jetzt kostenlos laden</h2>
-        <p data-i18n="download_text">Zuerst für iPhone und iPad: bald im App Store. Eine Android-Version ist noch in Entwicklung.</p>
-        <a href="#" class="app-store-button is-disabled" aria-disabled="true" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-            </svg>
-            <span data-i18n="cta_bottom">Bald verfügbar</span>
-        </a>
+        <div class="hero-cta-row">
+            <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <span data-i18n="cta_top">Bald verfügbar</span>
+            </a>
+            <span class="cta-button is-disabled" role="status">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-1.42-.65-3.02-1.02-4.73-1.02s-3.3.37-4.72 1.01L5.87 5.67c-.18-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85l1.84 3.18C3.98 11.42 2.5 14.34 2.5 17.5h19c0-3.16-1.48-6.08-3.9-8.02zM7 15h2v5H7v-5zm8 0h2v5h-2v-5zM6.5 15c-.83 0-1.5-.67-1.5-1.5S5.67 12 6.5 12s1.5.67 1.5 1.5S7.33 15 6.5 15zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+                <span data-i18n="cta_android">In Bearbeitung</span>
+            </span>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -789,8 +762,6 @@
                     about_text1: "Fishfy wurzelt in einem persönlichen Ziel: Wir wollten mehr Fische fangen. Deshalb haben wir Fänge lange Zeit manuell dokumentiert, um zu erkennen, wann, wie und wo es klappte und die Fische besser zu verstehen. Daraus wuchs der Wunsch, etwas Eigenes zu bauen und diese Schritte zu vereinfachen, und mit der Idee kamen neue, größere Ziele.",
                     about_text2: "Wenn wir etwas angehen, dann richtig und rundum. Daraus ist Fishfy entstanden: eine App, die alles bündelt, was Angler brauchen, um Wetter, Gewässer, Spots, Fänge und Taktik smarter zusammenzubringen.",
                     download_title: "Jetzt kostenlos laden",
-                    download_text: "Zuerst für iPhone und iPad: bald im App Store. Eine Android-Version ist noch in Entwicklung.",
-                    cta_bottom: "Bald verfügbar",
                     footer_brand: "Smarter angeln, mehr fangen. Die App für echte Angler.",
                     footer_legal: "Rechtliches",
                     footer_privacy: "Datenschutz",
@@ -825,8 +796,6 @@
                     about_text1: "Fishfy started from a personal goal: we wanted to catch more fish. For years we logged catches by hand to learn when, how and where it worked and to understand the fish better. That habit grew into the wish to build something of our own and to simplify those steps, and the idea opened the door to bigger goals.",
                     about_text2: "When we take something on, we want it done properly end to end. That is what Fishfy stands for: one app that brings together everything anglers need to connect weather, water, spots, catches and tactics more smartly.",
                     download_title: "Download for free",
-                    download_text: "First for iPhone and iPad: coming soon on the App Store. An Android version is still in development.",
-                    cta_bottom: "Coming soon",
                     footer_brand: "Smarter angeln, mehr fangen. The app for real anglers.",
                     footer_legal: "Legal",
                     footer_privacy: "Privacy",
@@ -861,8 +830,6 @@
                     about_text1: "Fishfy groeide uit een persoonlijk doel: meer vissen vangen. Jarenlang legden we vangsten handmatig vast om te zien wanneer, hoe en waar het lukte en de vis beter te begrijpen. Zo ontstond de wens om iets eigen te bouwen en die stappen te vereenvoudigen, en bij dat idee kwamen nieuwe, grote doelen.",
                     about_text2: "Als we ergens voor gaan, dan goed en volledig. Daarom is Fishfy bedoeld als app die alles samenbrengt wat vissers nodig hebben om weer, water, stekken, vangsten en tactiek slimmer te verbinden.",
                     download_title: "Nu gratis downloaden",
-                    download_text: "Eerst voor iPhone en iPad: binnenkort in de App Store. Een Android-versie is nog in ontwikkeling.",
-                    cta_bottom: "Binnenkort beschikbaar",
                     footer_brand: "Smarter angeln, mehr fangen. De app voor echte vissers.",
                     footer_legal: "Juridisch",
                     footer_privacy: "Privacy",
@@ -897,8 +864,6 @@
                     about_text1: "Fishfy est né d'un objectif personnel : prendre plus de poissons. Pendant longtemps nous avons noté nos prises à la main pour comprendre quand, comment et où ça marche et mieux connaître le poisson. Cette habitude est devenue l'envie de construire quelque chose de sérieux et de simplifier ces étapes, et l'idée a ouvert la voie à de nouveaux objectifs plus ambitieux.",
                     about_text2: "Lorsque nous nous lançons dans un projet, nous voulons le faire proprement et à fond. Fishfy en est le résultat : une app qui rassemble tout ce dont les pêcheurs ont besoin pour lier météo, eau, spots, prises et tactique avec plus d'intelligence.",
                     download_title: "Télécharger gratuitement",
-                    download_text: "D'abord pour iPhone et iPad : bientôt sur l'App Store. Une version Android est encore en développement.",
-                    cta_bottom: "Bientôt disponible",
                     footer_brand: "Smarter angeln, mehr fangen. L'app pour les vrais pêcheurs.",
                     footer_legal: "Légal",
                     footer_privacy: "Confidentialité",
@@ -933,8 +898,6 @@
                     about_text1: "Fishfy kënnt aus engem perséinleche Zil: méi Fësch fänken. Dofir hunn mir Fäng iwwer laang Zäit manuell dokumentéiert fir ze gesinn, wéini, wéi an wou et geklappt huet an d'Fësch besser ze verstoen. Doaus ass de Wëllen entstanen, eppes Eeges ze bauen an dës Schrëtt ze vereinfachen, an mat der Idee koumen nei grouss Ziler derbäi.",
                     about_text2: "Wann mir eppes unhuelen, dann ordentlech a komplett. Fir Fishfy heescht dat eng App déi alles zesummenféiert wat Angler brauchen fir Wieder, Gewässer, Spots, Fäng a Taktik méi schlau ze verbinden.",
                     download_title: "Elo gratis eroflueden",
-                    download_text: "Zouerst fir iPhone an iPad: geschwënn am App Store. Eng Android-Versioun ass nach an der Entwécklung.",
-                    cta_bottom: "Geschwënn verfügbar",
                     footer_brand: "Smarter angeln, mehr fangen. D'App fir richteg Angler.",
                     footer_legal: "Rechtleches",
                     footer_privacy: "Dateschutz",

@@ -100,6 +100,10 @@
             color: var(--primary);
         }
 
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
         .lang-switcher {
             border: 1px solid var(--line);
             background: rgba(255, 255, 255, 0.9);
@@ -949,6 +953,60 @@
                 localStorage.getItem(storageKey) || navigator.language || FALLBACK
             );
             applyLanguage(preferred);
+
+            const inPageSectionIds = ["features", "about"];
+            const inPageLinks = inPageSectionIds
+                .map((id) => document.querySelector('.nav-links a[href="#' + id + '"]'))
+                .filter(Boolean);
+
+            function setActiveInPageLink(sectionId) {
+                inPageLinks.forEach((link) => {
+                    const isActive = link.getAttribute("href") === "#" + sectionId;
+                    link.classList.toggle("active", isActive);
+                });
+            }
+
+            function updateActiveFromHash() {
+                const hashId = window.location.hash.replace("#", "");
+                if (inPageSectionIds.includes(hashId)) {
+                    setActiveInPageLink(hashId);
+                    return;
+                }
+                setActiveInPageLink("");
+            }
+
+            function updateActiveFromScroll() {
+                const nav = document.querySelector("nav");
+                const probeOffset = (nav ? nav.offsetHeight : 0) + 80;
+                let activeSectionId = "";
+
+                inPageSectionIds.forEach((id) => {
+                    const section = document.getElementById(id);
+                    if (!section) return;
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= probeOffset && rect.bottom > probeOffset) {
+                        activeSectionId = id;
+                    }
+                });
+
+                if (activeSectionId) {
+                    setActiveInPageLink(activeSectionId);
+                } else {
+                    updateActiveFromHash();
+                }
+            }
+
+            inPageLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    const targetId = link.getAttribute("href").replace("#", "");
+                    setActiveInPageLink(targetId);
+                });
+            });
+
+            window.addEventListener("hashchange", updateActiveFromHash);
+            window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
+            updateActiveFromHash();
+            updateActiveFromScroll();
 
             const switcher = document.getElementById("lang-switcher");
             if (switcher) {

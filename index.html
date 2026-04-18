@@ -154,24 +154,14 @@
             line-height: 1.08;
             padding-bottom: 0.06em;
             text-wrap: balance;
-            margin-bottom: 20px;
-            color: var(--ink);
-        }
-
-        .hero p {
-            font-size: clamp(18px, 3vw, 22px);
-            color: var(--ink-soft);
             margin-bottom: 40px;
-            max-width: 600px;
-            text-wrap: balance;
-            margin-left: auto;
-            margin-right: auto;
+            color: var(--ink);
         }
 
         .hero-cta-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px 14px;
+            gap: 10px 12px;
             justify-content: center;
             align-items: center;
         }
@@ -179,26 +169,26 @@
         .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: var(--ink);
             color: var(--white);
-            padding: 16px 28px;
+            padding: 12px 22px;
             border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 10px 26px rgba(29, 29, 31, 0.25);
+            box-shadow: 0 8px 20px rgba(29, 29, 31, 0.22);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 16px 36px rgba(29, 29, 31, 0.3);
+            box-shadow: 0 12px 28px rgba(29, 29, 31, 0.28);
         }
 
         .cta-button svg {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
         }
 
         .cta-button.is-disabled {
@@ -351,8 +341,19 @@
             font-size: 36px;
             font-weight: 700;
             color: var(--ink);
-            margin-bottom: 40px;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
+        }
+
+        .download p {
+            font-size: 18px;
+            color: var(--ink-soft);
+            margin-bottom: 40px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
+            text-wrap: balance;
         }
 
         /* Footer */
@@ -455,11 +456,6 @@
                 padding-bottom: 0.08em;
             }
 
-            .hero p {
-                font-size: clamp(17px, 5vw, 22px);
-                line-height: 1.5;
-            }
-
             .features, .about, .download {
                 padding: 60px 20px;
             }
@@ -518,10 +514,10 @@
 
             .cta-button {
                 width: 100%;
-                max-width: 340px;
+                max-width: 320px;
                 justify-content: center;
-                padding: 15px 18px;
-                gap: 10px;
+                padding: 12px 16px;
+                gap: 8px;
             }
         }
 
@@ -535,12 +531,12 @@
             }
 
             .cta-button {
-                font-size: 15px;
+                font-size: 13px;
             }
 
             .cta-button svg {
-                width: 22px;
-                height: 22px;
+                width: 19px;
+                height: 19px;
             }
         }
 
@@ -598,7 +594,6 @@
                 <span data-i18n="badge">Dein Angel-Assistent</span>
             </div>
             <h1 data-i18n="hero_title">Smarter angeln, mehr fangen</h1>
-            <p data-i18n="hero_text">Diese App wurde bis ins Detail durchdacht, damit Angeln einfacher und stressfreier wird. Du siehst schneller, was jetzt sinnvoll ist.</p>
             <div class="hero-cta-row">
                 <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -684,6 +679,7 @@
     <!-- Download Section -->
     <section class="download">
         <h2 data-i18n="download_title">Jetzt kostenlos laden</h2>
+        <p data-i18n="download_text">Zuerst für iPhone und iPad: bald im App Store. Eine Android-Version ist noch in Entwicklung.</p>
         <div class="hero-cta-row">
             <a href="#" class="cta-button is-disabled" aria-disabled="true" tabindex="-1">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -745,7 +741,6 @@
                     nav_terms: "Nutzungsbedingungen",
                     badge: "Dein Angel-Assistent",
                     hero_title: "Smarter angeln, mehr fangen",
-                    hero_text: "Diese App wurde bis ins Detail durchdacht, damit Angeln einfacher und stressfreier wird. Du siehst schneller, was jetzt sinnvoll ist.",
                     cta_top: "Bald verfügbar",
                     cta_android: "In Bearbeitung",
                     features_title: "Alles was du brauchst",
@@ -762,6 +757,7 @@
                     about_text1: "Fishfy wurzelt in einem persönlichen Ziel: Wir wollten mehr Fische fangen. Deshalb haben wir Fänge lange Zeit manuell dokumentiert, um zu erkennen, wann, wie und wo es klappte und die Fische besser zu verstehen. Daraus wuchs der Wunsch, etwas Eigenes zu bauen und diese Schritte zu vereinfachen, und mit der Idee kamen neue, größere Ziele.",
                     about_text2: "Wenn wir etwas angehen, dann richtig und rundum. Daraus ist Fishfy entstanden: eine App, die alles bündelt, was Angler brauchen, um Wetter, Gewässer, Spots, Fänge und Taktik smarter zusammenzubringen.",
                     download_title: "Jetzt kostenlos laden",
+                    download_text: "Zuerst für iPhone und iPad: bald im App Store. Eine Android-Version ist noch in Entwicklung.",
                     footer_brand: "Smarter angeln, mehr fangen. Die App für echte Angler.",
                     footer_legal: "Rechtliches",
                     footer_privacy: "Datenschutz",
@@ -779,7 +775,6 @@
                     nav_terms: "Terms",
                     badge: "Your fishing assistant",
                     hero_title: "Smarter fish, catch more",
-                    hero_text: "This app is thought through down to the smallest detail so fishing feels easier and less stressful. You quickly see what makes sense right now.",
                     cta_top: "Coming soon",
                     cta_android: "In progress",
                     features_title: "Everything you need",
@@ -796,6 +791,7 @@
                     about_text1: "Fishfy started from a personal goal: we wanted to catch more fish. For years we logged catches by hand to learn when, how and where it worked and to understand the fish better. That habit grew into the wish to build something of our own and to simplify those steps, and the idea opened the door to bigger goals.",
                     about_text2: "When we take something on, we want it done properly end to end. That is what Fishfy stands for: one app that brings together everything anglers need to connect weather, water, spots, catches and tactics more smartly.",
                     download_title: "Download for free",
+                    download_text: "First for iPhone and iPad: coming soon on the App Store. An Android version is still in development.",
                     footer_brand: "Smarter angeln, mehr fangen. The app for real anglers.",
                     footer_legal: "Legal",
                     footer_privacy: "Privacy",
@@ -813,7 +809,6 @@
                     nav_terms: "Gebruiksvoorwaarden",
                     badge: "Jouw visassistent",
                     hero_title: "Slimmer vissen, meer vangen",
-                    hero_text: "Deze app is tot in detail doordacht zodat vissen eenvoudiger en minder stressvol wordt. Je ziet snel wat nu zinvol is.",
                     cta_top: "Binnenkort beschikbaar",
                     cta_android: "In uitvoering",
                     features_title: "Alles wat je nodig hebt",
@@ -830,6 +825,7 @@
                     about_text1: "Fishfy groeide uit een persoonlijk doel: meer vissen vangen. Jarenlang legden we vangsten handmatig vast om te zien wanneer, hoe en waar het lukte en de vis beter te begrijpen. Zo ontstond de wens om iets eigen te bouwen en die stappen te vereenvoudigen, en bij dat idee kwamen nieuwe, grote doelen.",
                     about_text2: "Als we ergens voor gaan, dan goed en volledig. Daarom is Fishfy bedoeld als app die alles samenbrengt wat vissers nodig hebben om weer, water, stekken, vangsten en tactiek slimmer te verbinden.",
                     download_title: "Nu gratis downloaden",
+                    download_text: "Eerst voor iPhone en iPad: binnenkort in de App Store. Een Android-versie is nog in ontwikkeling.",
                     footer_brand: "Smarter angeln, mehr fangen. De app voor echte vissers.",
                     footer_legal: "Juridisch",
                     footer_privacy: "Privacy",
@@ -847,7 +843,6 @@
                     nav_terms: "Conditions",
                     badge: "Ton assistant de pêche",
                     hero_title: "Pêcher plus malin, attraper plus",
-                    hero_text: "Cette app est pensée dans les moindres détails pour rendre la pêche plus simple et moins stressante. Tu vois vite ce qui a du sens maintenant.",
                     cta_top: "Bientôt disponible",
                     cta_android: "En cours",
                     features_title: "Tout ce qu'il te faut",
@@ -864,6 +859,7 @@
                     about_text1: "Fishfy est né d'un objectif personnel : prendre plus de poissons. Pendant longtemps nous avons noté nos prises à la main pour comprendre quand, comment et où ça marche et mieux connaître le poisson. Cette habitude est devenue l'envie de construire quelque chose de sérieux et de simplifier ces étapes, et l'idée a ouvert la voie à de nouveaux objectifs plus ambitieux.",
                     about_text2: "Lorsque nous nous lançons dans un projet, nous voulons le faire proprement et à fond. Fishfy en est le résultat : une app qui rassemble tout ce dont les pêcheurs ont besoin pour lier météo, eau, spots, prises et tactique avec plus d'intelligence.",
                     download_title: "Télécharger gratuitement",
+                    download_text: "D'abord pour iPhone et iPad : bientôt sur l'App Store. Une version Android est encore en développement.",
                     footer_brand: "Smarter angeln, mehr fangen. L'app pour les vrais pêcheurs.",
                     footer_legal: "Légal",
                     footer_privacy: "Confidentialité",
@@ -881,7 +877,6 @@
                     nav_terms: "Benotzungsbedingungen",
                     badge: "Dengen Angel-Assistent",
                     hero_title: "Méi schlau angelen, méi fänken",
-                    hero_text: "Dës App ass bis an de klengsten Detail duerchduecht, sou datt Angelen méi einfach a manner stresseg gëtt. Du gesäis séier wat elo Sënn mécht.",
                     cta_top: "Geschwënn verfügbar",
                     cta_android: "An der Aarbecht",
                     features_title: "Alles wat s de brauchs",
@@ -898,6 +893,7 @@
                     about_text1: "Fishfy kënnt aus engem perséinleche Zil: méi Fësch fänken. Dofir hunn mir Fäng iwwer laang Zäit manuell dokumentéiert fir ze gesinn, wéini, wéi an wou et geklappt huet an d'Fësch besser ze verstoen. Doaus ass de Wëllen entstanen, eppes Eeges ze bauen an dës Schrëtt ze vereinfachen, an mat der Idee koumen nei grouss Ziler derbäi.",
                     about_text2: "Wann mir eppes unhuelen, dann ordentlech a komplett. Fir Fishfy heescht dat eng App déi alles zesummenféiert wat Angler brauchen fir Wieder, Gewässer, Spots, Fäng a Taktik méi schlau ze verbinden.",
                     download_title: "Elo gratis eroflueden",
+                    download_text: "Zouerst fir iPhone an iPad: geschwënn am App Store. Eng Android-Versioun ass nach an der Entwécklung.",
                     footer_brand: "Smarter angeln, mehr fangen. D'App fir richteg Angler.",
                     footer_legal: "Rechtleches",
                     footer_privacy: "Dateschutz",

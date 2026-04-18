@@ -12,6 +12,7 @@
         :root {
             --primary: #0071e3;
             --primary-dark: #0058b0;
+            --fishfy-app-accent: #007aff;
             --ink: #1d1d1f;
             --ink-soft: #424245;
             --surface: #f5f5f7;
@@ -226,75 +227,115 @@
         .section-header p {
             font-size: 18px;
             color: var(--ink-soft);
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+        .how-it-inner {
+            max-width: 720px;
+            margin: 0 auto;
         }
 
-        .feature-card {
-            background: var(--card);
-            padding: 32px;
-            border-radius: 24px;
+        .how-section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            margin: 36px 0 16px;
+            text-align: left;
+        }
+
+        .how-section-heading:first-of-type {
+            margin-top: 12px;
+        }
+
+        .how-card-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .how-card {
+            text-align: left;
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 16px;
             border: 1px solid var(--line);
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.24s ease, box-shadow 0.24s ease;
-            opacity: 0;
-            transform: translateY(14px);
-            animation: featureFadeIn 0.6s ease forwards;
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.06s; }
-        .feature-card:nth-child(2) { animation-delay: 0.12s; }
-        .feature-card:nth-child(3) { animation-delay: 0.18s; }
-        .feature-card:nth-child(4) { animation-delay: 0.24s; }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
+        .how-card-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 18px;
+        .how-card-icon {
+            flex-shrink: 0;
+            width: 30px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
-            margin-bottom: 20px;
-            border: 1px solid var(--line);
+            color: var(--fishfy-app-accent);
         }
 
-        .feature-icon svg {
-            width: 26px;
-            height: 26px;
-            stroke: #1f2937;
-            stroke-width: 1.85;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .how-card-icon svg {
+            width: 22px;
+            height: 22px;
         }
 
-        .feature-icon.blue { background: rgba(0, 113, 227, 0.08); }
-        .feature-icon.orange { background: rgba(255, 149, 0, 0.08); }
-        .feature-icon.green { background: rgba(52, 199, 89, 0.08); }
-        .feature-icon.purple { background: rgba(175, 82, 222, 0.08); }
+        .how-card.orange-accent .how-card-icon {
+            color: #ea580c;
+        }
 
-        .feature-card h3 {
-            font-size: 20px;
+        .how-card h4 {
+            font-size: 17px;
             font-weight: 600;
-            letter-spacing: -0.01em;
+            margin: 0;
             color: var(--ink);
-            margin-bottom: 12px;
+            line-height: 1.35;
+            flex: 1;
+            min-width: 0;
         }
 
-        .feature-card p {
+        .how-card p {
+            margin: 0;
             color: var(--ink-soft);
             font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.55;
+        }
+
+        .how-tech {
+            margin-top: 28px;
+            padding: 16px;
+            background: #f5f5f7;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            text-align: left;
+        }
+
+        .how-tech h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .how-tech p {
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .how-sprite {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
         }
 
         /* About Section */
@@ -551,16 +592,6 @@
             }
         }
 
-        @keyframes featureFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(14px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
@@ -571,7 +602,7 @@
                 <div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>
             </a>
             <ul class="nav-links">
-                <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                <li><a href="#features" data-i18n="nav_features">Wie funktioniert Fishfy?</a></li>
                 <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
                 <li><a href="datenschutz.html" data-i18n="nav_privacy">Datenschutz</a></li>
                 <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
@@ -615,55 +646,207 @@
     <section class="features" id="features">
         <div class="section-container">
             <div class="section-header">
-                <h2 data-i18n="features_title">Alles was du brauchst</h2>
-                <p data-i18n="features_subtitle">Weniger Suchen, weniger Stress, bessere Entscheidungen am Wasser.</p>
+                <h2 data-i18n="features_title">So funktioniert Fishfy</h2>
+                <p data-i18n="features_subtitle">Fishfy vereint Prognose, Wetter, Taktik, Spots und Fangbuch in einer App mit klarem Plan für deinen Angeltag.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon blue" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 19h16"></path>
-                            <path d="M7 15V9"></path>
-                            <path d="M12 15V6"></path>
-                            <path d="M17 15v-3"></path>
-                        </svg>
+            <svg class="how-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <symbol id="how-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13c-1.5 0-3 1-3 2s1.5 2 3 2 4-1.5 4-4-2-4-4-4-1.5 1-3 1-3-1-3-2 1.5-2 3-2"/><path d="M16.5 8.5c2 2 2.5 5.5 0 7.5M18 6l2-2M18 18l2 2"/></symbol>
+                <symbol id="how-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 14v3M4 15a8 8 0 1 1 16 0"/><path d="M12 15l3-5"/></symbol>
+                <symbol id="how-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+                <symbol id="how-arrows-v" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V5M5 8l3-3 3 3M16 13v6M19 16l-3 3-3-3"/></symbol>
+                <symbol id="how-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M9 8h6M15 16h6M7 4h2"/></symbol>
+                <symbol id="how-thermometer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></symbol>
+                <symbol id="how-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+                <symbol id="how-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M9.5 2l1 4 4 1-4 1-1 4-1-4-4-1 4-1 1-4zM16 11l.5 2 2 .5-2 .5-.5 2-.5-2-2-.5 2-.5.5-2z"/></symbol>
+                <symbol id="how-mappin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><ellipse cx="12" cy="10" rx="3" ry="1.5"/></symbol>
+                <symbol id="how-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M3 8h7a3 3 0 1 0-3-3M5 12h11a4 4 0 1 1-4 4M3 16h15"/></symbol>
+                <symbol id="how-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h3l2-2h6l2 2h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="14" r="3"/></symbol>
+                <symbol id="how-transfer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M15 9l3 3-3 3M9 15l-3-3 3-3"/></symbol>
+                <symbol id="how-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M9 10l3-3 3 3"/></symbol>
+                <symbol id="how-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/></symbol>
+                <symbol id="how-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></symbol>
+                <symbol id="how-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 7H3s3 0 3-7M10 21h4"/></symbol>
+                <symbol id="how-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+                <symbol id="how-chart-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 19V5M8 19v-6M12 19V9M16 19v-3M20 19v-8"/></symbol>
+                <symbol id="how-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+                <symbol id="how-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V21M3 12h18M12 8H9.5a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 2.5-5a2.5 2.5 0 0 1 0 5H12z"/></symbol>
+                <symbol id="how-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></symbol>
+                <symbol id="how-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11V3M8 11V6M16 11V7M4 11v2a8 8 0 0 0 16 0v-6a2 2 0 0 0-2-2h-1"/></symbol>
+                <symbol id="how-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6M17 8h4v4"/></symbol>
+            </svg>
+            <div class="how-it-inner">
+                <h3 class="how-section-heading" data-i18n="pe_section_forecast"></h3>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-fish"/></svg></span>
+                        <h4 data-i18n="pe_target_fish"></h4>
                     </div>
-                    <h3 data-i18n="feature1_title">Bessere Entscheidungen</h3>
-                    <p data-i18n="feature1_text">Fishfy fasst Wetter, Gewässer, Mond, Saison und deine Einstellungen zu einer klaren Aktivitätseinschätzung mit Bedingungen und Taktik zusammen.</p>
+                    <p data-i18n="pe_target_fish_body"></p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon orange" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 20s6-4.4 6-10a6 6 0 1 0-12 0c0 5.6 6 10 6 10z"></path>
-                            <circle cx="12" cy="10" r="2.3"></circle>
-                        </svg>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-gauge"/></svg></span>
+                        <h4 data-i18n="pe_score"></h4>
                     </div>
-                    <h3 data-i18n="feature2_title">Deine Angelspots</h3>
-                    <p data-i18n="feature2_text">Speichere Spots mit Gewässerdaten, Zielfischen, Notizen und guten Monaten, optional mit Aktivitätsalarm pro Spot.</p>
+                    <p data-i18n="pe_score_body"></p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon green" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4 8h16a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1z"></path>
-                            <path d="M9 8l1.1-2h3.8L15 8"></path>
-                            <circle cx="12" cy="14" r="3"></circle>
-                        </svg>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-wrench"/></svg></span>
+                        <h4 data-i18n="pe_bait_tech"></h4>
                     </div>
-                    <h3 data-i18n="feature3_title">Fänge dokumentieren</h3>
-                    <p data-i18n="feature3_text">Erfasse Fänge in Sekunden mit Foto, Fishfy speichert die aktuellen Wetterdaten automatisch mit. Ergänze später Details, Bedingungen und den Taktikvergleich.</p>
+                    <p data-i18n="pe_bait_tech_body"></p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon purple" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"></path>
-                            <path d="M9.6 4.4A2 2 0 1 1 11 8H2"></path>
-                            <path d="M12.6 19.4A2 2 0 1 0 14 16H2"></path>
-                        </svg>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-arrows-v"/></svg></span>
+                        <h4 data-i18n="pe_depth_lead"></h4>
                     </div>
-                    <h3 data-i18n="feature4_title">Wetter, Taktik & Push</h3>
-                    <p data-i18n="feature4_text">Nutze Wetterübersichten, Karte mit Wind und Niederschlag sowie Taktikhinweise zur Planung. Mit Pro Push zum Aktivitätsalarm und zum Bereich Ähnliche Fänge.</p>
+                    <p data-i18n="pe_depth_lead_body"></p>
+                </div>
+                <h3 class="how-section-heading" data-i18n="pe_section_influence"></h3>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-sliders"/></svg></span>
+                        <h4 data-i18n="pe_water_conditions"></h4>
+                    </div>
+                    <p data-i18n="pe_water_conditions_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-thermometer"/></svg></span>
+                        <h4 data-i18n="pe_water_temp"></h4>
+                    </div>
+                    <p data-i18n="pe_water_temp_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-clock"/></svg></span>
+                        <h4 data-i18n="pe_time_season"></h4>
+                    </div>
+                    <p data-i18n="pe_time_season_body"></p>
+                </div>
+                <h3 class="how-section-heading" data-i18n="pe_section_special"></h3>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-sparkles"/></svg></span>
+                        <h4 data-i18n="pe_forecast"></h4>
+                    </div>
+                    <p data-i18n="pe_forecast_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-mappin"/></svg></span>
+                        <h4 data-i18n="pe_spots"></h4>
+                    </div>
+                    <p data-i18n="pe_spots_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-wind"/></svg></span>
+                        <h4 data-i18n="pe_wind_map"></h4>
+                    </div>
+                    <p data-i18n="pe_wind_map_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-camera"/></svg></span>
+                        <h4 data-i18n="pe_catches"></h4>
+                    </div>
+                    <p data-i18n="pe_catches_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-transfer"/></svg></span>
+                        <h4 data-i18n="pe_transfer"></h4>
+                    </div>
+                    <p data-i18n="pe_transfer_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-share"/></svg></span>
+                        <h4 data-i18n="pe_spot_transfer"></h4>
+                    </div>
+                    <p data-i18n="pe_spot_transfer_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-bulb"/></svg></span>
+                        <h4 data-i18n="pe_similar"></h4>
+                    </div>
+                    <p data-i18n="pe_similar_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-map"/></svg></span>
+                        <h4 data-i18n="pe_map"></h4>
+                    </div>
+                    <p data-i18n="pe_map_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-bell"/></svg></span>
+                        <h4 data-i18n="pe_notifications"></h4>
+                    </div>
+                    <p data-i18n="pe_notifications_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-cloud"/></svg></span>
+                        <h4 data-i18n="pe_backup"></h4>
+                    </div>
+                    <p data-i18n="pe_backup_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-chart-bar"/></svg></span>
+                        <h4 data-i18n="pe_stats"></h4>
+                    </div>
+                    <p data-i18n="pe_stats_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-people"/></svg></span>
+                        <h4 data-i18n="pe_beginners_pros"></h4>
+                    </div>
+                    <p data-i18n="pe_beginners_pros_body"></p>
+                </div>
+                <h3 class="how-section-heading" data-i18n="pe_section_free"></h3>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-gift"/></svg></span>
+                        <h4 data-i18n="pe_free"></h4>
+                    </div>
+                    <p data-i18n="pe_free_body"></p>
+                </div>
+                <div class="how-card">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-star"/></svg></span>
+                        <h4 data-i18n="pe_fishfy_pro"></h4>
+                    </div>
+                    <p data-i18n="pe_fishfy_pro_body"></p>
+                </div>
+                <h3 class="how-section-heading" data-i18n="pe_section_honest"></h3>
+                <div class="how-card orange-accent">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-hand"/></svg></span>
+                        <h4 data-i18n="pe_no_guarantee"></h4>
+                    </div>
+                    <p data-i18n="pe_no_guarantee_body"></p>
+                </div>
+                <div class="how-card orange-accent">
+                    <div class="how-card-head">
+                        <span class="how-card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><use href="#how-trend"/></svg></span>
+                        <h4 data-i18n="pe_we_learn"></h4>
+                    </div>
+                    <p data-i18n="pe_we_learn_body"></p>
+                </div>
+                <div class="how-tech">
+                    <h3 data-i18n="pe_tech_title"></h3>
+                    <p data-i18n="pe_tech_body"></p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -734,7 +917,6 @@
                 de: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
                     meta_description: "Fishfy macht Angeln einfacher und stressfreier. Spots, Fangbuch, Karte, Wetter, Taktik, Erinnerungen und Backup in einer App. Zuerst für iPhone und iPad, bald im App Store; eine Android-Version ist in Entwicklung.",
-                    nav_features: "Features",
                     nav_about: "Über uns",
                     nav_privacy: "Datenschutz",
                     nav_imprint: "Impressum",
@@ -743,16 +925,62 @@
                     hero_title: "Smarter angeln, mehr fangen",
                     cta_top: "Bald verfügbar",
                     cta_android: "In Bearbeitung",
-                    features_title: "Alles was du brauchst",
-                    features_subtitle: "Weniger Suchen, weniger Stress, bessere Entscheidungen am Wasser.",
-                    feature1_title: "Bessere Entscheidungen",
-                    feature1_text: "Fishfy fasst Wetter, Gewässer, Mond, Saison und deine Einstellungen zu einer klaren Aktivitätseinschätzung mit Bedingungen und Taktik zusammen.",
-                    feature2_title: "Deine Angelspots",
-                    feature2_text: "Speichere Spots mit Gewässerdaten, Zielfischen, Notizen und guten Monaten, optional mit Aktivitätsalarm pro Spot.",
-                    feature3_title: "Fänge dokumentieren",
-                    feature3_text: "Erfasse Fänge in Sekunden mit Foto, Fishfy speichert die aktuellen Wetterdaten automatisch mit. Ergänze später Details, Bedingungen und den Taktikvergleich.",
-                    feature4_title: "Wetter, Taktik & Push",
-                    feature4_text: "Nutze Wetterübersichten, Karte mit Wind und Niederschlag sowie Taktikhinweise zur Planung. Mit Pro Push zum Aktivitätsalarm und zum Bereich Ähnliche Fänge.",
+                    features_title: "So funktioniert Fishfy",
+                    features_subtitle: "Fishfy vereint Prognose, Wetter, Taktik, Spots und Fangbuch in einer App mit klarem Plan für deinen Angeltag.",
+                    nav_features: "Wie funktioniert Fishfy?",
+                    pe_tech_title: "Die Technik dahinter",
+                    pe_tech_body: "Fishfy arbeitet mit regelbasierten Modellen und nachvollziehbaren Daten statt Blackbox Empfehlungen.",
+                    pe_section_forecast: "Was macht die Prognose?",
+                    pe_target_fish: "Zielfisch wählen",
+                    pe_target_fish_body: "Wähle Barsch, Hecht oder Zander und Fishfy passt die Empfehlungen je Art an.",
+                    pe_score: "Score berechnen",
+                    pe_score_body: "Der Score kombiniert Zeit, Saison, Mond und Wetterdaten und zeigt dir stündlich starke Beissfenster.",
+                    pe_bait_tech: "Köder & Technik empfehlen",
+                    pe_bait_tech_body: "Fishfy empfiehlt nur Köder und Techniken aus deiner Auswahl inklusive Alternativen.",
+                    pe_depth_lead: "Tiefe & Führung anpassen",
+                    pe_depth_lead_body: "Du bekommst direkte Angaben zu Tiefe, Führung, Pause und Absinkphase.",
+                    pe_section_influence: "Was beeinflusst die Prognose?",
+                    pe_water_conditions: "Gewässerbedingungen",
+                    pe_water_conditions_body: "Pegel, Trübung, Strömung und Gewässertyp gehen live in die Berechnung ein.",
+                    pe_water_temp: "Wassertemperatur",
+                    pe_water_temp_body: "Die Wassertemperatur wird manuell oder automatisch genutzt und stark gewichtet.",
+                    pe_time_season: "Tageszeit & Saison",
+                    pe_time_season_body: "Tageszeit und Saison steuern das Verhalten je Zielfisch.",
+                    pe_section_special: "Was macht Fishfy besonders?",
+                    pe_forecast: "Prognose",
+                    pe_forecast_body: "Die Prognose basiert auf Regeln und Daten und wird mit geprüften Fängen weiter verbessert.",
+                    pe_spots: "Spots speichern",
+                    pe_spots_body: "Spots speichern Gewässerdaten, Notizen, Zielfische, gute Monate und den Aktivitätsalarm pro Spot.",
+                    pe_wind_map: "Windkarte lesen",
+                    pe_wind_map_body: "Die Wetterkarte zeigt Wind und Niederschlag live plus eine stündliche 24h Vorschau ab jetzt.",
+                    pe_catches: "Fänge dokumentieren",
+                    pe_catches_body: "Fänge speicherst du in Sekunden mit Foto und ergänzt Details, Bedingungen und Taktikvergleich später.",
+                    pe_transfer: "Fang-Transfer",
+                    pe_transfer_body: "Übertrage einzelne Fänge mit Daten und Fotos sicher an den ursprünglichen Fänger.",
+                    pe_spot_transfer: "Spot teilen",
+                    pe_spot_transfer_body: "Teile einzelne Spots sicher mit anderen Accounts.",
+                    pe_similar: "Ähnliche Bedingungen erkennen",
+                    pe_similar_body: "Ähnliche Fänge erkennen passende Situationen und melden auf Wunsch per Push.",
+                    pe_map: "Alles auf einer Karte",
+                    pe_map_body: "Die Karte vereint Spots und Fänge mit starken Filtern für Fisch, Gewässer, Land, Wind, Pegel und mehr.",
+                    pe_notifications: "Aktivitätsmeldungen",
+                    pe_notifications_body: "Benachrichtigungen informieren über gute Aktivität, Aktivitätsalarm pro Spot und ähnliche Fänge.",
+                    pe_backup: "Backup & Sync",
+                    pe_backup_body: "Cloud Backup, Sync und Restore sichern deine Daten geräteübergreifend und halten den Wechsel einfach.",
+                    pe_stats: "Fang-Statistiken",
+                    pe_stats_body: "Statistiken zeigen Muster zu Zeit, Temperatur, Ködern, Größen und Monaten.",
+                    pe_beginners_pros: "Für Anfänger & Profis",
+                    pe_beginners_pros_body: "Anfänger erhalten klare Schritte, Profis nutzen tiefe Filter, Alternativen und Detaildaten.",
+                    pe_section_free: "Kostenlos & ohne Werbung",
+                    pe_free: "Gratis nutzbar",
+                    pe_free_body: "Fishfy ist werbefrei und viele Funktionen sind kostenlos nutzbar.",
+                    pe_fishfy_pro: "Fishfy Pro",
+                    pe_fishfy_pro_body: "Fishfy Pro erweitert Limits und Premiumfunktionen für Analyse, Karten, Automationen und volle Kontrolle.",
+                    pe_section_honest: "Ehrlich gesagt...",
+                    pe_no_guarantee: "Keine Fanggarantie",
+                    pe_no_guarantee_body: "Fishfy verbessert Entscheidungen, eine Fanggarantie gibt es nicht.",
+                    pe_we_learn: "Wir lernen mit",
+                    pe_we_learn_body: "Mit Zustimmung nutzen wir anonymisierte Fangdaten, damit Empfehlungen laufend präziser werden.",
                     about_title: "Über uns",
                     about_text1: "Fishfy wurzelt in einem persönlichen Ziel: Wir wollten mehr Fische fangen. Deshalb haben wir Fänge lange Zeit manuell dokumentiert, um zu erkennen, wann, wie und wo es klappte und die Fische besser zu verstehen. Daraus wuchs der Wunsch, etwas Eigenes zu bauen und diese Schritte zu vereinfachen, und mit der Idee kamen neue, größere Ziele.",
                     about_text2: "Wenn wir etwas angehen, dann richtig und rundum. Daraus ist Fishfy entstanden: eine App, die alles bündelt, was Angler brauchen, um Wetter, Gewässer, Spots, Fänge und Taktik smarter zusammenzubringen.",
@@ -768,7 +996,6 @@
                 en: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
                     meta_description: "Fishfy makes fishing easier and less stressful. Spots, catch log, map, weather, tactics, reminders and backup in one app. First for iPhone and iPad, coming soon on the App Store; an Android version is in development.",
-                    nav_features: "Features",
                     nav_about: "About",
                     nav_privacy: "Privacy",
                     nav_imprint: "Imprint",
@@ -777,16 +1004,62 @@
                     hero_title: "Smarter fish, catch more",
                     cta_top: "Coming soon",
                     cta_android: "In progress",
-                    features_title: "Everything you need",
-                    features_subtitle: "Less searching, less stress, better decisions on the water.",
-                    feature1_title: "Better decisions",
-                    feature1_text: "Fishfy combines weather, water, moon, season and your settings into a clear activity read with conditions and tactic ideas.",
-                    feature2_title: "Your fishing spots",
-                    feature2_text: "Save spots with water details, target fish, notes and best months, with an optional activity alarm per spot.",
-                    feature3_title: "Log your catches",
-                    feature3_text: "Log catches in seconds with a photo; Fishfy saves current weather data automatically. Add details, conditions and your tactic check later.",
-                    feature4_title: "Weather, tactics & push",
-                    feature4_text: "Use weather views, the map with wind and precipitation, and tactic hints for planning. With Pro, push for the activity alarm and for Similar catches.",
+                    features_title: "How Fishfy works",
+                    features_subtitle: "Fishfy combines forecast, weather, tactics, spots and catch log in one app with a clear plan for your fishing day.",
+                    nav_features: "How does Fishfy work?",
+                    pe_tech_title: "The tech behind it",
+                    pe_tech_body: "Fishfy uses rule based models and traceable data instead of black box recommendations.",
+                    pe_section_forecast: "What does the forecast do?",
+                    pe_target_fish: "Choose target species",
+                    pe_target_fish_body: "Choose perch, pike or pikeperch and Fishfy adapts recommendations per species.",
+                    pe_score: "Calculate score",
+                    pe_score_body: "The score combines time, season, moon and weather data and shows strong bite windows hour by hour.",
+                    pe_bait_tech: "Recommend bait & technique",
+                    pe_bait_tech_body: "Fishfy recommends only baits and techniques from your setup including alternatives.",
+                    pe_depth_lead: "Adapt depth & retrieve",
+                    pe_depth_lead_body: "You get direct guidance for depth, retrieve, pause and sink phase.",
+                    pe_section_influence: "What influences the forecast?",
+                    pe_water_conditions: "Water conditions",
+                    pe_water_conditions_body: "Water level, turbidity, current and water type feed the calculation in real time.",
+                    pe_water_temp: "Water temperature",
+                    pe_water_temp_body: "Water temperature can be manual or automatic and has high impact.",
+                    pe_time_season: "Time of day & season",
+                    pe_time_season_body: "Time of day and season shape activity for each target species.",
+                    pe_section_special: "What makes Fishfy special?",
+                    pe_forecast: "Forecast",
+                    pe_forecast_body: "The forecast uses rules and data and improves further with verified catches.",
+                    pe_spots: "Save spots",
+                    pe_spots_body: "Spots store water details, notes, target fish, best months and the activity alarm per spot.",
+                    pe_wind_map: "Read wind map",
+                    pe_wind_map_body: "The weather map shows live wind and precipitation plus an hourly 24h outlook from now.",
+                    pe_catches: "Document catches",
+                    pe_catches_body: "Save catches in seconds with photo and add details, conditions and tactic checks later.",
+                    pe_transfer: "Catch transfer",
+                    pe_transfer_body: "Transfer single catches with data and photos securely to the original angler.",
+                    pe_spot_transfer: "Share spots",
+                    pe_spot_transfer_body: "Share selected spots securely with other accounts.",
+                    pe_similar: "Recognise similar conditions",
+                    pe_similar_body: "Similar catches detect matching situations and can notify you by push.",
+                    pe_map: "Everything on one map",
+                    pe_map_body: "The map combines spots and catches with strong filters for fish, water, country, wind, level and more.",
+                    pe_notifications: "Activity alerts",
+                    pe_notifications_body: "Alerts cover bite activity, per spot activity alarm and similar catches.",
+                    pe_backup: "Backup & sync",
+                    pe_backup_body: "Cloud backup, sync and restore protect your data across devices and keep switching simple.",
+                    pe_stats: "Catch statistics",
+                    pe_stats_body: "Stats reveal patterns for time, temperature, baits, sizes and months.",
+                    pe_beginners_pros: "For beginners & pros",
+                    pe_beginners_pros_body: "Beginners get clear next steps, pros use deep filters, alternatives and detail data.",
+                    pe_section_free: "Free & ad-free",
+                    pe_free: "Free to use",
+                    pe_free_body: "Fishfy is ad free and many features are available for free.",
+                    pe_fishfy_pro: "Fishfy Pro",
+                    pe_fishfy_pro_body: "Fishfy Pro extends limits and premium features for analysis, maps, automation and full control.",
+                    pe_section_honest: "Honestly...",
+                    pe_no_guarantee: "No catch guarantee",
+                    pe_no_guarantee_body: "Fishfy improves decisions, but it cannot guarantee a catch.",
+                    pe_we_learn: "We learn with you",
+                    pe_we_learn_body: "With consent we use anonymised catch data to make recommendations more precise over time.",
                     about_title: "About us",
                     about_text1: "Fishfy started from a personal goal: we wanted to catch more fish. For years we logged catches by hand to learn when, how and where it worked and to understand the fish better. That habit grew into the wish to build something of our own and to simplify those steps, and the idea opened the door to bigger goals.",
                     about_text2: "When we take something on, we want it done properly end to end. That is what Fishfy stands for: one app that brings together everything anglers need to connect weather, water, spots, catches and tactics more smartly.",
@@ -802,7 +1075,6 @@
                 nl: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
                     meta_description: "Fishfy maakt vissen eenvoudiger en rustiger. Stekken, vangstlogboek, kaart, weer, tactiek, herinneringen en back-up in één app. Eerst voor iPhone en iPad, binnenkort in de App Store; een Android-versie is in ontwikkeling.",
-                    nav_features: "Functies",
                     nav_about: "Over ons",
                     nav_privacy: "Privacy",
                     nav_imprint: "Colofon",
@@ -811,16 +1083,62 @@
                     hero_title: "Slimmer vissen, meer vangen",
                     cta_top: "Binnenkort beschikbaar",
                     cta_android: "In uitvoering",
-                    features_title: "Alles wat je nodig hebt",
-                    features_subtitle: "Minder zoeken, minder stress, betere keuzes aan het water.",
-                    feature1_title: "Betere beslissingen",
-                    feature1_text: "Fishfy brengt weer, water, maan, seizoen en jouw instellingen samen tot een duidelijke activiteitsschatting met omstandigheden en tactiek.",
-                    feature2_title: "Jouw visstekken",
-                    feature2_text: "Sla stekken op met waterdata, doelvis, notities en beste maanden, optioneel met activiteitsalarm per stek.",
-                    feature3_title: "Vangsten documenteren",
-                    feature3_text: "Leg vangsten in seconden vast met een foto, Fishfy slaat actuele weergegevens automatisch op. Vul later details, condities en de tactiekcheck aan.",
-                    feature4_title: "Weer, tactiek & push",
-                    feature4_text: "Gebruik weeroverzichten, de kaart met wind en neerslag en tactiektips voor planning. Met Pro push voor het activiteitsalarm en voor Vergelijkbare vangsten.",
+                    features_title: "Hoe Fishfy werkt",
+                    features_subtitle: "Fishfy bundelt voorspelling, weer, tactiek, stekken en vangstlogboek in één app met een helder plan voor je visdag.",
+                    nav_features: "Hoe werkt Fishfy?",
+                    pe_tech_title: "De techniek erachter",
+                    pe_tech_body: "Fishfy werkt met regelgestuurde modellen en navolgbare data in plaats van blackbox advies.",
+                    pe_section_forecast: "Wat doet de voorspelling?",
+                    pe_target_fish: "Kies doelfish",
+                    pe_target_fish_body: "Kies baars, snoek of snoekbaars en Fishfy past advies per soort aan.",
+                    pe_score: "Bereken score",
+                    pe_score_body: "De score combineert tijd, seizoen, maan en weerdata en toont per uur sterke bijtvensters.",
+                    pe_bait_tech: "Aas en techniek aanbevelen",
+                    pe_bait_tech_body: "Fishfy adviseert alleen aas en technieken uit jouw keuze met alternatieven.",
+                    pe_depth_lead: "Diepte en ophalen aanpassen",
+                    pe_depth_lead_body: "Je krijgt directe info over diepte, binnenhalen, pauze en zinkfase.",
+                    pe_section_influence: "Wat beïnvloedt de voorspelling?",
+                    pe_water_conditions: "Wateromstandigheden",
+                    pe_water_conditions_body: "Waterstand, troebelheid, stroming en watertype gaan live in de berekening.",
+                    pe_water_temp: "Watertemperatuur",
+                    pe_water_temp_body: "Watertemperatuur kan handmatig of automatisch en weegt zwaar mee.",
+                    pe_time_season: "Tijdstip en seizoen",
+                    pe_time_season_body: "Tijdstip en seizoen sturen het gedrag per doelfish.",
+                    pe_section_special: "Wat maakt Fishfy bijzonder?",
+                    pe_forecast: "Voorspelling",
+                    pe_forecast_body: "De voorspelling werkt met regels en data en verbetert met gecontroleerde vangsten.",
+                    pe_spots: "Stekken opslaan",
+                    pe_spots_body: "Stekken bewaren waterdata, notities, doelsoorten, beste maanden en activiteitsalarm per stek.",
+                    pe_wind_map: "Windkaart lezen",
+                    pe_wind_map_body: "De weerkaart toont live wind en neerslag met een uurlijkse 24u vooruitblik vanaf nu.",
+                    pe_catches: "Vangsten vastleggen",
+                    pe_catches_body: "Sla vangsten in seconden op met foto en vul details, condities en tactiekcheck later aan.",
+                    pe_transfer: "Vangstoverdracht",
+                    pe_transfer_body: "Draag losse vangsten met data en foto's veilig over aan de oorspronkelijke vanger.",
+                    pe_spot_transfer: "Spots delen",
+                    pe_spot_transfer_body: "Deel geselecteerde spots veilig met andere accounts.",
+                    pe_similar: "Vergelijkbare omstandigheden herkennen",
+                    pe_similar_body: "Vergelijkbare vangsten herkennen passende situaties en sturen optioneel push.",
+                    pe_map: "Alles op één kaart",
+                    pe_map_body: "De kaart combineert stekken en vangsten met sterke filters voor vis, water, land, wind, peil en meer.",
+                    pe_notifications: "Activiteitsmeldingen",
+                    pe_notifications_body: "Meldingen tonen bijtactiviteit, activiteitsalarm per stek en vergelijkbare vangsten.",
+                    pe_backup: "Back-up en sync",
+                    pe_backup_body: "Cloud back-up, sync en herstel beschermen je data op meerdere apparaten en maken wisselen eenvoudig.",
+                    pe_stats: "Vangststatistieken",
+                    pe_stats_body: "Statistieken tonen patronen voor tijd, temperatuur, aas, maten en maanden.",
+                    pe_beginners_pros: "Voor beginners en profs",
+                    pe_beginners_pros_body: "Beginners krijgen duidelijke stappen, profs gebruiken diepe filters en detaildata.",
+                    pe_section_free: "Gratis en reclamevrij",
+                    pe_free: "Gratis te gebruiken",
+                    pe_free_body: "Fishfy is reclamevrij en veel functies zijn gratis te gebruiken.",
+                    pe_fishfy_pro: "Fishfy Pro",
+                    pe_fishfy_pro_body: "Fishfy Pro verruimt limieten en premiumfuncties voor analyse, kaarten, automatisering en volledige controle.",
+                    pe_section_honest: "Eerlijk gezegd…",
+                    pe_no_guarantee: "Geen vangstgarantie",
+                    pe_no_guarantee_body: "Fishfy verbetert keuzes maar geeft geen vangstgarantie.",
+                    pe_we_learn: "Wij leren mee",
+                    pe_we_learn_body: "Met toestemming gebruiken we anonieme vangstdata om advies steeds preciezer te maken.",
                     about_title: "Over ons",
                     about_text1: "Fishfy groeide uit een persoonlijk doel: meer vissen vangen. Jarenlang legden we vangsten handmatig vast om te zien wanneer, hoe en waar het lukte en de vis beter te begrijpen. Zo ontstond de wens om iets eigen te bouwen en die stappen te vereenvoudigen, en bij dat idee kwamen nieuwe, grote doelen.",
                     about_text2: "Als we ergens voor gaan, dan goed en volledig. Daarom is Fishfy bedoeld als app die alles samenbrengt wat vissers nodig hebben om weer, water, stekken, vangsten en tactiek slimmer te verbinden.",
@@ -836,7 +1154,6 @@
                 fr: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
                     meta_description: "Fishfy rend la pêche plus simple et moins stressante. Spots, carnet de prises, carte, météo, tactique, rappels et sauvegarde dans une seule app. D'abord pour iPhone et iPad, bientôt sur l'App Store ; une version Android est en développement.",
-                    nav_features: "Fonctionnalités",
                     nav_about: "À propos",
                     nav_privacy: "Confidentialité",
                     nav_imprint: "Mentions légales",
@@ -845,16 +1162,62 @@
                     hero_title: "Pêcher plus malin, attraper plus",
                     cta_top: "Bientôt disponible",
                     cta_android: "En cours",
-                    features_title: "Tout ce qu'il te faut",
-                    features_subtitle: "Moins de recherche, moins de stress, de meilleures décisions au bord de l eau.",
-                    feature1_title: "Meilleures décisions",
-                    feature1_text: "Fishfy regroupe météo, eau, lune, saison et tes réglages en une estimation d'activité claire avec conditions et idées tactiques.",
-                    feature2_title: "Tes spots de pêche",
-                    feature2_text: "Enregistre des spots avec données d'eau, poissons cibles, notes et bons mois, avec alarme activité optionnelle par spot.",
-                    feature3_title: "Documenter les prises",
-                    feature3_text: "Enregistre les prises en secondes avec photo, Fishfy enregistre automatiquement les données météo actuelles. Complète détails, conditions et contrôle tactique plus tard.",
-                    feature4_title: "Météo, tactique et push",
-                    feature4_text: "Utilise les vues météo, la carte avec vent et précipitations ainsi que des conseils tactiques pour planifier. Avec Pro, push pour l'alarme activité et pour Prises similaires.",
+                    features_title: "Comment fonctionne Fishfy",
+                    features_subtitle: "Fishfy réunit prévision, météo, tactique, spots et carnet de prises dans une app avec un plan clair pour ta session.",
+                    nav_features: "Comment fonctionne Fishfy ?",
+                    pe_tech_title: "La technique derrière",
+                    pe_tech_body: "Fishfy utilise des modèles à règles et des données traçables au lieu de recommandations boîte noire.",
+                    pe_section_forecast: "À quoi sert la prévision ?",
+                    pe_target_fish: "Choisir l’espèce cible",
+                    pe_target_fish_body: "Choisis perche, brochet ou sandre et Fishfy adapte les conseils par espèce.",
+                    pe_score: "Calculer le score",
+                    pe_score_body: "Le score combine heure, saison, lune et météo et montre les bonnes fenêtres de touche heure par heure.",
+                    pe_bait_tech: "Recommander appât et technique",
+                    pe_bait_tech_body: "Fishfy recommande seulement les appâts et techniques de ta sélection avec alternatives.",
+                    pe_depth_lead: "Adapter profondeur et récupération",
+                    pe_depth_lead_body: "Tu reçois des infos directes sur profondeur, animation, pause et phase de descente.",
+                    pe_section_influence: "Qu’est-ce qui influence la prévision ?",
+                    pe_water_conditions: "Conditions d’eau",
+                    pe_water_conditions_body: "Niveau, turbidité, courant et type d eau entrent en direct dans le calcul.",
+                    pe_water_temp: "Température de l’eau",
+                    pe_water_temp_body: "La température de l eau peut être manuelle ou automatique et pèse fortement.",
+                    pe_time_season: "Moment de la journée et saison",
+                    pe_time_season_body: "Moment de la journée et saison influencent chaque espèce cible.",
+                    pe_section_special: "Qu’est-ce qui rend Fishfy unique ?",
+                    pe_forecast: "Prévision",
+                    pe_forecast_body: "La prévision suit des règles et des données puis progresse avec des prises vérifiées.",
+                    pe_spots: "Enregistrer les spots",
+                    pe_spots_body: "Les spots gardent données d eau, notes, poissons cibles, bons mois et alarme activité par spot.",
+                    pe_wind_map: "Lire la carte du vent",
+                    pe_wind_map_body: "La carte météo montre vent et précipitations en direct avec vue horaire sur 24h dès maintenant.",
+                    pe_catches: "Documenter les prises",
+                    pe_catches_body: "Enregistre une prise en secondes avec photo puis complète détails, conditions et tactique plus tard.",
+                    pe_transfer: "Transfert de prise",
+                    pe_transfer_body: "Transfère des prises individuelles avec données et photos vers le pêcheur d origine en sécurité.",
+                    pe_spot_transfer: "Partager des spots",
+                    pe_spot_transfer_body: "Partage des spots sélectionnés en sécurité avec d autres comptes.",
+                    pe_similar: "Reconnaître des conditions similaires",
+                    pe_similar_body: "Les prises similaires détectent les situations proches et envoient une alerte push si voulu.",
+                    pe_map: "Tout sur une carte",
+                    pe_map_body: "La carte regroupe spots et prises avec des filtres puissants poisson, eau, pays, vent, niveau et plus.",
+                    pe_notifications: "Alertes d’activité",
+                    pe_notifications_body: "Les alertes couvrent activité, alarme activité par spot et prises similaires.",
+                    pe_backup: "Sauvegarde et sync",
+                    pe_backup_body: "Sauvegarde cloud, sync et restauration protègent tes données sur tous tes appareils.",
+                    pe_stats: "Statistiques de prises",
+                    pe_stats_body: "Les stats montrent des schémas sur heure, température, appâts, tailles et mois.",
+                    pe_beginners_pros: "Pour débutants et pros",
+                    pe_beginners_pros_body: "Les débutants ont des étapes claires, les pros profitent de filtres avancés et données détaillées.",
+                    pe_section_free: "Gratuit et sans pub",
+                    pe_free: "Gratuit",
+                    pe_free_body: "Fishfy est sans pub et beaucoup de fonctions restent gratuites.",
+                    pe_fishfy_pro: "Fishfy Pro",
+                    pe_fishfy_pro_body: "Fishfy Pro étend limites et fonctions premium pour analyse, cartes, automatisation et contrôle total.",
+                    pe_section_honest: "Soyons honnêtes…",
+                    pe_no_guarantee: "Pas de garantie de prise",
+                    pe_no_guarantee_body: "Fishfy améliore les décisions mais ne garantit pas une prise.",
+                    pe_we_learn: "On apprend avec vous",
+                    pe_we_learn_body: "Avec ton accord nous utilisons des données de prise anonymisées pour affiner les recommandations.",
                     about_title: "À propos",
                     about_text1: "Fishfy est né d'un objectif personnel : prendre plus de poissons. Pendant longtemps nous avons noté nos prises à la main pour comprendre quand, comment et où ça marche et mieux connaître le poisson. Cette habitude est devenue l'envie de construire quelque chose de sérieux et de simplifier ces étapes, et l'idée a ouvert la voie à de nouveaux objectifs plus ambitieux.",
                     about_text2: "Lorsque nous nous lançons dans un projet, nous voulons le faire proprement et à fond. Fishfy en est le résultat : une app qui rassemble tout ce dont les pêcheurs ont besoin pour lier météo, eau, spots, prises et tactique avec plus d'intelligence.",
@@ -870,7 +1233,6 @@
                 lb: {
                     title: "Fishfy - Smarter angeln, mehr fangen",
                     meta_description: "Fishfy mécht d Angelen méi einfach a manner stresseg. Spots, Fangbuch, Kaart, Wieder, Taktik, Erënnerungen a Backup an enger App. Zouerst fir iPhone an iPad, geschwënn am App Store; eng Android-Versioun ass an der Entwécklung.",
-                    nav_features: "Funktiounen",
                     nav_about: "Iwwer eis",
                     nav_privacy: "Dateschutz",
                     nav_imprint: "Impressum",
@@ -879,16 +1241,62 @@
                     hero_title: "Méi schlau angelen, méi fänken",
                     cta_top: "Geschwënn verfügbar",
                     cta_android: "An der Aarbecht",
-                    features_title: "Alles wat s de brauchs",
-                    features_subtitle: "Manner sichen, manner Stress, besser Decisiounen um Waasser.",
-                    feature1_title: "Besser Decisiounen",
-                    feature1_text: "Fishfy setzt Wieder, Gewässer, Mound, Saison an deng Astellungen zu enger kloer Aktivitéitsbewäertung mat Konditiounen an Taktik zesummen.",
-                    feature2_title: "Deng Angelspots",
-                    feature2_text: "Späicher Spots mat Gewässerdaten, Zielfësch, Notizen a gudde Méint, optional mam Aktivitéitsalarm pro Spot.",
-                    feature3_title: "Faengen dokumentéieren",
-                    feature3_text: "Erfaass Fäng a Sekonne mat Foto, Fishfy späichert d aktuell Wiederdaten automatesch mat. Ergänz méi spéit Detailer, Konditiounen an d Taktikcheck.",
-                    feature4_title: "Wieder, Taktik a Push",
-                    feature4_text: "Notz Wieder Iwwerbléck, Kaart mat Wand an Nidderschlag sou wéi Taktik Hiweiser fir d Planung. Mat Pro Push fir den Aktivitéitsalarm an fir den Beräich Ähnlech Fäng.",
+                    features_title: "So funktionéiert Fishfy",
+                    features_subtitle: "Fishfy verbënnt Virso, Wieder, Taktik, Spots a Fangbuch an enger App mat kloerem Plang fir däin Angeldag.",
+                    nav_features: "Wéi funktionéiert Fishfy?",
+                    pe_tech_title: "D'Technik dahinter",
+                    pe_tech_body: "Fishfy schafft mat regelbaséierte Modeller a noweisbaren Donnéeën amplaz vu Blackbox Empfehlungen.",
+                    pe_section_forecast: "Was macht die Virsoen?",
+                    pe_target_fish: "Zielfësch wielen",
+                    pe_target_fish_body: "Wiel Barsch, Hecht oder Zander an Fishfy passt Empfehlungen pro Aart un.",
+                    pe_score: "Score berechnen",
+                    pe_score_body: "De Score kombinéiert Zäit, Saison, Mound a Wiederdaten a weist stënnlech staark Bäissfënsteren.",
+                    pe_bait_tech: "Këder & Technik empfehlen",
+                    pe_bait_tech_body: "Fishfy recommandéiert nëmme Këder a Techniken aus denger Auswiel mat Alternativen.",
+                    pe_depth_lead: "Tiefe & Féierung anpassen",
+                    pe_depth_lead_body: "Du kriss direkt Hiwäiser zu Déift, Féierung, Paus an Ofsénkphas.",
+                    pe_section_influence: "Was beeinflusst die Virsoen?",
+                    pe_water_conditions: "Gewässerbedingungen",
+                    pe_water_conditions_body: "Pegel, Trübheet, Stréimung a Gewässertyp ginn live an d Berechnung.",
+                    pe_water_temp: "Waassertemperatur",
+                    pe_water_temp_body: "Waassertemperatur kann manuell oder automatesch sinn a gewiicht staark.",
+                    pe_time_season: "Zäit vum Dag & Saison",
+                    pe_time_season_body: "Zäit vum Dag a Saison beaflossen all Zielfësch.",
+                    pe_section_special: "Wat mécht Fishfy besonnesch?",
+                    pe_forecast: "Virsoen",
+                    pe_forecast_body: "D Virso steiert mat Regelen an Daten a gëtt mat gepréifte Fäng ëmmer besser.",
+                    pe_spots: "Spots späicheren",
+                    pe_spots_body: "Spots späicheren Gewässerdaten, Notizen, Zielfësch, gutt Méint an Aktivitéitsalarm pro Spot.",
+                    pe_wind_map: "Wandkaart lesen",
+                    pe_wind_map_body: "D Wiederkaart weist Wand a Nidderschlag live mat enger stënnlecher 24h Iwwersiicht ab elo.",
+                    pe_catches: "Fäng dokumentieren",
+                    pe_catches_body: "Späicher Fäng a Sekonnen mat Foto a ergänz Detailer, Konditiounen an Taktikcheck méi spéit.",
+                    pe_transfer: "Fang-Transfer",
+                    pe_transfer_body: "Iwwerdro eenzel Fäng mat Donnéeën a Fotoen sécher un den urspréngleche Fänger.",
+                    pe_spot_transfer: "Spots deelen",
+                    pe_spot_transfer_body: "Deel ausgewielte Spots sécher mat anere Konten.",
+                    pe_similar: "Ähnliche Konditiounen erkennen",
+                    pe_similar_body: "Ähnlech Fäng erkennen passend Situatiounen a kënne Push schécken.",
+                    pe_map: "Alles op enger Kaart",
+                    pe_map_body: "D Kaart vereent Spots a Fäng mat staarke Filtere fir Fësch, Waasser, Land, Wand, Pegel a méi.",
+                    pe_notifications: "Aktivitéitsmeldungen",
+                    pe_notifications_body: "Notifikatiounen decken Aktivitéit, Aktivitéitsalarm pro Spot an ähnlech Fäng.",
+                    pe_backup: "Backup & Sync",
+                    pe_backup_body: "Cloud Backup, Sync a Restore schützen deng Donnéeën op alle Geräter a maachen den Wiessel einfach.",
+                    pe_stats: "Fang-Statistiken",
+                    pe_stats_body: "Statistike weisen Mustere bei Zäit, Temperatur, Këder, Gréissten a Méint.",
+                    pe_beginners_pros: "Fir Ufänger & Profis",
+                    pe_beginners_pros_body: "Ufänger kréien kloer Schrëtt, Profien notzen déif Filteren an Detaildaten.",
+                    pe_section_free: "Kostenlos & ouni Reklam",
+                    pe_free: "Gratis benotzbar",
+                    pe_free_body: "Fishfy ass ouni Reklam a vill Funktioune si gratis notzbar.",
+                    pe_fishfy_pro: "Fishfy Pro",
+                    pe_fishfy_pro_body: "Fishfy Pro erweidert Limiten a Premiumfunktioune fir Analyse, Kaarten, Automatisatioun a voll Kontroll.",
+                    pe_section_honest: "Eerlech gesot...",
+                    pe_no_guarantee: "Keng Fanggarantie",
+                    pe_no_guarantee_body: "Fishfy verbessert Decisiounen, eng Fanggarantie gëtt et net.",
+                    pe_we_learn: "Mir léieren mat",
+                    pe_we_learn_body: "Mat dengem Accord notze mir anonymiséiert Fangdaten fir Empfehlungen ze präziséieren.",
                     about_title: "Iwwer eis",
                     about_text1: "Fishfy kënnt aus engem perséinleche Zil: méi Fësch fänken. Dofir hunn mir Fäng iwwer laang Zäit manuell dokumentéiert fir ze gesinn, wéini, wéi an wou et geklappt huet an d'Fësch besser ze verstoen. Doaus ass de Wëllen entstanen, eppes Eeges ze bauen an dës Schrëtt ze vereinfachen, an mat der Idee koumen nei grouss Ziler derbäi.",
                     about_text2: "Wann mir eppes unhuelen, dann ordentlech a komplett. Fir Fishfy heescht dat eng App déi alles zesummenféiert wat Angler brauchen fir Wieder, Gewässer, Spots, Fäng a Taktik méi schlau ze verbinden.",

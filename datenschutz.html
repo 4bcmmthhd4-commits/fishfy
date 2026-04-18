@@ -10,51 +10,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #007AFF;
-            --navy: #011c38;
+            --primary: #0071e3;
+            --ink: #1d1d1f;
+            --ink-soft: #424245;
+            --surface: #f5f5f7;
+            --card: #ffffff;
+            --line: #e5e5ea;
             --white: #ffffff;
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-500: #6c757d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; color: var(--navy); background: var(--white); }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--surface);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
         nav {
             position: fixed; top: 0; left: 0; right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(245, 245, 247, 0.72);
             backdrop-filter: blur(20px);
-            z-index: 1000; padding: 16px 24px; border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000; padding: 14px 24px; border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
         .logo { text-decoration: none; display: flex; align-items: center; gap: 0; }
         .logo-icon { width: 74px; height: 74px; }
         .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
-        .back-link { color: var(--primary); text-decoration: none; font-weight: 500; }
-        .back-link:hover { text-decoration: underline; }
+        .nav-links { display:flex; gap:32px; list-style:none; }
+        .nav-links a { color:var(--ink-soft); text-decoration:none; font-weight:500; font-size:15px; transition:color .2s; }
+        .nav-links a:hover { color:var(--primary); }
         .lang-switcher {
-            border: 1px solid var(--gray-200);
-            background: var(--white);
-            color: var(--navy);
-            border-radius: 10px;
-            padding: 8px 12px;
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,.9);
+            color: var(--ink);
+            border-radius: 999px;
+            padding: 8px 14px;
             font-size: 14px;
             font-weight: 500;
         }
-        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
-        h1 { font-size: 36px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-        .last-updated { color: var(--gray-500); font-size: 14px; margin-bottom: 48px; }
-        h2 { font-size: 22px; font-weight: 600; color: var(--navy); margin-top: 48px; margin-bottom: 16px; }
-        p { color: var(--gray-500); margin-bottom: 16px; }
-        .info-box { background: var(--gray-100); border-radius: 12px; padding: 24px; margin: 24px 0; color: var(--gray-500); white-space: pre-line; }
-        .section-text { color: var(--gray-500); white-space: pre-line; margin-bottom: 16px; }
-        footer { background: var(--navy); color: rgba(255, 255, 255, 0.7); padding: 40px 24px; text-align: center; }
+        .content { max-width: 800px; margin: 0 auto; padding: 138px 24px 80px; }
+        h1 { font-size: 36px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing:-0.02em; }
+        .last-updated { color: var(--ink-soft); font-size: 14px; margin-bottom: 48px; }
+        h2 { font-size: 22px; font-weight: 600; color: var(--ink); margin-top: 48px; margin-bottom: 16px; }
+        p { color: var(--ink-soft); margin-bottom: 16px; }
+        .info-box { background: var(--card); border:1px solid var(--line); border-radius: 16px; padding: 24px; margin: 24px 0; color: var(--ink-soft); white-space: pre-line; }
+        .section-text { color: var(--ink-soft); white-space: pre-line; margin-bottom: 16px; }
+        footer { background: #1d1d1f; color: rgba(255, 255, 255, 0.72); padding: 40px 24px; text-align: center; }
         footer a { color: rgba(255, 255, 255, 0.7); text-decoration: none; margin: 0 16px; }
         footer a:hover { color: white; }
         .footer-links { margin-bottom: 24px; }
         .footer-copy { font-size: 13px; opacity: 0.7; }
         @media (max-width: 768px) {
-            .content { padding: 100px 20px 60px; }
+            .nav-container { flex-wrap:wrap; row-gap:10px; }
+            .nav-links { display:flex; order:3; width:100%; justify-content:center; flex-wrap:wrap; gap:12px 18px; }
+            .nav-links a { font-size:14px; }
+            .content { padding: 128px 20px 60px; }
             h1 { font-size: 28px; }
             h2 { font-size: 20px; }
         }
@@ -66,7 +79,12 @@
             <a href="index.html" class="logo">
                 <div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>
             </a>
-            <a href="index.html" class="back-link" data-i18n="back">Back to home</a>
+            <ul class="nav-links">
+                <li><a href="index.html#features" data-i18n="nav_features">Features</a></li>
+                <li><a href="index.html#about" data-i18n="nav_about">Über uns</a></li>
+                <li><a href="datenschutz.html" data-i18n="nav_privacy">Datenschutz</a></li>
+                <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
+            </ul>
             <select id="lang-switcher" class="lang-switcher" aria-label="Select language">
                 <option value="de">DE</option>
                 <option value="en">EN</option>
@@ -104,7 +122,10 @@
                 de: {
                     pageTitle: "Datenschutzerklärung",
                     updated: "Stand: 3. April 2026",
-                    back: "Zurück zur Startseite",
+                    nav_features: "Features",
+                    nav_about: "Über uns",
+                    nav_privacy: "Datenschutz",
+                    nav_imprint: "Impressum",
                     home: "Startseite",
                     privacy: "Datenschutz",
                     imprint: "Impressum",
@@ -132,7 +153,10 @@
                 en: {
                     pageTitle: "Privacy policy",
                     updated: "As of: April 3, 2026",
-                    back: "Back to home",
+                    nav_features: "Features",
+                    nav_about: "About",
+                    nav_privacy: "Privacy",
+                    nav_imprint: "Imprint",
                     home: "Home",
                     privacy: "Privacy",
                     imprint: "Imprint",
@@ -160,7 +184,10 @@
                 nl: {
                     pageTitle: "Privacybeleid",
                     updated: "Stand: 3 april 2026",
-                    back: "Terug naar startpagina",
+                    nav_features: "Functies",
+                    nav_about: "Over ons",
+                    nav_privacy: "Privacy",
+                    nav_imprint: "Colofon",
                     home: "Startpagina",
                     privacy: "Privacy",
                     imprint: "Colofon",
@@ -188,7 +215,10 @@
                 fr: {
                     pageTitle: "Politique de confidentialité",
                     updated: "État : 3 avril 2026",
-                    back: "Retour à l'accueil",
+                    nav_features: "Fonctionnalités",
+                    nav_about: "À propos",
+                    nav_privacy: "Confidentialité",
+                    nav_imprint: "Mentions légales",
                     home: "Accueil",
                     privacy: "Confidentialité",
                     imprint: "Mentions légales",
@@ -216,7 +246,10 @@
                 lb: {
                     pageTitle: "Dateschutzerklärung",
                     updated: "Stand: 3. Abrëll 2026",
-                    back: "Zréck op d'Startsäit",
+                    nav_features: "Funktiounen",
+                    nav_about: "Iwwer eis",
+                    nav_privacy: "Dateschutz",
+                    nav_imprint: "Impressum",
                     home: "Startsäit",
                     privacy: "Dateschutz",
                     imprint: "Impressum",
@@ -264,7 +297,10 @@
                 document.title = "Fishfy - " + t.pageTitle;
                 document.getElementById("title").textContent = t.pageTitle;
                 document.getElementById("updated").textContent = t.updated;
-                document.querySelector('[data-i18n="back"]').textContent = t.back;
+                document.querySelector('[data-i18n="nav_features"]').textContent = t.nav_features;
+                document.querySelector('[data-i18n="nav_about"]').textContent = t.nav_about;
+                document.querySelector('[data-i18n="nav_privacy"]').textContent = t.nav_privacy;
+                document.querySelector('[data-i18n="nav_imprint"]').textContent = t.nav_imprint;
                 document.querySelector('[data-i18n="home"]').textContent = t.home;
                 document.querySelector('[data-i18n="privacy"]').textContent = t.privacy;
                 document.querySelector('[data-i18n="imprint"]').textContent = t.imprint;

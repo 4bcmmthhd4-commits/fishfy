@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-fishfy-layout="grid-v8">
+<html lang="de" data-fishfy-layout="grid-v9">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -469,9 +469,9 @@
         .how-card-icon.feature-icon svg {
             display: block;
             flex-shrink: 0;
-            /* 48 = 2× viewBox 24. stroke 1.25 ≈ gleiche Strichstärke wie Lucide bei 24px mit stroke 2 (nicht 2× so dick wie stroke 2 hier). */
-            width: 48px;
-            height: 48px;
+            /* Kasten 56px, Icon kleiner eingebettet (mehr Luft). 36 = 1,5× viewBox 24. */
+            width: 36px;
+            height: 36px;
             overflow: visible;
             fill: none;
             stroke: currentColor;
@@ -491,7 +491,8 @@
         .how-card-icon.feature-icon svg.fish-ion circle {
             fill: none;
             stroke: currentColor;
-            stroke-width: 18;
+            /* Bei kleinerem SVG leicht hoch, damit Strich optisch ähnlich bleibt (18 @ 48px → 24 @ 36px). */
+            stroke-width: 24;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
@@ -1093,7 +1094,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v8 — stroke 1.25, „Wir lernen mit“ = Lucide trending-up. -->
+        <!-- fishfy-layout:grid-v9 — Feature-Icons 36px im 56px-Kasten. -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>

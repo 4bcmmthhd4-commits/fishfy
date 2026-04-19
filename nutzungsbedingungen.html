@@ -3,6 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            function isReloadNavigation() {
+                try {
+                    var n = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+                    if (n && n.type === "reload") return true;
+                } catch (e) {}
+                try {
+                    return performance.navigation && performance.navigation.type === 1;
+                } catch (e2) {}
+                return false;
+            }
+            function resetAfterReload() {
+                if (!isReloadNavigation()) return;
+                try {
+                    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+                } catch (e) {}
+                var base = location.pathname + location.search;
+                if (location.hash) {
+                    try {
+                        history.replaceState(null, "", base);
+                    } catch (e2) {}
+                }
+                window.scrollTo(0, 0);
+            }
+            resetAfterReload();
+            window.addEventListener(
+                "pageshow",
+                function (ev) {
+                    if (ev.persisted) return;
+                    resetAfterReload();
+                },
+                { passive: true }
+            );
+            window.addEventListener("load", resetAfterReload, { passive: true });
+        })();
+    </script>
     <title>Fishfy - Terms of use</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
     <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="32x32">

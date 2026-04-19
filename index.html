@@ -468,15 +468,17 @@
         .how-card-icon.feature-icon svg {
             display: block;
             flex-shrink: 0;
-            width: 30px;
-            height: 30px;
+            /* 24×24 = exakt viewBox 0 0 24 24 → keine fraktionale Skalierung der Striche (vermeidet „versetzte“ Kanten). */
+            width: 24px;
+            height: 24px;
             overflow: visible;
             fill: none;
             stroke: currentColor;
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
-            shape-rendering: geometricPrecision;
+            shape-rendering: auto;
+            transform: translateZ(0);
         }
 
         .how-card-icon.feature-icon.blue svg {
@@ -1060,7 +1062,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v3 — Wenn dieser Kommentar im Seitenquelltext fehlt, ist nicht diese index.html geladen (z. B. alte Hosting-Version). -->
+        <!-- fishfy-layout:grid-v4 — Feature-Icons: SVG 24×24 CSS-Pixel = 1:1 zum viewBox (scharfe Striche). Fehlt dieser Kommentar, ist eine gecachte/alte index.html aktiv. -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>
@@ -1070,28 +1072,28 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_forecast"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M6.39 12c.94-3.05 3.87-5 7.61-5 3.74 0 6.67 1.95 7.61 5-.94 3.05-3.87 5-7.61 5-3.74 0-6.67-1.95-7.61-5Z"/><path d="M2 9.27c.6.23 1.19.52 1.76.85L7 12l-3.24 1.88c-.57.33-1.16.62-1.76.85L2 12Z"/><path d="M22 9.27v5.46l-1-.37c-.6-.23-1.19-.52-1.76-.85L17 12l3.24-1.88c.57-.33 1.16-.62 1.76-.85l1-.37Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.39 12c.94-3.05 3.87-5 7.61-5 3.74 0 6.67 1.95 7.61 5-.94 3.05-3.87 5-7.61 5-3.74 0-6.67-1.95-7.61-5Z"/><path d="M2 9.27c.6.23 1.19.52 1.76.85L7 12l-3.24 1.88c-.57.33-1.16.62-1.76.85L2 12Z"/><path d="M22 9.27v5.46l-1-.37c-.6-.23-1.19-.52-1.76-.85L17 12l3.24-1.88c.57-.33 1.16-.62 1.76-.85l1-.37Z"/></svg>
                     </div>
                     <h4 data-i18n="pe_target_fish"></h4>
                     <p data-i18n="pe_target_fish_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="m12 14 3-5"/><path d="M12 14v3"/><path d="M5 15.5a7 7 0 0 1 14 0"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 3-5"/><path d="M12 14v3"/><path d="M5 15.5a7 7 0 0 1 14 0"/></svg>
                     </div>
                     <h4 data-i18n="pe_score"></h4>
                     <p data-i18n="pe_score_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon green" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg>
                     </div>
                     <h4 data-i18n="pe_bait_tech"></h4>
                     <p data-i18n="pe_bait_tech_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
                     </div>
                     <h4 data-i18n="pe_depth_lead"></h4>
                     <p data-i18n="pe_depth_lead_body"></p>
@@ -1099,28 +1101,28 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_influence"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M9 8h6M15 16h6M7 4h2"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
                     </div>
                     <h4 data-i18n="pe_water_conditions"></h4>
                     <p data-i18n="pe_water_conditions_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></svg>
                     </div>
                     <h4 data-i18n="pe_water_temp"></h4>
                     <p data-i18n="pe_water_temp_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon green" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
                     </div>
                     <h4 data-i18n="pe_time_season"></h4>
                     <p data-i18n="pe_time_season_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 4.93-1.41 1.41"/><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></svg>
                     </div>
                     <h4 data-i18n="pe_weather"></h4>
                     <p data-i18n="pe_weather_body"></p>
@@ -1128,84 +1130,84 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_special"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
                     </div>
                     <h4 data-i18n="pe_forecast"></h4>
                     <p data-i18n="pe_forecast_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
                     </div>
                     <h4 data-i18n="pe_spots"></h4>
                     <p data-i18n="pe_spots_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3 8h7a3 3 0 1 0-3-3M5 12h11a4 4 0 1 1-4 4M3 16h15"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h7a3 3 0 1 0-3-3M5 12h11a4 4 0 1 1-4 4M3 16h15"/></svg>
                     </div>
                     <h4 data-i18n="pe_wind_map"></h4>
                     <p data-i18n="pe_wind_map_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon green" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M4 9h3l2-2h6l2 2h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="14" r="3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l2-2h6l2 2h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="14" r="3"/></svg>
                     </div>
                     <h4 data-i18n="pe_catches"></h4>
                     <p data-i18n="pe_catches_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
                     </div>
                     <h4 data-i18n="pe_transfer"></h4>
                     <p data-i18n="pe_transfer_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M9 10l3-3 3 3"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M9 10l3-3 3 3"/></svg>
                     </div>
                     <h4 data-i18n="pe_spot_transfer"></h4>
                     <p data-i18n="pe_spot_transfer_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11z"/></svg>
                     </div>
                     <h4 data-i18n="pe_similar"></h4>
                     <p data-i18n="pe_similar_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon green" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>
                     </div>
                     <h4 data-i18n="pe_map"></h4>
                     <p data-i18n="pe_map_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 7H3s3 0 3-7M10 21h4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 7 3 7H3s3 0 3-7M10 21h4"/></svg>
                     </div>
                     <h4 data-i18n="pe_notifications"></h4>
                     <p data-i18n="pe_notifications_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
                     </div>
                     <h4 data-i18n="pe_backup"></h4>
                     <p data-i18n="pe_backup_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M4 19V5M8 19v-6M12 19V9M16 19v-3M20 19v-8"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M8 19v-6M12 19V9M16 19v-3M20 19v-8"/></svg>
                     </div>
                     <h4 data-i18n="pe_stats"></h4>
                     <p data-i18n="pe_stats_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon green" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <h4 data-i18n="pe_beginners_pros"></h4>
                     <p data-i18n="pe_beginners_pros_body"></p>
@@ -1213,14 +1215,14 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_free"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon purple" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V21M3 12h18M12 8H9.5a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 2.5-5a2.5 2.5 0 0 1 0 5H12z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8V21M3 12h18M12 8H9.5a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 2.5-5a2.5 2.5 0 0 1 0 5H12z"/></svg>
                     </div>
                     <h4 data-i18n="pe_free"></h4>
                     <p data-i18n="pe_free_body"></p>
                 </div>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue is-filled" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/></svg>
                     </div>
                     <h4 data-i18n="pe_fishfy_pro"></h4>
                     <p data-i18n="pe_fishfy_pro_body"></p>
@@ -1228,14 +1230,14 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_honest"></h3>
                 <div class="how-card feature-card orange-accent">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
                     </div>
                     <h4 data-i18n="pe_no_guarantee"></h4>
                     <p data-i18n="pe_no_guarantee_body"></p>
                 </div>
                 <div class="how-card feature-card orange-accent">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6M17 8h4v4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><polyline points="7 12 11 8 15 12 21 6"/><polyline points="17 8 21 8 21 12"/></svg>
                     </div>
                     <h4 data-i18n="pe_we_learn"></h4>
                     <p data-i18n="pe_we_learn_body"></p>

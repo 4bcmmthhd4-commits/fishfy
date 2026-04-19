@@ -468,17 +468,52 @@
         .how-card-icon.feature-icon svg {
             display: block;
             flex-shrink: 0;
-            /* 24×24 = exakt viewBox 0 0 24 24 → keine fraktionale Skalierung der Striche (vermeidet „versetzte“ Kanten). */
-            width: 24px;
-            height: 24px;
+            /* 48 = 2× viewBox 24 → ganzzahlige Skalierung, Striche wirken ruhiger als bei 30px. */
+            width: 48px;
+            height: 48px;
             overflow: visible;
             fill: none;
             stroke: currentColor;
-            stroke-width: 2;
+            stroke-width: 2.35;
             stroke-linecap: round;
             stroke-linejoin: round;
             shape-rendering: auto;
             transform: translateZ(0);
+        }
+
+        /* Ion fish (viewBox 512): Strichbreite in Nutzerkoordinaten, Farbe von .blue/.orange svg geerbt. */
+        .how-card-icon.feature-icon svg.fish-ion {
+            stroke-width: 0;
+        }
+
+        .how-card-icon.feature-icon svg.fish-ion path,
+        .how-card-icon.feature-icon svg.fish-ion circle {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 32;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .how-card-icon.feature-icon.blue svg.fish-ion {
+            color: #154a91;
+        }
+
+        .how-card-icon.feature-icon.orange svg.fish-ion {
+            color: #0f5f73;
+        }
+
+        .how-card-icon.feature-icon.green svg.fish-ion {
+            color: #1d4ed8;
+        }
+
+        .how-card-icon.feature-icon.purple svg.fish-ion {
+            color: #334155;
+        }
+
+        /* „Wir lernen mit“: etwas dickerer Strich für ruhigere Ecken zwischen Segmenten. */
+        .how-card-icon.feature-icon svg.trend-we-learn {
+            stroke-width: 2.65;
         }
 
         .how-card-icon.feature-icon.blue svg {
@@ -1062,7 +1097,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v4 — Feature-Icons: SVG 24×24 CSS-Pixel = 1:1 zum viewBox (scharfe Striche). Fehlt dieser Kommentar, ist eine gecachte/alte index.html aktiv. -->
+        <!-- fishfy-layout:grid-v5 — Feature-Icons 48px (2× viewBox 24), Fisch Ion-Umriss. Fehlt der Kommentar → alte gecachte index.html. -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>
@@ -1072,7 +1107,7 @@
                 <h3 class="how-section-heading" data-i18n="pe_section_forecast"></h3>
                 <div class="how-card feature-card">
                     <div class="how-card-icon feature-icon blue" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.39 12c.94-3.05 3.87-5 7.61-5 3.74 0 6.67 1.95 7.61 5-.94 3.05-3.87 5-7.61 5-3.74 0-6.67-1.95-7.61-5Z"/><path d="M2 9.27c.6.23 1.19.52 1.76.85L7 12l-3.24 1.88c-.57.33-1.16.62-1.76.85L2 12Z"/><path d="M22 9.27v5.46l-1-.37c-.6-.23-1.19-.52-1.76-.85L17 12l3.24-1.88c.57-.33 1.16-.62 1.76-.85l1-.37Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fish-ion" viewBox="0 0 512 512" aria-hidden="true"><path d="M240 152c-50.71 12.21-94.15 52.31-120.3 73.43a261.14 261.14 0 00-23.81-19.58C59.53 179.29 16 176 16 176s11.37 51.53 41.36 79.83C27.37 284.14 16 335.67 16 335.67s43.53-3.29 79.89-29.85a259.18 259.18 0 0023.61-19.41c26.1 21.14 69.74 61.34 120.5 73.59l-16 56c39.43-6.67 78.86-35.51 94.72-48.25C448 362 496 279 496 256c0-22-48-106-176.89-111.73C303.52 131.78 263.76 102.72 224 96z"/><circle cx="416" cy="239.99" r="16"/><path stroke-miterlimit="20" d="M378.37 356a199.22 199.22 0 010-200"/></svg>
                     </div>
                     <h4 data-i18n="pe_target_fish"></h4>
                     <p data-i18n="pe_target_fish_body"></p>
@@ -1237,7 +1272,7 @@
                 </div>
                 <div class="how-card feature-card orange-accent">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><polyline points="7 12 11 8 15 12 21 6"/><polyline points="17 8 21 8 21 12"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="trend-we-learn" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6"/><path d="M17 8h4v4"/></svg>
                     </div>
                     <h4 data-i18n="pe_we_learn"></h4>
                     <p data-i18n="pe_we_learn_body"></p>

@@ -306,6 +306,12 @@
             background: var(--surface);
         }
 
+        /* Fixe Nav: Sprungziele (#features, #about) nicht unter der Leiste verstecken */
+        #features,
+        #about {
+            scroll-margin-top: 104px;
+        }
+
         .section-container {
             max-width: 1120px;
             margin: 0 auto;
@@ -869,6 +875,11 @@
                 width: 22px;
                 height: 22px;
             }
+
+            #features,
+            #about {
+                scroll-margin-top: 88px;
+            }
         }
 
         @media (max-width: 390px) {
@@ -896,6 +907,11 @@
             .nav-menu-toggle {
                 width: 40px;
                 height: 40px;
+            }
+
+            #features,
+            #about {
+                scroll-margin-top: 80px;
             }
 
             .hero-badge {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate 'Wie funktioniert Fishfy' HTML + i18n keys from iOS Localizable.strings."""
+"""Generate Features-section HTML + i18n keys from iOS Localizable.strings."""
 import json
 import re
 from pathlib import Path

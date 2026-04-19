@@ -1,8 +1,8 @@
 {
   "de": {
-    "features_title": "So funktioniert Fishfy",
+    "features_title": "Features",
     "features_subtitle": "Fishfy vereint Prognose, Wetter, Taktik, Spots und Fangbuch in einer App mit klarem Plan für deinen Angeltag.",
-    "nav_features": "Wie funktioniert Fishfy?",
+    "nav_features": "Features",
     "pe_tech_title": "Die Technik dahinter",
     "pe_tech_body": "Fishfy arbeitet mit regelbasierten Modellen und nachvollziehbaren Daten statt Blackbox Empfehlungen.",
     "pe_section_forecast": "Was macht die Prognose?",
@@ -60,9 +60,9 @@
     "pe_we_learn_body": "Mit Zustimmung nutzen wir anonymisierte Fangdaten, damit Empfehlungen laufend präziser werden."
   },
   "en": {
-    "features_title": "How Fishfy works",
+    "features_title": "Features",
     "features_subtitle": "Fishfy combines forecast, weather, tactics, spots and catch log in one app with a clear plan for your fishing day.",
-    "nav_features": "How does Fishfy work?",
+    "nav_features": "Features",
     "pe_tech_title": "The tech behind it",
     "pe_tech_body": "Fishfy uses rule based models and traceable data instead of black box recommendations.",
     "pe_section_forecast": "What does the forecast do?",
@@ -120,9 +120,9 @@
     "pe_we_learn_body": "With consent we use anonymised catch data to make recommendations more precise over time."
   },
   "nl": {
-    "features_title": "Hoe Fishfy werkt",
+    "features_title": "Features",
     "features_subtitle": "Fishfy bundelt voorspelling, weer, tactiek, stekken en vangstlogboek in één app met een helder plan voor je visdag.",
-    "nav_features": "Hoe werkt Fishfy?",
+    "nav_features": "Features",
     "pe_tech_title": "De techniek erachter",
     "pe_tech_body": "Fishfy werkt met regelgestuurde modellen en navolgbare data in plaats van blackbox advies.",
     "pe_section_forecast": "Wat doet de voorspelling?",
@@ -180,9 +180,9 @@
     "pe_we_learn_body": "Met toestemming gebruiken we anonieme vangstdata om advies steeds preciezer te maken."
   },
   "fr": {
-    "features_title": "Comment fonctionne Fishfy",
+    "features_title": "Features",
     "features_subtitle": "Fishfy réunit prévision, météo, tactique, spots et carnet de prises dans une app avec un plan clair pour ta session.",
-    "nav_features": "Comment fonctionne Fishfy ?",
+    "nav_features": "Features",
     "pe_tech_title": "La technique derrière",
     "pe_tech_body": "Fishfy utilise des modèles à règles et des données traçables au lieu de recommandations boîte noire.",
     "pe_section_forecast": "À quoi sert la prévision ?",
@@ -240,9 +240,9 @@
     "pe_we_learn_body": "Avec ton accord nous utilisons des données de prise anonymisées pour affiner les recommandations."
   },
   "lb": {
-    "features_title": "So funktionéiert Fishfy",
+    "features_title": "Features",
     "features_subtitle": "Fishfy verbënnt Virso, Wieder, Taktik, Spots a Fangbuch an enger App mat kloerem Plang fir däin Angeldag.",
-    "nav_features": "Wéi funktionéiert Fishfy?",
+    "nav_features": "Features",
     "pe_tech_title": "D'Technik dahinter",
     "pe_tech_body": "Fishfy schafft mat regelbaséierte Modeller a noweisbaren Donnéeën amplaz vu Blackbox Empfehlungen.",
     "pe_section_forecast": "Was macht die Virsoen?",

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-fishfy-layout="grid-v7">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=0, must-revalidate, proxy-revalidate">
     <script>
         (function () {
             function isReloadNavigation() {
@@ -41,8 +42,8 @@
         })();
     </script>
     <title>Fishfy - Smarter angeln, mehr fangen</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="favicon.svg?v=7" type="image/svg+xml" sizes="any">
+    <link rel="icon" href="favicon.ico?v=7" type="image/x-icon" sizes="32x32">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="icon" type="image/png" sizes="24x24" href="favicon-24.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -763,6 +764,14 @@
             font-size: 13px;
         }
 
+        .footer-rev {
+            margin-left: 0.35em;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
         .scroll-top-btn {
             display: none;
         }
@@ -1102,7 +1111,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v6 — Strich 2px, Trend butt-cap. Fehlt der Kommentar → alte gecachte index.html. -->
+        <!-- fishfy-layout:grid-v7 — Footer zeigt „r7“ (Cache-Check). Strich 2px, Trend butt-cap. -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>
@@ -1344,7 +1353,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Apzura. Alle Rechte vorbehalten.</p>
+                <p>© 2026 Apzura. Alle Rechte vorbehalten.<span class="footer-rev" title="Seitenstand (bei Update sichtbar; sonst Browser-Cache)">· r7</span></p>
             </div>
         </div>
     </footer>

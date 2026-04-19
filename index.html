@@ -69,15 +69,94 @@
             z-index: 1000;
             padding: 14px 24px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            isolation: isolate;
         }
 
         .nav-container {
+            position: relative;
+            z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 16px;
+        }
+
+        .nav-end {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .nav-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--ink);
+            cursor: pointer;
+            flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-menu-toggle:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .nav-menu-bars {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 18px;
+        }
+
+        .nav-menu-bars span {
+            display: block;
+            height: 2px;
+            background: var(--ink);
+            border-radius: 1px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+
+        nav.nav-menu-open .nav-menu-bars span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        nav.nav-menu-open .nav-menu-bars span:nth-child(2) {
+            opacity: 0;
+        }
+
+        nav.nav-menu-open .nav-menu-bars span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        #nav-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: rgba(0, 0, 0, 0.28);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        nav.nav-menu-open #nav-backdrop {
+            display: block;
+            opacity: 1;
         }
 
         .logo {
@@ -128,6 +207,12 @@
             padding: 8px 14px;
             font-size: 14px;
             font-weight: 500;
+        }
+
+        @media (min-width: 769px) {
+            #nav-backdrop {
+                display: none !important;
+            }
         }
 
         /* Hero Section */
@@ -596,22 +681,65 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .nav-menu-toggle {
+                display: inline-flex;
+            }
+
             .nav-container {
-                flex-wrap: wrap;
-                row-gap: 10px;
+                flex-wrap: nowrap;
             }
 
             .nav-links {
-                display: flex;
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 12px 18px;
+                position: absolute;
+                top: 100%;
+                left: -24px;
+                right: -24px;
+                width: calc(100% + 48px);
+                margin: 0;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: stretch;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition:
+                    max-height 0.32s ease,
+                    opacity 0.2s ease,
+                    padding 0.2s ease;
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+                list-style: none;
+            }
+
+            nav.nav-menu-open .nav-links {
+                max-height: min(75vh, 440px);
+                opacity: 1;
+                padding: 6px 0 14px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .nav-links a {
-                font-size: 14px;
+                display: block;
+                padding: 15px 24px;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
+
+            body.nav-menu-open-body {
+                overflow: hidden;
+                touch-action: none;
             }
 
             .hero {
@@ -678,12 +806,9 @@
                 font-size: 13px;
             }
 
-            .nav-links {
-                gap: 8px 14px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
+            .nav-menu-toggle {
+                width: 42px;
+                height: 42px;
             }
 
             .hero-badge {
@@ -736,25 +861,31 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav id="site-nav">
+        <button type="button" id="nav-backdrop" class="nav-backdrop" aria-label=""></button>
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="#features" data-i18n="nav_features">Features</a></li>
                 <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
                 <li><a href="datenschutz.html" data-i18n="nav_privacy">Datenschutz</a></li>
                 <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
                 <li><a href="nutzungsbedingungen.html" data-i18n="nav_terms">Nutzungsbedingungen</a></li>
             </ul>
-            <select id="lang-switcher" class="lang-switcher" aria-label="Sprache auswählen">
-                <option value="de">DE</option>
-                <option value="en">EN</option>
-                <option value="nl">NL</option>
-                <option value="fr">FR</option>
-                <option value="lb">LB</option>
-            </select>
+            <div class="nav-end">
+                <button type="button" class="nav-menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menü öffnen">
+                    <span class="nav-menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <select id="lang-switcher" class="lang-switcher" aria-label="Sprache auswählen">
+                    <option value="de">DE</option>
+                    <option value="en">EN</option>
+                    <option value="nl">NL</option>
+                    <option value="fr">FR</option>
+                    <option value="lb">LB</option>
+                </select>
+            </div>
         </div>
     </nav>
 
@@ -1070,6 +1201,9 @@
                     nav_privacy: "Datenschutz",
                     nav_imprint: "Impressum",
                     nav_terms: "Nutzungsbedingungen",
+                    nav_aria_menu: "Menü öffnen",
+                    nav_aria_close: "Menü schließen",
+                    nav_aria_backdrop: "Menü schließen",
                     badge: "Dein Angel-Assistent",
                     hero_title: "Smarter angeln, mehr fangen",
                     cta_top: "Bald verfügbar",
@@ -1151,6 +1285,9 @@
                     nav_privacy: "Privacy",
                     nav_imprint: "Imprint",
                     nav_terms: "Terms",
+                    nav_aria_menu: "Open menu",
+                    nav_aria_close: "Close menu",
+                    nav_aria_backdrop: "Close menu",
                     badge: "Your fishing assistant",
                     hero_title: "Smarter fish, catch more",
                     cta_top: "Coming soon",
@@ -1232,6 +1369,9 @@
                     nav_privacy: "Privacy",
                     nav_imprint: "Colofon",
                     nav_terms: "Gebruiksvoorwaarden",
+                    nav_aria_menu: "Menu openen",
+                    nav_aria_close: "Menu sluiten",
+                    nav_aria_backdrop: "Menu sluiten",
                     badge: "Jouw visassistent",
                     hero_title: "Slimmer vissen, meer vangen",
                     cta_top: "Binnenkort beschikbaar",
@@ -1313,6 +1453,9 @@
                     nav_privacy: "Confidentialité",
                     nav_imprint: "Mentions légales",
                     nav_terms: "Conditions",
+                    nav_aria_menu: "Ouvrir le menu",
+                    nav_aria_close: "Fermer le menu",
+                    nav_aria_backdrop: "Fermer le menu",
                     badge: "Ton assistant de pêche",
                     hero_title: "Pêcher plus malin, attraper plus",
                     cta_top: "Bientôt disponible",
@@ -1394,6 +1537,9 @@
                     nav_privacy: "Dateschutz",
                     nav_imprint: "Impressum",
                     nav_terms: "Benotzungsbedingungen",
+                    nav_aria_menu: "Menu opmaachen",
+                    nav_aria_close: "Menu zoumaachen",
+                    nav_aria_backdrop: "Menu zoumaachen",
                     badge: "Dengen Angel-Assistent",
                     hero_title: "Méi schlau angelen, méi fänken",
                     cta_top: "Geschwënn verfügbar",
@@ -1478,7 +1624,26 @@
                 return SUPPORTED.includes(base) ? base : FALLBACK;
             }
 
+            let activeLang = FALLBACK;
+            let navMenuOpen = false;
+
+            function updateNavMenuAria(dict) {
+                const toggle = document.getElementById("nav-menu-toggle");
+                const backdrop = document.getElementById("nav-backdrop");
+                if (toggle && dict.nav_aria_menu && dict.nav_aria_close) {
+                    toggle.setAttribute(
+                        "aria-label",
+                        navMenuOpen ? dict.nav_aria_close : dict.nav_aria_menu
+                    );
+                }
+                if (backdrop && dict.nav_aria_backdrop) {
+                    backdrop.setAttribute("aria-label", dict.nav_aria_backdrop);
+                    backdrop.setAttribute("aria-hidden", navMenuOpen ? "false" : "true");
+                }
+            }
+
             function applyLanguage(lang) {
+                activeLang = lang;
                 const dict = translations[lang] || translations[FALLBACK];
                 document.documentElement.lang = lang;
                 document.title = dict.title;
@@ -1493,12 +1658,74 @@
 
                 const switcher = document.getElementById("lang-switcher");
                 if (switcher) switcher.value = lang;
+
+                updateNavMenuAria(dict);
+            }
+
+            function isNarrowNav() {
+                return window.matchMedia("(max-width: 768px)").matches;
+            }
+
+            function setNavMenuOpen(open) {
+                const nav = document.getElementById("site-nav");
+                const toggle = document.getElementById("nav-menu-toggle");
+                if (!nav || !toggle) return;
+                navMenuOpen = !!open;
+                nav.classList.toggle("nav-menu-open", navMenuOpen);
+                document.body.classList.toggle("nav-menu-open-body", navMenuOpen);
+                toggle.setAttribute("aria-expanded", navMenuOpen ? "true" : "false");
+                updateNavMenuAria(translations[activeLang] || translations[FALLBACK]);
+            }
+
+            function closeNavMenu() {
+                if (navMenuOpen) setNavMenuOpen(false);
+            }
+
+            function toggleNavMenu() {
+                if (!isNarrowNav()) return;
+                setNavMenuOpen(!navMenuOpen);
             }
 
             const preferred = normalizeLang(
                 localStorage.getItem(storageKey) || navigator.language || FALLBACK
             );
             applyLanguage(preferred);
+
+            (function initMobileNav() {
+                const toggle = document.getElementById("nav-menu-toggle");
+                const backdrop = document.getElementById("nav-backdrop");
+                if (!toggle) return;
+
+                toggle.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    toggleNavMenu();
+                });
+
+                if (backdrop) {
+                    backdrop.addEventListener("click", closeNavMenu);
+                }
+
+                const panel = document.getElementById("primary-nav");
+                if (panel) {
+                    panel.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", function () {
+                            if (isNarrowNav()) closeNavMenu();
+                        });
+                    });
+                }
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+                        if (!isNarrowNav()) closeNavMenu();
+                    },
+                    { passive: true }
+                );
+
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") closeNavMenu();
+                });
+            })();
 
             const inPageSectionIds = ["features", "about"];
             const inPageLinks = inPageSectionIds

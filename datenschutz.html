@@ -49,8 +49,27 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000; padding: 14px 24px; border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            isolation: isolate;
         }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .nav-container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .nav-end { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+        .nav-menu-toggle {
+            display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0;
+            border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.92); color: var(--ink);
+            cursor: pointer; flex-shrink: 0; -webkit-tap-highlight-color: transparent;
+        }
+        .nav-menu-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+        .nav-menu-bars { display: flex; flex-direction: column; gap: 5px; width: 18px; }
+        .nav-menu-bars span { display: block; height: 2px; background: var(--ink); border-radius: 1px; transition: transform 0.25s ease, opacity 0.2s ease; }
+        nav.nav-menu-open .nav-menu-bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        nav.nav-menu-open .nav-menu-bars span:nth-child(2) { opacity: 0; }
+        nav.nav-menu-open .nav-menu-bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        #nav-backdrop {
+            display: none; position: fixed; inset: 0; z-index: 0; margin: 0; padding: 0; border: none;
+            background: rgba(0,0,0,.28); cursor: pointer; opacity: 0; transition: opacity 0.2s ease; -webkit-tap-highlight-color: transparent;
+        }
+        nav.nav-menu-open #nav-backdrop { display: block; opacity: 1; }
+        @media (min-width: 769px) { #nav-backdrop { display: none !important; } }
         .logo { text-decoration: none; display: flex; align-items: center; gap: 0; }
         .logo-icon { width: 74px; height: 74px; }
         .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
@@ -86,39 +105,57 @@
         .footer-links { margin-bottom: 24px; }
         .footer-copy { font-size: 13px; opacity: 0.7; }
         @media (max-width: 768px) {
-            .nav-container { flex-wrap:wrap; row-gap:10px; }
-            .nav-links { display:flex; order:3; width:100%; justify-content:center; flex-wrap:wrap; gap:12px 18px; }
-            .nav-links a { font-size:14px; padding: 6px 8px; }
+            .nav-menu-toggle { display: inline-flex; }
+            .nav-container { flex-wrap: nowrap; }
+            .nav-links {
+                position: absolute; top: 100%; left: -24px; right: -24px; width: calc(100% + 48px); margin: 0;
+                flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; align-items: stretch; gap: 0; padding: 0;
+                max-height: 0; overflow: hidden; opacity: 0;
+                transition: max-height 0.32s ease, opacity 0.2s ease, padding 0.2s ease;
+                background: rgba(255,255,255,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(0,0,0,.06); box-shadow: 0 16px 40px rgba(0,0,0,.1); list-style: none;
+            }
+            nav.nav-menu-open .nav-links {
+                max-height: min(75vh, 440px); opacity: 1; padding: 6px 0 14px; overflow-y: auto; -webkit-overflow-scrolling: touch;
+            }
+            .nav-links a { display: block; padding: 15px 24px; font-size: 16px; font-weight: 500; border-bottom: 1px solid var(--line); }
+            .nav-links li:last-child a { border-bottom: none; }
+            body.nav-menu-open-body { overflow: hidden; touch-action: none; }
             .content { padding: 128px 20px 60px; }
             h1 { font-size: 28px; }
             h2 { font-size: 20px; }
         }
         @media (max-width: 420px) {
-            .nav-links { gap: 8px 12px; }
-            .nav-links a { font-size: 13px; padding: 5px 7px; }
+            .nav-menu-toggle { width: 42px; height: 42px; }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <nav id="site-nav">
+        <button type="button" id="nav-backdrop" class="nav-backdrop" aria-label=""></button>
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <div class="logo-icon"><img src="logo.svg" alt="Fishfy Logo"></div>
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html#features" data-i18n="nav_features">Features</a></li>
                 <li><a href="index.html#about" data-i18n="nav_about">Über uns</a></li>
                 <li><a href="datenschutz.html" class="active" data-i18n="nav_privacy">Datenschutz</a></li>
                 <li><a href="impressum.html" data-i18n="nav_imprint">Impressum</a></li>
                 <li><a href="nutzungsbedingungen.html" data-i18n="terms">Nutzungsbedingungen</a></li>
             </ul>
-            <select id="lang-switcher" class="lang-switcher" aria-label="Select language">
-                <option value="de">DE</option>
-                <option value="en">EN</option>
-                <option value="nl">NL</option>
-                <option value="fr">FR</option>
-                <option value="lb">LB</option>
-            </select>
+            <div class="nav-end">
+                <button type="button" class="nav-menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="">
+                    <span class="nav-menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <select id="lang-switcher" class="lang-switcher" aria-label="Select language">
+                    <option value="de">DE</option>
+                    <option value="en">EN</option>
+                    <option value="nl">NL</option>
+                    <option value="fr">FR</option>
+                    <option value="lb">LB</option>
+                </select>
+            </div>
         </div>
     </nav>
 
@@ -157,6 +194,9 @@
                     privacy: "Datenschutz",
                     imprint: "Impressum",
                     terms: "Nutzungsbedingungen",
+                    nav_aria_menu: "Menü öffnen",
+                    nav_aria_close: "Menü schließen",
+                    nav_aria_backdrop: "Menü schließen",
                     s1: "1. Verantwortlicher",
                     s1c: "Verantwortlich für die Datenverarbeitung ist:\n\nApzura\nHafenstraße 39, 67346 Speyer\nE-Mail: support@fishfy.app",
                     s2: "2. Datenerhebung und -speicherung",
@@ -188,6 +228,9 @@
                     privacy: "Privacy",
                     imprint: "Imprint",
                     terms: "Terms",
+                    nav_aria_menu: "Open menu",
+                    nav_aria_close: "Close menu",
+                    nav_aria_backdrop: "Close menu",
                     s1: "1. Controller",
                     s1c: "Responsible for data processing:\n\nApzura\nHafenstraße 39, 67346 Speyer\nEmail: support@fishfy.app",
                     s2: "2. Data collection and storage",
@@ -219,6 +262,9 @@
                     privacy: "Privacy",
                     imprint: "Colofon",
                     terms: "Gebruiksvoorwaarden",
+                    nav_aria_menu: "Menu openen",
+                    nav_aria_close: "Menu sluiten",
+                    nav_aria_backdrop: "Menu sluiten",
                     s1: "1. Verantwoordelijke",
                     s1c: "Verantwoordelijk voor de gegevensverwerking:\n\nApzura\nHafenstraße 39, 67346 Speyer\nE-mail: support@fishfy.app",
                     s2: "2. Gegevensverzameling en -opslag",
@@ -250,6 +296,9 @@
                     privacy: "Confidentialité",
                     imprint: "Mentions légales",
                     terms: "Conditions",
+                    nav_aria_menu: "Ouvrir le menu",
+                    nav_aria_close: "Fermer le menu",
+                    nav_aria_backdrop: "Fermer le menu",
                     s1: "1. Responsable",
                     s1c: "Responsable du traitement des données :\n\nApzura\nHafenstraße 39, 67346 Speyer\nE-mail : support@fishfy.app",
                     s2: "2. Collecte et stockage des données",
@@ -281,6 +330,9 @@
                     privacy: "Dateschutz",
                     imprint: "Impressum",
                     terms: "Benotzungsbedingungen",
+                    nav_aria_menu: "Menu opmaachen",
+                    nav_aria_close: "Menu zoumaachen",
+                    nav_aria_backdrop: "Menu zoumaachen",
                     s1: "1. Verantwortlechen",
                     s1c: "Verantwortlech fir d'Donnéeëveraarbechtung ass:\n\nApzura\nHafenstraße 39, 67346 Speyer\nE-Mail: support@fishfy.app",
                     s2: "2. Donnéeënerhiewung an -späicherung",
@@ -318,6 +370,22 @@
                     .replaceAll(">", "&gt;");
             }
 
+            function applyNavMenuLabels(lang) {
+                const t = content[lang] || content[FALLBACK];
+                const toggle = document.getElementById("nav-menu-toggle");
+                const backdrop = document.getElementById("nav-backdrop");
+                if (toggle && t.nav_aria_menu && t.nav_aria_close) {
+                    toggle.setAttribute(
+                        "aria-label",
+                        window.__fishfyNavOpen ? t.nav_aria_close : t.nav_aria_menu
+                    );
+                }
+                if (backdrop && t.nav_aria_backdrop) {
+                    backdrop.setAttribute("aria-label", t.nav_aria_backdrop);
+                    backdrop.setAttribute("aria-hidden", window.__fishfyNavOpen ? "false" : "true");
+                }
+            }
+
             function render(lang) {
                 const t = content[lang] || content[FALLBACK];
                 const setTextAll = (key, value) => {
@@ -339,6 +407,8 @@
                 setTextAll("terms", t.terms);
                 document.querySelector(".footer-copy").textContent = t.footerCopy;
 
+                applyNavMenuLabels(lang);
+
                 sections.innerHTML = [
                     ["s1", "s1c", true],
                     ["s2", "s2c", false],
@@ -356,6 +426,33 @@
                 }).join("");
             }
 
+            window.__fishfyNavOpen = false;
+
+            function isNarrowNav() {
+                return window.matchMedia("(max-width: 768px)").matches;
+            }
+
+            function setNavMenuOpen(open) {
+                const nav = document.getElementById("site-nav");
+                const toggle = document.getElementById("nav-menu-toggle");
+                if (!nav || !toggle) return;
+                window.__fishfyNavOpen = !!open;
+                nav.classList.toggle("nav-menu-open", window.__fishfyNavOpen);
+                document.body.classList.toggle("nav-menu-open-body", window.__fishfyNavOpen);
+                toggle.setAttribute("aria-expanded", window.__fishfyNavOpen ? "true" : "false");
+                const lang = normalizeLang(localStorage.getItem(storageKey) || navigator.language || FALLBACK);
+                applyNavMenuLabels(lang);
+            }
+
+            function closeNavMenu() {
+                if (window.__fishfyNavOpen) setNavMenuOpen(false);
+            }
+
+            function toggleNavMenu() {
+                if (!isNarrowNav()) return;
+                setNavMenuOpen(!window.__fishfyNavOpen);
+            }
+
             const preferred = normalizeLang(localStorage.getItem(storageKey) || navigator.language || FALLBACK);
             render(preferred);
             const switcher = document.getElementById("lang-switcher");
@@ -365,6 +462,31 @@
                 localStorage.setItem(storageKey, lang);
                 render(lang);
             });
+
+            (function initMobileNav() {
+                const toggle = document.getElementById("nav-menu-toggle");
+                const backdrop = document.getElementById("nav-backdrop");
+                if (!toggle) return;
+                toggle.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    toggleNavMenu();
+                });
+                if (backdrop) backdrop.addEventListener("click", closeNavMenu);
+                const panel = document.getElementById("primary-nav");
+                if (panel) {
+                    panel.querySelectorAll("a").forEach(function (link) {
+                        link.addEventListener("click", function () {
+                            if (isNarrowNav()) closeNavMenu();
+                        });
+                    });
+                }
+                window.addEventListener("resize", function () {
+                    if (!isNarrowNav()) closeNavMenu();
+                }, { passive: true });
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape") closeNavMenu();
+                });
+            })();
         })();
     </script>
 </body>

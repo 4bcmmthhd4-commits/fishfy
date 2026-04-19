@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-fishfy-layout="grid-v10">
+<html lang="de" data-fishfy-layout="grid-v11">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -248,7 +248,7 @@
             font-weight: 500;
         }
 
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
             #nav-backdrop {
                 display: none !important;
             }
@@ -771,8 +771,11 @@
             border: 0;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
+        /*
+         * Navigation bis 1024px als Hamburger (auch Phone-Landscape >768px breit).
+         * Restliche „Mobile“-Layouts bleiben bei 768px.
+         */
+        @media (max-width: 1024px) {
             .nav-menu-toggle {
                 display: inline-flex;
             }
@@ -859,6 +862,15 @@
                 touch-action: none;
             }
 
+            body.nav-menu-open-body .scroll-top-btn {
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+            }
+        }
+
+        /* Mobile Responsive (Layout unterhalb der Navigation) */
+        @media (max-width: 768px) {
             .hero {
                 padding: 150px 20px 44px;
             }
@@ -938,12 +950,6 @@
             .scroll-top-btn:focus-visible {
                 outline: 2px solid var(--primary);
                 outline-offset: 2px;
-            }
-
-            body.nav-menu-open-body .scroll-top-btn {
-                opacity: 0 !important;
-                visibility: hidden !important;
-                pointer-events: none !important;
             }
 
             .scroll-top-btn svg {
@@ -1094,7 +1100,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v10 — Slogan i18n (EN „Fish smarter, catch more“). -->
+        <!-- fishfy-layout:grid-v11 — Slogan-i18n v10; Nav-Hamburger bis 1024px (Phone-Querformat). -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>
@@ -1825,7 +1831,7 @@
             }
 
             function isNarrowNav() {
-                return window.matchMedia("(max-width: 768px)").matches;
+                return window.matchMedia("(max-width: 1024px)").matches;
             }
 
             function setNavMenuOpen(open) {

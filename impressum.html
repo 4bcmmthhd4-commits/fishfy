@@ -103,7 +103,7 @@
         nav.nav-menu-open .nav-menu-bars span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
         #nav-backdrop { display:none; position:fixed; inset:0; z-index:0; margin:0; padding:0; border:none; background:rgba(0,0,0,.28); cursor:pointer; opacity:0; transition:opacity .2s ease; -webkit-tap-highlight-color:transparent; }
         nav.nav-menu-open #nav-backdrop { display:block; opacity:1; }
-        @media (min-width:769px){ #nav-backdrop { display:none !important; } }
+        @media (min-width:1025px){ #nav-backdrop { display:none !important; } }
         .logo { text-decoration:none; display:flex; align-items:center; gap:0; }
         .logo-icon { width:74px; height:74px; } .logo-icon img { display:block; width:100%; height:100%; object-fit:contain; }
         .nav-links { display:flex; gap:32px; list-style:none; }
@@ -125,7 +125,7 @@
         footer { background:#1d1d1f; color:rgba(255,255,255,.72); padding:40px 24px; text-align:center; }
         footer a { color:rgba(255,255,255,.7); text-decoration:none; margin:0 16px; } footer a:hover { color:white; }
         .footer-links { margin-bottom:24px; } .footer-copy { font-size:13px; opacity:.7; }
-        @media (max-width:768px){
+        @media (max-width:1024px){
             .nav-menu-toggle { display:inline-flex; }
             .nav-container { flex-wrap:nowrap; align-items:center; justify-content:space-between; }
             .logo { display:flex; align-items:center; justify-content:flex-start; height:64px; margin-right:auto; overflow:visible; transform:translateY(9px); }
@@ -212,7 +212,7 @@
                     backdrop.setAttribute("aria-hidden", window.__fishfyNavOpen ? "false" : "true");
                 }
             }
-            function isNarrowNav() { return window.matchMedia("(max-width: 768px)").matches; }
+            function isNarrowNav() { return window.matchMedia("(max-width: 1024px)").matches; }
             function setNavMenuOpen(open) {
                 const nav = document.getElementById("site-nav");
                 const toggle = document.getElementById("nav-menu-toggle");

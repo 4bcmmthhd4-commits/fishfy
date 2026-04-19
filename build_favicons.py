@@ -37,6 +37,9 @@ def main() -> None:
     apple = downscale(source, 180)
     apple.save(ROOT / "apple-touch-icon.png", format="PNG", optimize=True)
     print("apple-touch-icon.png", apple.size)
+    # Einzelbild-.ico für ältere Clients / feste /favicon.ico-Anfragen (Multi-Res-ICO: Pillow SAVE_ALL).
+    Image.open(ROOT / "favicon-32.png").convert("RGBA").save(ROOT / "favicon.ico", format="ICO")
+    print("favicon.ico (32×32 embedded)")
 
 
 if __name__ == "__main__":

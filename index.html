@@ -746,17 +746,29 @@
             .nav-container {
                 flex-wrap: nowrap;
                 align-items: center;
+                position: relative;
+                justify-content: flex-end;
             }
 
             .logo {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
                 align-items: center;
-                height: 44px;
+                height: auto;
+                z-index: 1;
             }
 
             .logo-icon {
-                width: 44px;
-                height: 44px;
+                width: 56px;
+                height: 56px;
                 flex-shrink: 0;
+            }
+
+            .nav-end {
+                position: relative;
+                z-index: 2;
             }
 
             .lang-switcher {
@@ -913,7 +925,7 @@
 
             #features,
             #about {
-                scroll-margin-top: 88px;
+                scroll-margin-top: 96px;
             }
         }
 
@@ -924,12 +936,12 @@
 
             .logo {
                 gap: 0;
-                height: 40px;
+                height: auto;
             }
 
             .logo-icon {
-                width: 40px;
-                height: 40px;
+                width: 48px;
+                height: 48px;
             }
 
             .lang-switcher {

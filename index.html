@@ -474,7 +474,7 @@
             overflow: visible;
             fill: none;
             stroke: currentColor;
-            stroke-width: 2.35;
+            stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
             shape-rendering: auto;
@@ -490,7 +490,7 @@
         .how-card-icon.feature-icon svg.fish-ion circle {
             fill: none;
             stroke: currentColor;
-            stroke-width: 32;
+            stroke-width: 28;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
@@ -511,9 +511,14 @@
             color: #334155;
         }
 
-        /* „Wir lernen mit“: etwas dickerer Strich für ruhigere Ecken zwischen Segmenten. */
+        /*
+         * „Wir lernen mit“: butt caps verhindern doppelte Rundungen an Segment-Enden
+         * (sonst wirkt die Linie an Knicken „perlig“). linejoin bleibt rund.
+         */
         .how-card-icon.feature-icon svg.trend-we-learn {
-            stroke-width: 2.65;
+            stroke-width: 2;
+            stroke-linecap: butt;
+            stroke-linejoin: round;
         }
 
         .how-card-icon.feature-icon.blue svg {
@@ -1097,7 +1102,7 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <!-- fishfy-layout:grid-v5 — Feature-Icons 48px (2× viewBox 24), Fisch Ion-Umriss. Fehlt der Kommentar → alte gecachte index.html. -->
+        <!-- fishfy-layout:grid-v6 — Strich 2px, Trend butt-cap. Fehlt der Kommentar → alte gecachte index.html. -->
         <div class="section-container">
             <div class="section-header">
                 <h2 data-i18n="features_title">Funktionen</h2>
@@ -1272,7 +1277,7 @@
                 </div>
                 <div class="how-card feature-card orange-accent">
                     <div class="how-card-icon feature-icon orange" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="trend-we-learn" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6"/><path d="M17 8h4v4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="trend-we-learn" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><polyline points="7 12 11 8 15 12 21 6"/><path d="M17 8h4v4"/></svg>
                     </div>
                     <h4 data-i18n="pe_we_learn"></h4>
                     <p data-i18n="pe_we_learn_body"></p>
